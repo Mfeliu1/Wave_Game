@@ -1,0 +1,37 @@
+Known Bugs 11/24/17:
+ - Rocket Boss's angling is slightly off
+ - Randomization of bosses for waves does not work properly
+ - Tails do no display when drawing images for enemies. 
+ - Screen size scales properly, but does not detect users screen size and adjust scale properly 
+     - App runs in 1920x1080... but is scaled down manually due to not checking screen size of user. 
+ 
+
+Improvements:
+ - Upgrades
+ - Power Ups
+ - Add more enemies 
+ - Add more gamemodes
+ - Add multi-player
+ 
+ 
+
+Event Process/How the game runs:
+ - Game.java acts as a holder class for all the games data
+         - This was kept from older version, but those properties should be shifted to a less functional class. 
+         
+ - Game.java creates the window.java, and passes itself to it... Window then adds game to its JFrame 
+ - Game.java operates the entire programs ticks and rendering
+         - Critical that handler is ticks and rendered every cycle. 
+
+ - All Enemies and entities in the game are added to handler.java's list of GameObject.... handler.java renders everything
+   From here. Nice because all rendering for enemies is kept in one area. Remember this class draws objects using Game.javas Graphic
+   object.
+   
+ - GamemodeManager.java is a mini version of Game.java... ticks and renders the correct gamemode according to the current Mode property
+   in the class. Again, uses Game.java's Graphic object...
+   
+ - Waves is a gamemode, and outlines and generates enemies to be passed to the level class. 
+ 
+ - Level class is an "outline" of a round or level for Waves... or any gamemode. It allows the programmer to add more game mode without
+   having to repeatively re-program enemy spawning logic. Some logic is inherited from the gameMode that is passed to the level class. 
+   
