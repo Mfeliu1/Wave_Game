@@ -8,7 +8,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Random;
 
-
 public class Waves implements GameMode {
 	private Player player;
 	private int currentLevelNum = 0;
