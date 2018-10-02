@@ -23,7 +23,7 @@ import mainGame.Game.STATE;
 
 /*****
  * @author Katie Rosell
- * Any changes or comments I made I sign off with my name!
+ * Any changes or comments I made I sign off with my name
  */
 
 public class Menu {
