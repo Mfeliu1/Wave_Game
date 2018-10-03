@@ -40,7 +40,7 @@ public class BossEye extends GameObject {
 		this.speed = speedTypes[r.nextInt(4)];
 		this.handler = handler;
 		this.placement = placement;
-		this.timer = 200;
+		this.timer = 400;
 	}
 
 	public void tick() {

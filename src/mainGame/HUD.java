@@ -74,7 +74,7 @@ public class HUD {
 		}
 		
 
-		if (ability.equals("freezeTime")) {
+		if (ability.equals("freezeTime")) {//comment
 			g.drawString("Time Freezes: " + abilityUses, Game.WIDTH - 300, 64);
 		} else if (ability.equals("clearScreen")) {
 			g.drawString("Screen Clears: " + abilityUses, Game.WIDTH - 300, 64);
