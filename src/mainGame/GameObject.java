@@ -4,7 +4,7 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 
 /**
- * Every object in the game extends this abstract class
+ * Every object in the game extends this abstract class 
  * @author Brandon Loehle 5/30/16
  *
  */
