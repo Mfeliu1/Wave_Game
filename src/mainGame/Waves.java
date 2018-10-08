@@ -90,9 +90,15 @@ public class Waves implements GameMode {
 			this.levelPopTimer = 0;
 			t = new LevelText(Game .WIDTH / 2 - 675, Game.HEIGHT / 2 - 200, "Level " + this.currentLevelNum + (this.currentLevelNum%5 == 0 ? ": Boss Level!!!":""), ID.Levels1to10Text);
 			handler.addObject(t);
-			handler.addObject(new PickupSize((double)500,(double)500));//debug
-			handler.addObject(new PickupHealth((double)400,(double)400));//debug
-			handler.addObject(new PickupLife((double)300,(double)300));//debug
+			
+			double tempx = Math.random()*Game.WIDTH;
+			double tempy = Math.random()*Game.HEIGHT;
+			switch ((int)(Math.random()*4)){
+			case 0: handler.addObject(new PickupSize(tempx,tempy));break;
+			case 1: handler.addObject(new PickupHealth(tempx,tempy));break;
+			case 2: handler.addObject(new PickupLife(tempx,tempy));break;
+			case 3: handler.addObject(new PickupScore(tempx,tempy));break;
+			}
 			if(this.currentLevelNum%5 == 0){
 				ArrayList<Integer>bossLimit = new ArrayList<Integer>();
 				bossLimit.add(1);

@@ -142,6 +142,11 @@ public class Player extends GameObject {
 				hud.setExtraLives(hud.getExtraLives()+1);
 				handler.removeObject(tempObject);
 			}
+			
+			if (tempObject.getId() == ID.PickupScore && (getBounds().intersects(tempObject.getBounds()))) {
+				hud.setScore(hud.getScore()+1000);
+				handler.removeObject(tempObject);
+			}
 		}
 		}catch(NullPointerException e){
 			System.err.println("ahh looks like you done removed an object while checking the object");

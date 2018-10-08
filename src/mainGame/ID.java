@@ -35,6 +35,7 @@ public enum ID {
 	PickupHealth(-1),
 	PickupSize(-1),
 	PickupLife(-1),
+	PickupScore(-1),
 	Levels1to10Text(-1),
 	Player(-1),
 	Trail(-1);
