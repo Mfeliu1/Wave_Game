@@ -116,7 +116,6 @@ public class EnemyBurst extends Enemy {
 	}
 
 	public void render(Graphics g) {
-		drawHitBox(g);
 		Graphics2D a = (Graphics2D) g;
 		a.drawImage(img, (int) x, (int) y, 150, 150, null);
 	}
