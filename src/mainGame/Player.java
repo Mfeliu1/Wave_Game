@@ -137,6 +137,11 @@ public class Player extends GameObject {
 				playerHeight/=1.2;
 				handler.removeObject(tempObject);
 			}
+			
+			if (tempObject.getId() == ID.PickupLife && (getBounds().intersects(tempObject.getBounds()))) {
+				hud.setExtraLives(hud.getExtraLives()+1);
+				handler.removeObject(tempObject);
+			}
 		}
 		}catch(NullPointerException e){
 			System.err.println("ahh looks like you done removed an object while checking the object");

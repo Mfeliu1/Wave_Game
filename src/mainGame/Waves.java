@@ -92,6 +92,7 @@ public class Waves implements GameMode {
 			handler.addObject(t);
 			handler.addObject(new PickupSize((double)500,(double)500));//debug
 			handler.addObject(new PickupHealth((double)400,(double)400));//debug
+			handler.addObject(new PickupLife((double)300,(double)300));//debug
 			if(this.currentLevelNum%5 == 0){
 				ArrayList<Integer>bossLimit = new ArrayList<Integer>();
 				bossLimit.add(1);
