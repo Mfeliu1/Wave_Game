@@ -57,13 +57,16 @@ public class EnemyBasic extends Enemy {
 	}
 
 	public void render(Graphics g) {
+		//drawHitBox(g);
 		Graphics2D a = (Graphics2D) g;
-		a.drawImage(img, (int) x, (int) y, 250, 250, null);
+		a.drawImage(img, (int) x-125, (int) y-125, 250, 250, null);
+		
+		
 	}
 
 	@Override
 	public Rectangle getBounds() {
-		return new Rectangle((int) this.x, (int) this.y, 16, 16);
+		return new Rectangle((int) this.x-62, (int) this.y-30, 125, 60);//16,16
 	}
 
 }

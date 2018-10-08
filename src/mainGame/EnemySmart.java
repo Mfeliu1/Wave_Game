@@ -62,13 +62,13 @@ public class EnemySmart extends Enemy {
 
 	public void render(Graphics g) {
 		Graphics2D a = (Graphics2D) g;
-		a.drawImage(img, (int) x, (int) y, 150, 75, null);
+		a.drawImage(img, (int)x-75, (int) y-30, 150, 75, null);
 
 	}
 
 	@Override
 	public Rectangle getBounds() {
-		return new Rectangle((int) this.x, (int) this.y, 16, 16);
+		return new Rectangle((int) this.x-75, (int) this.y-30, 150, 75);
 	}
 
 }

@@ -94,12 +94,12 @@ public class EnemyShooter extends Enemy {
 
 	public void render(Graphics g) {
 		Graphics2D a = (Graphics2D) g;
-		a.drawImage(img, (int)this.x-10, (int) this.y-10, 100, 75, null);
+		a.drawImage(img, (int)this.x-this.sizeX/2, (int) this.y-sizeY/2, 100, 75, null);
 	}
 
 	@Override
 	public Rectangle getBounds() {
-		return new Rectangle((int) this.x, (int) this.y, this.sizeX, this.sizeY);
+		return new Rectangle((int) this.x-this.sizeX/2, (int) this.y-sizeY/2, this.sizeX, this.sizeY);
 	}
 
 }
