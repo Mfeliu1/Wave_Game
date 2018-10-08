@@ -24,10 +24,10 @@ public class EnemyFast extends Enemy {
 	public EnemyFast(double x, double y, ID id, Handler handler) {
 		super(x, y, id);
 		this.handler = handler;
-		velX = 2;
-		velY = 9;
+		velX = 2*(Math.random()-Math.random());
+		velY = -12;
 		try {
-			img = ImageIO.read(new File("src/images/rocket.png"));
+			img = ImageIO.read(new File("src/images/Rocket_Boss.png"));
 		} catch (Exception e){
 			e.printStackTrace();
 		}
@@ -50,13 +50,16 @@ public class EnemyFast extends Enemy {
 
 	public void render(Graphics g) {
 		Graphics2D a = (Graphics2D) g;
-		a.drawImage(img, (int) x, (int) y, null);
+		if (velY > 0) {
+			a.drawImage(img, (int) x, (int) y+64,32,-64, null);
+		}else {
+		a.drawImage(img, (int) x, (int) y,32,64, null);}
 
 	}
 
 	@Override
 	public Rectangle getBounds() {
-		return new Rectangle((int) this.x, (int) this.y, 16, 16);
+		return new Rectangle((int) this.x+8, (int) this.y, 16, 64);
 	}
 
 }

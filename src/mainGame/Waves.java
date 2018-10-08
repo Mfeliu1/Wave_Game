@@ -44,6 +44,7 @@ public class Waves implements GameMode {
 		case BossEye: return new EnemyBoss(ID.EnemyBoss, handler);
 		case EnemyBoss: return new EnemyBoss(ID.EnemyBoss, handler);
 		case EnemyRocketBoss: return new EnemyRocketBoss(100,100,ID.EnemyRocketBoss,this.player, this.handler,this.hud, this);
+		case EnemyFast: return new EnemyFast(spawnLoc.getX(), spawnLoc.getY(), ID.EnemySmart, handler);
 		default: return new EnemyBasic(spawnLoc.getX(),spawnLoc.getY(), 9, 9, ID.EnemyBasic, handler);
 		}
 	}
@@ -52,7 +53,7 @@ public class Waves implements GameMode {
 	 * @return ID (for entities)
 	 */
 	private ID randomEnemy(){	
-		int r = (int)(Math.random()*5); //0-6 can be generated
+		int r = (int)(Math.random()*6); //0-6 can be generated
 		ID returnID = null;
 		System.out.println("Enemy type of level " + this.currentLevelNum + " is " + r);
 		switch(r){ //pick what enemy the random integer represents
