@@ -116,13 +116,14 @@ public class EnemyBurst extends Enemy {
 	}
 
 	public void render(Graphics g) {
+		drawHitBox(g);
 		Graphics2D a = (Graphics2D) g;
 		a.drawImage(img, (int) x, (int) y, 150, 150, null);
 	}
 
 	@Override
 	public Rectangle getBounds() {
-		return new Rectangle((int) this.x, (int) this.y, 200, 200);
+		return new Rectangle((int) this.x, (int) this.y, 150,150);
 	}
 
 }
