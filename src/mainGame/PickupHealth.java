@@ -15,13 +15,11 @@ import java.awt.Rectangle;
 public class PickupHealth extends Pickup{
 	
 	// instance
-	private Handler handler;
 
 	// constructor
 	// used to initialize the state of the object
-	public PickupHealth(double x, double y, ID id, String path, Handler handler) {
-		super(x, y, id, path);
-		this.handler = handler;
+	public PickupHealth(double x, double y) {
+		super(x, y, ID.PickupHealth,"src/images/PickupHealth.png");
 	}
 
 	// methods
@@ -34,12 +32,6 @@ public class PickupHealth extends Pickup{
 	public void render(Graphics g) {
 		g.drawImage(this.img, (int)this.x, (int)this.y, 16, 16, null);
 		
-	}
-
-	// gets the bounding rectangle of this rectangle
-	// returns null
-	public Rectangle getBounds() {
-		return null;
 	}
 
 }

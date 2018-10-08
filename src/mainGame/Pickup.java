@@ -4,7 +4,11 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
+
+import javax.imageio.ImageIO;
 
 /**
  * TO BE IMPLEMENTED - class for pickups that affect the player, such as health
@@ -14,7 +18,7 @@ import java.net.URL;
  * @author David Nguyen 12/13/17
  */
 
-public abstract class Pickup {
+public abstract class Pickup extends GameObject{
 
 	// instances
 	protected double x;
@@ -26,11 +30,17 @@ public abstract class Pickup {
 	// constructor
 	// used to initialize the state of the object
 	public Pickup(double x, double y, ID id, String path) {
+		super(x, y, id);
 		this.x = x;
 		this.y = y;
 		this.id = id;
 		this.path = path;
-		this.img = setImg(this.path);
+		try {
+			this.img = ImageIO.read(new File(this.path));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 
@@ -56,7 +66,10 @@ public abstract class Pickup {
 
 	// gets the bounding rectangle of this rectangle
 	// returns a new rectangle, equal to the bounding rectangle for this rectangle
-	public abstract Rectangle getBounds();
+	public Rectangle getBounds() {
+	 return new Rectangle((int) this.x-16, (int) this.y-16,(int) this.x+16, (int) this.y+16);
+		
+	}
 
 	// get x value
 	public double getX() {
@@ -87,5 +100,6 @@ public abstract class Pickup {
 	public void setId(ID id) {
 		this.id = id;
 	}
+	
 
 }

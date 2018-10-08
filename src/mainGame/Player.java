@@ -126,6 +126,11 @@ public class Player extends GameObject {
 					hud.updateScoreColor(Color.red);
 				}
 			}
+			
+			if (tempObject.getId() == ID.PickupHealth && (getBounds().intersects(tempObject.getBounds()))) {
+				hud.health = 100;
+				handler.removeObject(tempObject);
+			}
 		}
 		}catch(NullPointerException e){
 			System.err.println("ahh looks like you done removed an object while checking the object");
