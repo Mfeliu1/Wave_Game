@@ -12,14 +12,14 @@ import java.awt.Rectangle;
  * 
  */
 
-public class PickupHealth extends Pickup{
+public class PickupSize extends Pickup{
 	
 	// instance
 
 	// constructor
 	// used to initialize the state of the object
-	public PickupHealth(double x, double y) {
-		super(x, y, ID.PickupHealth,"src/images/PickupHealth.png");
+	public PickupSize(double x, double y) {
+		super(x, y, ID.PickupSize,"src/images/PickupSpeed.png");
 	}
 
 	// methods

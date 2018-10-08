@@ -62,12 +62,15 @@ public abstract class Pickup extends GameObject{
 
 	// is the abstract base class for all graphics contexts that allow an application to draw 
 	// onto components that are realized on various devices, as well as onto off-screen images
-	public abstract void render(Graphics g);
 
 	// gets the bounding rectangle of this rectangle
 	// returns a new rectangle, equal to the bounding rectangle for this rectangle
 	public Rectangle getBounds() {
-	 return new Rectangle((int) this.x-16, (int) this.y-16,(int) this.x+16, (int) this.y+16);
+	 return new Rectangle((int) this.x, (int) this.y,30, 30);
+		
+	}
+	public void render(Graphics g) {
+		g.drawImage(this.img, (int)this.x, (int)this.y, 30,30, null);
 		
 	}
 

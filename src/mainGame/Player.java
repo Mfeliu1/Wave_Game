@@ -131,6 +131,12 @@ public class Player extends GameObject {
 				hud.health = 100;
 				handler.removeObject(tempObject);
 			}
+			
+			if (tempObject.getId() == ID.PickupSize && (getBounds().intersects(tempObject.getBounds()))) {
+				playerWidth/=1.2;
+				playerHeight/=1.2;
+				handler.removeObject(tempObject);
+			}
 		}
 		}catch(NullPointerException e){
 			System.err.println("ahh looks like you done removed an object while checking the object");
@@ -146,7 +152,7 @@ public class Player extends GameObject {
 
 	@Override
 	public Rectangle getBounds() {
-		return new Rectangle((int) this.x, (int) this.y, 60, 60);
+		return new Rectangle((int) this.x, (int) this.y, playerWidth,playerHeight);//was this,this,60,60 -bpm
 	}
 	//how mucvh damage has the player taken?
 	public void setDamage(int damage) {

@@ -33,6 +33,7 @@ public enum ID {
 	FireworkSpark(-1),
 	CircleTrail(-1),
 	PickupHealth(1),
+	PickupSize(1),
 	Levels1to10Text(-1),
 	Player(-1),
 	Trail(-1);
