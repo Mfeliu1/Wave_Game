@@ -14,7 +14,7 @@ import java.util.Random;
  *
  */
 
-public class EnemySweep extends GameObject {
+public class EnemySweep extends Enemy {
 
 	private Handler handler;
 	private Color[] colors= {Color.red, Color.blue, Color.green, Color.cyan, Color.magenta, Color.orange, Color.yellow, Color.pink};

@@ -16,7 +16,7 @@ import javax.imageio.ImageIO;
  *
  */
 
-public class EnemyBasic extends GameObject {
+public class EnemyBasic extends Enemy {
 
 	private Image img;
 	private Handler handler;

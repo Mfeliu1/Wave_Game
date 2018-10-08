@@ -13,7 +13,7 @@ import java.util.Random;
  *
  */
 
-public class EnemyBossBullet extends GameObject {
+public class EnemyBossBullet extends Enemy {
 
 	// instances
 	private Handler handler;

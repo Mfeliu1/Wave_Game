@@ -17,7 +17,7 @@ import javax.imageio.ImageIO;
  *
  */
 
-public class EnemyBurst extends GameObject {
+public class EnemyBurst extends Enemy {
 
 	private Handler handler;
 	private int timer;

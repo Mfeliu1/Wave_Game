@@ -16,7 +16,7 @@ import javax.imageio.ImageIO;
  *
  */
 
-public class EnemySmart extends GameObject {
+public class EnemySmart extends Enemy {
 
 	private Handler handler;
 	private GameObject player;

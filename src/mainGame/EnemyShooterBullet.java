@@ -11,7 +11,7 @@ import java.awt.Rectangle;
  *
  */
 
-public class EnemyShooterBullet extends GameObject {
+public class EnemyShooterBullet extends Enemy {
 
 	private Handler handler;
 
