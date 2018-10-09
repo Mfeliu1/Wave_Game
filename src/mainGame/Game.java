@@ -28,12 +28,12 @@ public class Game extends Canvas{
 	public static final Dimension canvasSize = new Dimension(1920, 1080);
 	public static final double aspectRatio   = (double)canvasSize.getWidth()/(double)canvasSize.getHeight();
 	static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-	static int ScreenWidth = (int) screenSize.getWidth();
-	static int ScreenHeight = (int) screenSize.getHeight(); 
-	public static final Dimension windowSize = new Dimension((int)(ScreenWidth*0.9),(int)(ScreenHeight*0.9));
+	static int WindowWidth = (int) (0.95 * screenSize.getWidth());
+	static int WindowHeight = (int) (0.914 * screenSize.getHeight());
+	public static final Dimension windowSize = new Dimension(WindowWidth,WindowHeight);
 	public static final int WIDTH  = (int)canvasSize.getWidth();
 	public static final int HEIGHT = (int)canvasSize.getHeight();
-	public static final int high = highScore();    
+	public static final int high = highScore();
 	
 	private boolean running = false;
 	private HUD hud;
@@ -83,7 +83,7 @@ public class Game extends Canvas{
 		gm = new GameManager(this, hud);
 		this.addKeyListener(new KeyInput(this.handler, this, this.hud, this.player, this.upgrades));
 		this.addMouseListener(mouseListener);
-	
+
 		@SuppressWarnings("unused")
 		Window window = new Window((int) windowSize.getWidth(), (int)windowSize.getHeight(), "Wave Game", this);
 		window.setIconImage(this.getImage("/images/Rocket_Boss.png"));
