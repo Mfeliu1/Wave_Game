@@ -19,7 +19,7 @@ public class PickupLife extends Pickup{
 	// constructor
 	// used to initialize the state of the object
 	public PickupLife(double x, double y) {
-		super(x, y, ID.PickupLife,"src/images/PickupHealth.png");
+		super(x, y, ID.PickupLife,"src/images/PickupLife.png");
 	}
 
 	// methods
