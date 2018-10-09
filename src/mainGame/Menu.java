@@ -122,8 +122,10 @@ public class Menu {
 			g.drawString("Help", 900, 70); //this is the help text, yayy
 			//Instructions 
 			g.setFont(font2);
-			g.drawString("Player controls: W A S D" + " \n"
-					+ "Defeat bosses and avoid enemies as long as you can as you probe deeper into space...", 40, 200);
+			g.drawString("Player controls: W A S D or Arrow Keys", 40, 180);
+			g.drawString("Avoid enemies as long as you can where the game gets progressively more difficult every five levels.", 40, 210);
+			g.drawString("Boss levels occur every five levels where you avoid projectiles for as long as you can until its health is depleted.", 40, 240);
+			g.drawString("Players can pick up items that appear on-screen which provides benefits such as extra health, extra lives, and to make your sprite smaller!", 40, 270);
 			//Back button
 			g.setFont(font2);
 			g.setColor(Color.white);

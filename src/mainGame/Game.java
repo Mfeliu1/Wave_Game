@@ -28,9 +28,9 @@ public class Game extends Canvas{
 	public static final Dimension canvasSize = new Dimension(1920, 1080);
 	public static final double aspectRatio   = (double)canvasSize.getWidth()/(double)canvasSize.getHeight();
 	static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-	static int width = (int) screenSize.getWidth();
-	static int height = (int) screenSize.getHeight();
-	public static final Dimension windowSize = new Dimension(width,height);
+	static int ScreenWidth = (int) screenSize.getWidth();
+	static int ScreenHeight = (int) screenSize.getHeight(); 
+	public static final Dimension windowSize = new Dimension(ScreenWidth,ScreenHeight);
 	public static final int WIDTH  = (int)canvasSize.getWidth();
 	public static final int HEIGHT = (int)canvasSize.getHeight();
 	public static final int high = highScore();    
