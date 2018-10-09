@@ -94,11 +94,12 @@ public class Waves implements GameMode {
 			
 			double tempx = Math.random()*Game.WIDTH;
 			double tempy = Math.random()*Game.HEIGHT;
-			switch ((int)(Math.random()*4)){
+			switch ((int)(Math.random()*5)){
 			case 0: handler.addObject(new PickupSize(tempx,tempy));break;
 			case 1: handler.addObject(new PickupHealth(tempx,tempy));break;
 			case 2: handler.addObject(new PickupLife(tempx,tempy));break;
 			case 3: handler.addObject(new PickupScore(tempx,tempy));break;
+			case 4: handler.addObject(new PickupFreeze(tempx,tempy));break;
 			}
 			if(this.currentLevelNum%5 == 0){
 				ArrayList<Integer>bossLimit = new ArrayList<Integer>();

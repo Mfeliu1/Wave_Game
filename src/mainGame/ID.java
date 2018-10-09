@@ -38,7 +38,7 @@ public enum ID {
 	PickupScore(-1),
 	Levels1to10Text(-1),
 	Player(-1),
-	Trail(-1);
+	Trail(-1), PickupFreeze(-1);
     private int numVal;
     
     ID(int numVal) { //dis was joe 

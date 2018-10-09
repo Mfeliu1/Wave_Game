@@ -14,7 +14,7 @@ public class Handler {
 
 	ArrayList<GameObject> object = new ArrayList<GameObject>();
 	ArrayList<Pickup> pickups = new ArrayList<Pickup>();
-	private int timer = 0;
+	public int timer = 0;
 	
 	/**
 	 * Updates each entity in the game by looping through each ArrayList and calling

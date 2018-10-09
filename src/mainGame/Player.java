@@ -127,6 +127,7 @@ public class Player extends GameObject {
 				}
 			}
 			
+			if (Pickup.class.isInstance(tempObject)) {
 			if (tempObject.getId() == ID.PickupHealth && (getBounds().intersects(tempObject.getBounds()))) {
 				hud.health = 100;
 				handler.removeObject(tempObject);
@@ -146,6 +147,12 @@ public class Player extends GameObject {
 			if (tempObject.getId() == ID.PickupScore && (getBounds().intersects(tempObject.getBounds()))) {
 				hud.setScore(hud.getScore()+1000);
 				handler.removeObject(tempObject);
+			}
+			
+			if (tempObject.getId() == ID.PickupFreeze && (getBounds().intersects(tempObject.getBounds()))) {
+				handler.timer = 300;
+				handler.removeObject(tempObject);
+			}
 			}
 		}
 		}catch(NullPointerException e){
