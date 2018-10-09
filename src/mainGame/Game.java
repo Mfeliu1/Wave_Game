@@ -15,7 +15,7 @@ import java.util.Scanner;
 
 /**
  * Main game class. This class is the driver class and it follows the Holder
- * pattern. It houses references to ALL of the components of the game
+ * pattern. It houses references toop ALL of the components of the game
  * 
  * @author Brandon Loehle 5/30/16
  * @author Joe Passanante 11/28/17
@@ -30,7 +30,7 @@ public class Game extends Canvas{
 	static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 	static int ScreenWidth = (int) screenSize.getWidth();
 	static int ScreenHeight = (int) screenSize.getHeight(); 
-	public static final Dimension windowSize = new Dimension(ScreenWidth,ScreenHeight);
+	public static final Dimension windowSize = new Dimension((int)(ScreenWidth*0.9),(int)(ScreenHeight*0.9));
 	public static final int WIDTH  = (int)canvasSize.getWidth();
 	public static final int HEIGHT = (int)canvasSize.getHeight();
 	public static final int high = highScore();    
