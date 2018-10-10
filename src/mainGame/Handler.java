@@ -108,9 +108,14 @@ public class Handler {
 	 */
 	public void clearEnemies() {
 		for (int i = 0; i < this.object.size(); i++) {
-			GameObject tempObject = this.object.get(i);
-			if (this.object.contains(tempObject)) {
-				 if(tempObject.getId() != ID.Player) removeObject(tempObject);
+			try {
+				GameObject tempObject = this.object.get(i);
+				if (this.object.contains(tempObject)) {
+					if (tempObject.getId() != ID.Player) removeObject(tempObject);
+				}
+			}catch(java.lang.NullPointerException e){
+				e.getStackTrace();
+				System.err.println("Item removed mid count. Do not be alarmed.");
 			}
 		}
 	}

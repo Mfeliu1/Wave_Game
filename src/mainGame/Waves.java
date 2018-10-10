@@ -106,6 +106,7 @@ public class Waves implements GameMode {
 				bossLimit.add(1);
 				System.out.println("New Boss Level");
 				currentLevel = new Level(handler, this, this.game, this.player,0,randomBoss(), bossLimit, -1 , false, false);
+				currentLevel.setBossLevel(true);
 				
 			}else{
 				System.out.println("New Normal Level");

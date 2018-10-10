@@ -69,7 +69,10 @@ public class EnemyBoss extends GameObject {
 
 		// handler.addObject(new Trail(x, y, ID.Trail, Color.red, 96, 96, 0.025,
 		// this.handler));
-
+		if (this.health <= 0) {
+			System.out.println("Removing Boss");
+			handler.removeObject(this);
+		}
 	}
 
 	// returns an image which gets pixel data from the specific file, whose format can be either GIF, JPEG or PNG. 
