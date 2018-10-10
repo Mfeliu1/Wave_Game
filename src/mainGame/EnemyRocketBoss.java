@@ -40,23 +40,24 @@ public class EnemyRocketBoss extends GameObject {
 		}
 		health--;
 //		handler.addObject(new Trail(this.x - 80, this.y-296, ID.Trail, Color.red, 20, 20, 0.05, this.handler));
+	
 		if(inDash){
 			this.speed = 28 - this.health/100;
 			Move();
 		}else{
+			this.dash_x = (player.getX()+player.playerWidth/2) + player.velX*1.5;
+			this.dash_y = (player.getY()+player.playerHeight/2) + player.velY*1.5;
+			
 			if(cooldown<=0){
-				this.dash_x = player.getX()+16 + player.velX*1.5;
-				this.dash_y = player.getY()+16 + player.velY*1.5;
+				
 				double angle = this.GetAngleOfLineBetweenTwoPoints(new Point.Double(this.x+40, this.y), new Point.Double(dash_x,dash_y));
 				this.drawAngle = angle;
 				this.inDash = true;
 				cooldown = 60 - (int)(Math.random()*25); //lazy way to make cooldown shorter
 			}else{
 				cooldown--;
-					this.dash_x = player.getX()+16;
-					this.dash_y = player.getY()+16;
 					double angle = this.GetAngleOfLineBetweenTwoPoints(new Point.Double(this.x+40, this.y), new Point.Double(dash_x,dash_y));
-					this.drawAngle = angle;
+					this.drawAngle = this.drawAngle-Math.max(-5,Math.min(angleDifference(this.drawAngle,angle),5));
 			}
 		}
 		if(health<=0){
@@ -70,6 +71,11 @@ public class EnemyRocketBoss extends GameObject {
         double yDiff = p2.y - p1.y;
         return Math.toDegrees(Math.atan2(yDiff, xDiff));
     }
+    
+    public double angleDifference(double angleFrom, double angleTo) {
+        return ((((angleFrom - angleTo) % 360) + 540) % 360) - 180;
+    }
+    
 	private void Move(){
 	// System.out.println("Moving");
 		this.x = this.x + this.velX;
@@ -99,7 +105,6 @@ public class EnemyRocketBoss extends GameObject {
 		g.setColor(Color.WHITE);
 		g.drawRect(Game.WIDTH / 2 - 500, Game.HEIGHT - 150, 1000, 50);
 		
-		
 		Graphics2D g2d = (Graphics2D)g;
 		//DEV TOOLS
 		/*
@@ -110,15 +115,23 @@ public class EnemyRocketBoss extends GameObject {
 		
 		//Draw Rocket
 		AffineTransform old = g2d.getTransform();
-		g2d.translate(this.x, this.y);
+		g2d.translate(Math.cos(Math.toRadians(this.drawAngle-90))*40 +this.x, Math.sin(Math.toRadians(this.drawAngle-90))*40 +this.y);
 		g2d.rotate(Math.toRadians(this.drawAngle + 90));
-		g2d.drawImage(img, 0, 0, 80, 296, null);
-		Rectangle2D rec = new Rectangle2D.Double(0, 0, 80, 200);
+		int offsetx = 0;
+		int offsety = 0;
+		Rectangle2D rec = new Rectangle2D.Double(30+offsetx, 0+offsety, 20, 200);
+		//g2d.fill(rec);
+		g2d.drawImage(img, 0+offsetx, 0+offsety, 80, 296, null);
 	    Rectangle2D playerBounds = new Rectangle2D.Double(this.x-player.x,this.y-player.y,player.getPlayerWidth(),player.getPlayerHeight());
 	    if(rec.contains(playerBounds)){
 	    	hud.health = hud.health - 1;
 	    }
+	    //g2d.drawRect((int)40,(int)0,10,10);
 	    g2d.setTransform(old);
+	    //g2d.setColor(Color.YELLOW);
+	    //g2d.drawRect((int)this.dash_x-5,(int)this.dash_y-5,10,10);
+	    
+	    
 	}
 	//Unlike the other enemies, this boss will handle collisions internally with the player. This allows us to have an accurate hitbox..
 	//Despite being angled. 
@@ -138,4 +151,6 @@ public class EnemyRocketBoss extends GameObject {
 
 		return image;
 	}
+	
+	
 }
