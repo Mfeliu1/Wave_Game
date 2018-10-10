@@ -123,16 +123,16 @@ public class Menu {
 			g.drawString("Help", 900, 70); //this is the help text, yayy
 			//Instructions 
 			g.setFont(font);
-			g.drawString("•  Player controls: WASD/Arrow Keys", 35, 180);
-			g.drawString("•  Avoid enemies as difficulty increases", 35, 240);
-			g.drawString("•  Boss levels occur every five levels", 35, 300);
-			g.drawString("•  Players can pick up various powerups", 35, 360);
-			g.drawString("•  Power-Ups:", 1100, 180);
-			g.drawString("		○  Screen freeze powerup (stop sign)", 1125, 240);
-			g.drawString("		○  Make players smaller (blue pill)", 1125, 300);
-			g.drawString("		○  More points (coin)", 1125, 360);
-			g.drawString("		○  Health refill (green medpack)", 1125, 420);
-			g.drawString("		○  Extra Life (red medpack)", 1125, 480);
+			g.drawString("  Player controls: WASD/Arrow Keys", 35, 180);
+			g.drawString("  Avoid enemies as difficulty increases", 35, 240);
+			g.drawString("  Boss levels occur every five levels", 35, 300);
+			g.drawString("  Players can pick up various powerups", 35, 360);
+			g.drawString("  Power-Ups:", 1100, 180);
+			g.drawString("		-  Screen freeze powerup (stop sign)", 1125, 240);
+			g.drawString("		-  Make players smaller (blue pill)", 1125, 300);
+			g.drawString("		-  More points (coin)", 1125, 360);
+			g.drawString("		-  Health refill (green medpack)", 1125, 420);
+			g.drawString("		-  Extra Life (red medpack)", 1125, 480);
 			//Back button
 			g.setFont(font3);
 			g.setColor(Color.white);
