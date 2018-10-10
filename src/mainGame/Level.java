@@ -88,7 +88,7 @@ public class Level {
 		if(Math.sqrt(Math.pow((player.getX()-x), 2) + Math.pow((player.getY()-y), 2))<=player.playerWidth*5){ //don't spawn within 5X of player size
 			return getSpawnLoc(); //try another point
 		}
-		if(x>=Game.WIDTH-50 || y>=Game.HEIGHT-50){
+		if(x>=Game.WIDTH-50 || y>=Game.HEIGHT-50 || y < 50 || x < 50){
 			return getSpawnLoc(); //try another point
 		}
 		return new Point(x,y);
