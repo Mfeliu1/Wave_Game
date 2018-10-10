@@ -34,8 +34,8 @@ public class EnemyShooter extends Enemy {
 		this.handler = handler;
 		this.velX = 0;
 		this.velY = 0;
-		this.sizeX = sizeX;
-		this.sizeY = sizeY;
+		this.sizeX = 100;
+		this.sizeY = 75;
 		this.timer = 60;
 		this.bulletSpeed = bulletSpeed;
 		try {
@@ -87,14 +87,14 @@ public class EnemyShooter extends Enemy {
 		this.sizeX--;
 		this.sizeY--;
 
-		if (sizeX <= 0) {
+		if (sizeX <= 1) {
 			handler.removeObject(this);
 		}
 	}
 
 	public void render(Graphics g) {
 		Graphics2D a = (Graphics2D) g;
-		a.drawImage(img, (int)this.x-this.sizeX/2, (int) this.y-sizeY/2, 100, 75, null);
+		a.drawImage(img, (int)this.x-this.sizeX/2, (int) this.y-sizeY/2, this.sizeX, this.sizeY, null);
 	}
 
 	@Override
