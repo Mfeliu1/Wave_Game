@@ -5,10 +5,12 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Point;
+import java.awt.Polygon;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.Ellipse2D;
+import java.awt.geom.Path2D;
 import java.awt.geom.Rectangle2D;
 import java.net.URL;
 
@@ -115,19 +117,31 @@ public class EnemyRocketBoss extends GameObject {
 		
 		//Draw Rocket
 		AffineTransform old = g2d.getTransform();
+		
+		
+		
 		g2d.translate(Math.cos(Math.toRadians(this.drawAngle-90))*40 +this.x, Math.sin(Math.toRadians(this.drawAngle-90))*40 +this.y);
 		g2d.rotate(Math.toRadians(this.drawAngle + 90));
-		int offsetx = 0;
-		int offsety = 0;
-		Rectangle2D rec = new Rectangle2D.Double(30+offsetx, 0+offsety, 20, 200);
+		
+		
+		g2d.drawImage(img, 0, 0, 80, 296, null);
+	    
+	    
+	    //g2d.drawRect((int)40,(int)0,10,10);
+		Rectangle2D rec = new Rectangle.Double(30, 0, 20, 200);
+		Path2D bounds = new Path2D.Double(rec,g2d.getTransform());
+	    g2d.setTransform(old);
+	   
+	    //int[] xs = {this.x,2,3,4};
+	   // int[] ys = {this.y,2,3,4};
+	    
+	    Rectangle2D playerBounds = new Rectangle2D.Double(player.x,player.y,player.getPlayerWidth(),player.getPlayerHeight());
 		//g2d.fill(rec);
-		g2d.drawImage(img, 0+offsetx, 0+offsety, 80, 296, null);
-	    Rectangle2D playerBounds = new Rectangle2D.Double(this.x-player.x,this.y-player.y,player.getPlayerWidth(),player.getPlayerHeight());
-	    if(rec.contains(playerBounds)){
+		//g2d.fill(bounds);
+		
+		if(bounds.intersects(playerBounds)){
 	    	hud.health = hud.health - 1;
 	    }
-	    //g2d.drawRect((int)40,(int)0,10,10);
-	    g2d.setTransform(old);
 	    //g2d.setColor(Color.YELLOW);
 	    //g2d.drawRect((int)this.dash_x-5,(int)this.dash_y-5,10,10);
 	    
