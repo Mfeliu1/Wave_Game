@@ -109,9 +109,8 @@ public class Handler {
 	public void clearEnemies() {
 		for (int i = 0; i < this.object.size(); i++) {
 			GameObject tempObject = this.object.get(i);
-			if (tempObject.getId() != ID.Player) {
-				this.removeObject(tempObject);
-				i--; // Removing shrinks the array by 1, causing the loop to skip an enemy
+			if (this.object.contains(tempObject)) {
+				 if(tempObject.getId() != ID.Player) removeObject(tempObject);
 			}
 		}
 	}
