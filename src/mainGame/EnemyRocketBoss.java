@@ -49,16 +49,15 @@ public class EnemyRocketBoss extends GameObject {
 		}else{
 			this.dash_x = (player.getX()+player.playerWidth/2) + player.velX*1.5;
 			this.dash_y = (player.getY()+player.playerHeight/2) + player.velY*1.5;
-			
+			double angle = this.GetAngleOfLineBetweenTwoPoints(new Point.Double(this.x+40, this.y), new Point.Double(dash_x,dash_y));
+			this.dash_x = (player.getX()+player.playerWidth/2)+Math.cos(Math.toRadians(angle))*100;
+			this.dash_y = (player.getY()+player.playerHeight/2)+Math.sin(Math.toRadians(angle))*100;
 			if(cooldown<=0){
-				
-				double angle = this.GetAngleOfLineBetweenTwoPoints(new Point.Double(this.x+40, this.y), new Point.Double(dash_x,dash_y));
 				this.drawAngle = angle;
 				this.inDash = true;
 				cooldown = 60 - (int)(Math.random()*25); //lazy way to make cooldown shorter
 			}else{
 				cooldown--;
-					double angle = this.GetAngleOfLineBetweenTwoPoints(new Point.Double(this.x+40, this.y), new Point.Double(dash_x,dash_y));
 					this.drawAngle = this.drawAngle-Math.max(-5,Math.min(angleDifference(this.drawAngle,angle),5));
 			}
 		}
