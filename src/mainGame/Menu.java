@@ -111,26 +111,33 @@ public class Menu {
 			//Credits to original editor
 			g.setColor(Color.white);
 			g.setFont(font2);
-			g.drawString("Credits: Brandon Loehle's AP CSC project '15-'16", 0, 1000);
+			g.drawString("Credits: Irrelephant Games '18-'19", 0, 1000);
 			//Now if the user clicked the Help button
 		} else if (game.gameState == STATE.Help) {// if the user clicks on "help"
 			Font font = new Font("impact", 1, 50); //make a new font
 			Font font2 = new Font("impact", 1, 30); //also make a new font
+			Font font3 = new Font("impact", 1, 30); //also make a new font
 			//Help text
 			g.setFont(font); //set the font with its parameters above 
 			g.setColor(Color.white);
 			g.drawString("Help", 900, 70); //this is the help text, yayy
 			//Instructions 
-			g.setFont(font2);
-			g.drawString("Player controls: W A S D or Arrow Keys", 40, 180);
-			g.drawString("Avoid enemies as long as you can where the game gets progressively more difficult every five levels.", 40, 210);
-			g.drawString("Boss levels occur every five levels where you avoid projectiles for as long as you can until its health is depleted.", 40, 240);
-			g.drawString("Players can pick up items that appear on-screen which provides benefits such as extra health, extra lives, and to make your sprite smaller!", 40, 270);
+			g.setFont(font);
+			g.drawString("•  Player controls: WASD/Arrow Keys", 35, 180);
+			g.drawString("•  Avoid enemies as difficulty increases", 35, 240);
+			g.drawString("•  Boss levels occur every five levels", 35, 300);
+			g.drawString("•  Players can pick up various powerups", 35, 360);
+			g.drawString("•  Power-Ups:", 1100, 180);
+			g.drawString("		○  Screen freeze powerup (stop sign)", 1125, 240);
+			g.drawString("		○  Make players smaller (blue pill)", 1125, 300);
+			g.drawString("		○  More points (coin)", 1125, 360);
+			g.drawString("		○  Health refill (green medpack)", 1125, 420);
+			g.drawString("		○  Extra Life (red medpack)", 1125, 480);
 			//Back button
-			g.setFont(font2);
+			g.setFont(font3);
 			g.setColor(Color.white);
-			g.drawRect(850, 300, 200, 64); //ugly rectangle box
-			g.drawString("Back", 920, 340); //make it the back button
+			g.drawRect(910, 300, 150, 64); //ugly rectangle box
+			g.drawString("Back", 955, 340); //make it the back button
 		}
 	}
 //Background image source path
