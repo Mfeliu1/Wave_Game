@@ -16,7 +16,7 @@ package mainGame;
 public enum ID {
 	//How many of these should be spawned (will be changed + or - 20% unless marked as 1(for boss)
 	//-1 is a non-enemy entity
-	EnemyBasic(10),
+	EnemyBasic(8),
 	EnemyFast(15),
 	EnemySmart(10),
 	EnemyBurst(10),
