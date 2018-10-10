@@ -87,7 +87,7 @@ public class EnemyShooter extends Enemy {
 		this.sizeX--;
 		this.sizeY--;
 
-		if (sizeX <= 1) {
+		if (sizeX <= 1 || sizeY <= 1) {
 			handler.removeObject(this);
 		}
 	}
