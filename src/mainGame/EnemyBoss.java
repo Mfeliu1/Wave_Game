@@ -118,8 +118,4 @@ public class EnemyBoss extends GameObject {
 			handler.addObject(new EnemyBossBullet((int) this.x + 48, (int) this.y + 96, ID.EnemyBossBullet, handler));
 	}
 
-	public int getHealth() {
-		return this.health;
-	}
-
 }
