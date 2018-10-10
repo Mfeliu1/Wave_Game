@@ -27,6 +27,9 @@ public class EnemySweep extends Enemy {
 		this.handler = handler;
 		this.velX = velX;
 		this.velY = velY;
+		if (Math.random() > .5) {
+			this.velX*=-1;
+		}
 		
 	}
 
