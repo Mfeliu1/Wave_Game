@@ -29,7 +29,7 @@ public class Game extends Canvas{
 	public static final double aspectRatio   = (double)canvasSize.getWidth()/(double)canvasSize.getHeight();
 	static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 	static int WindowWidth = (int) (1.00 * screenSize.getWidth());
-	static int WindowHeight = (int) (0.97 * screenSize.getHeight());
+	static int WindowHeight = (int) (0.9 * screenSize.getHeight());
 	public static final Dimension windowSize = new Dimension(WindowWidth,WindowHeight);
 	public static final int WIDTH  = (int)canvasSize.getWidth();
 	public static final int HEIGHT = (int)canvasSize.getHeight();

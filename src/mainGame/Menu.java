@@ -33,6 +33,11 @@ public class Menu {
 	@SuppressWarnings("unused")
 	private HUD hud;
 	private Image img;
+	private Image PowerCoin;
+	private Image PowerLife;
+	private Image PowerHealth;
+	private Image PowerSpeed;
+	private Image PowerSlow;
 	private int timer;
 	private Random r;
 	private ArrayList<Color> colorPick = new ArrayList<Color>();
@@ -117,6 +122,11 @@ public class Menu {
 			Font font = new Font("impact", 1, 50); //make a new font
 			Font font2 = new Font("impact", 1, 30); //also make a new font
 			Font font3 = new Font("impact", 1, 30); //also make a new font
+			PowerCoin = getImage("/images/PickupCoin.png");
+			PowerSlow = getImage("/images/dr.png");
+			PowerHealth = getImage("/images/PickupHealth.png");
+			PowerLife = getImage("/images/PickupLife.png");
+			PowerSpeed = getImage("/images/PickupSpeed.png");
 			//Help text
 			g.setFont(font); //set the font with its parameters above 
 			g.setColor(Color.white);
@@ -128,11 +138,16 @@ public class Menu {
 			g.drawString("  Boss levels occur every five levels", 35, 300);
 			g.drawString("  Players can pick up various powerups", 35, 360);
 			g.drawString("  Power-Ups:", 1100, 180);
-			g.drawString("		-  Screen freeze powerup (stop sign)", 1125, 240);
-			g.drawString("		-  Make players smaller (blue pill)", 1125, 300);
-			g.drawString("		-  More points (coin)", 1125, 360);
-			g.drawString("		-  Health refill (green medpack)", 1125, 420);
-			g.drawString("		-  Extra Life (red medpack)", 1125, 480);
+			g.drawString("		-  Screen freeze powerup", 1125, 240);
+			g.drawImage(PowerSlow, 1655, 205, 40, 40, null);
+			g.drawString("		-  Make players smaller", 1125, 300);
+			g.drawImage(PowerSpeed, 1635, 260, 40, 40, null);
+			g.drawString("		-  More points", 1125, 360);
+			g.drawImage(PowerCoin, 1430, 325, 40, 40, null);
+			g.drawString("		-  Health refill", 1125, 420);
+			g.drawImage(PowerHealth, 1430, 380, 40, 40, null);
+			g.drawString("		-  Extra Life", 1125, 480);
+			g.drawImage(PowerLife, 1370, 440, 40, 40, null);
 			//Back button
 			g.setFont(font3);
 			g.setColor(Color.white);

@@ -18,7 +18,7 @@ public class Window extends JFrame{
 		setResizable(false);
 		add(game);
 		setVisible(true);
-		game.setPreferredSize(new Dimension(width, height));
+		setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
 		pack();
 		game.start();
 		setLocationRelativeTo(null);		
