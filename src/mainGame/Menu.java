@@ -119,9 +119,9 @@ public class Menu {
 			g.drawString("Credits: Irrelephant Games '18-'19", 0, 1000);
 			//Now if the user clicked the Help button
 		} else if (game.gameState == STATE.Help) {// if the user clicks on "help"
-			Font font = new Font("impact", 1, 50); //make a new font
-			Font font2 = new Font("impact", 1, 30); //also make a new font
-			Font font3 = new Font("impact", 1, 30); //also make a new font
+			Font font = new Font("impact", Font.PLAIN, 50); //make a new font
+			Font font2 = new Font("impact", Font.PLAIN, 30); //also make a new font
+			Font font3 = new Font("impact", Font.PLAIN, 30); //also make a new font
 			PowerCoin = getImage("/images/PickupCoin.png");
 			PowerSlow = getImage("/images/dr.png");
 			PowerHealth = getImage("/images/PickupHealth.png");
