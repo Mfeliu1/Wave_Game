@@ -12,6 +12,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.Scanner;
+import java.awt.GraphicsEnvironment;
 
 /**
  * Main game class. This class is the driver class and it follows the Holder

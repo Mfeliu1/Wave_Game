@@ -1,5 +1,6 @@
 package mainGame;
 import java.awt.Dimension;
+import java.awt.GraphicsEnvironment;
 
 import javax.swing.JFrame;
 
@@ -19,6 +20,8 @@ public class Window extends JFrame{
 		add(game);
 		setVisible(true);
 		setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
+		game.setPreferredSize(new Dimension(width, height));
+		GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
 		pack();
 		game.start();
 		setLocationRelativeTo(null);		
