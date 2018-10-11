@@ -15,7 +15,7 @@ import java.awt.geom.Rectangle2D;
 import java.net.URL;
 
 public class EnemyRocketBoss extends GameObject {
-	private Image img;
+	private Image img, imgOff;
 	private double dash_x,dash_y; //current target
 	private boolean inDash = false; // in dash
 	private int cooldown = 10; // dash cooldown
@@ -31,6 +31,7 @@ public class EnemyRocketBoss extends GameObject {
 		super(x, y, id);
 		this.player = p;
 		img = getImage("/images/Rocket_Boss.png");
+		imgOff = getImage("/images/Rocket_Boss_Off.png");
 		handler = h;
 		this.hud = hud;
 		this.mode = mode; 
@@ -48,6 +49,7 @@ public class EnemyRocketBoss extends GameObject {
 			this.speed = 28 - this.health/100;
 			Move();
 		}else{
+			
 			if (!colliding) {
 			this.dash_x = (player.getX()+player.playerWidth/2) + player.velX*1.5;
 			this.dash_y = (player.getY()+player.playerHeight/2) + player.velY*1.5;
@@ -125,12 +127,11 @@ public class EnemyRocketBoss extends GameObject {
 		g2d.translate(Math.cos(Math.toRadians(this.drawAngle-90))*40 +this.x, Math.sin(Math.toRadians(this.drawAngle-90))*40 +this.y);
 		g2d.rotate(Math.toRadians(this.drawAngle + 90));
 		
-		
-		g2d.drawImage(img, 0, 0, 80, 296, null);
+		g2d.drawImage(inDash ? img : imgOff, 0, 0, 80, 296, null);
 	    
 	    
 	    //g2d.drawRect((int)40,(int)0,10,10);
-		Rectangle2D rec = new Rectangle.Double(30, 0, 20, 200);
+		Rectangle2D rec = new Rectangle.Double(30, 0, 20,inDash ?  230 : 180);
 		Path2D bounds = new Path2D.Double(rec,g2d.getTransform());
 	    g2d.setTransform(old);
 	   
