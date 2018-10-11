@@ -26,6 +26,7 @@ public class EnemyRocketBoss extends GameObject {
 	private int health = 1000;
 	private HUD hud;
 	private GameMode mode;
+	private boolean colliding = false;
 	public EnemyRocketBoss(double x, double y, ID id, Player p, Handler h, HUD hud, GameMode mode) {
 		super(x, y, id);
 		this.player = p;
@@ -47,6 +48,7 @@ public class EnemyRocketBoss extends GameObject {
 			this.speed = 28 - this.health/100;
 			Move();
 		}else{
+			if (!colliding) {
 			this.dash_x = (player.getX()+player.playerWidth/2) + player.velX*1.5;
 			this.dash_y = (player.getY()+player.playerHeight/2) + player.velY*1.5;
 			double angle = this.GetAngleOfLineBetweenTwoPoints(new Point.Double(this.x+40, this.y), new Point.Double(dash_x,dash_y));
@@ -59,6 +61,7 @@ public class EnemyRocketBoss extends GameObject {
 			}else{
 				cooldown--;
 					this.drawAngle = this.drawAngle-Math.max(-5,Math.min(angleDifference(this.drawAngle,angle),5));
+			}
 			}
 		}
 		if(health<=0){
@@ -140,6 +143,9 @@ public class EnemyRocketBoss extends GameObject {
 		
 		if(bounds.intersects(playerBounds)){
 	    	hud.health = hud.health - 1;
+	    	colliding = true;
+	    }else {
+	    	colliding = false;
 	    }
 	    //g2d.setColor(Color.YELLOW);
 	    //g2d.drawRect((int)this.dash_x-5,(int)this.dash_y-5,10,10);
