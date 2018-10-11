@@ -122,25 +122,19 @@ public class EnemyRocketBoss extends GameObject {
 		//Draw Rocket
 		AffineTransform old = g2d.getTransform();
 		
-		
-		
 		g2d.translate(Math.cos(Math.toRadians(this.drawAngle-90))*40 +this.x, Math.sin(Math.toRadians(this.drawAngle-90))*40 +this.y);
 		g2d.rotate(Math.toRadians(this.drawAngle + 90));
 		
 		g2d.drawImage(inDash ? img : imgOff, 0, 0, 80, 296, null);
-	    
-	    
-	    //g2d.drawRect((int)40,(int)0,10,10);
+		
 		Rectangle2D rec = new Rectangle.Double(30, 0, 20,inDash ?  230 : 180);
 		Path2D bounds = new Path2D.Double(rec,g2d.getTransform());
+		
 	    g2d.setTransform(old);
-	   
-	    //int[] xs = {this.x,2,3,4};
-	   // int[] ys = {this.y,2,3,4};
 	    
 	    Rectangle2D playerBounds = new Rectangle2D.Double(player.x,player.y,player.getPlayerWidth(),player.getPlayerHeight());
-		//g2d.fill(rec);
-		//g2d.fill(bounds);
+		//g2d.fill(playerBounds);
+	    g2d.fill(bounds);
 		
 		if(bounds.intersects(playerBounds)){
 	    	hud.health = hud.health - 1;
