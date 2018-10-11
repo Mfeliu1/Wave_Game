@@ -134,7 +134,7 @@ public class EnemyRocketBoss extends GameObject {
 	    
 	    Rectangle2D playerBounds = new Rectangle2D.Double(player.x,player.y,player.getPlayerWidth(),player.getPlayerHeight());
 		//g2d.fill(playerBounds);
-	    g2d.fill(bounds);
+	    //g2d.fill(bounds);
 		
 		if(bounds.intersects(playerBounds)){
 	    	hud.health = hud.health - 1;
