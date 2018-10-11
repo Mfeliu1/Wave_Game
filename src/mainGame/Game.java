@@ -16,7 +16,7 @@ import java.awt.GraphicsEnvironment;
 
 /**
  * Main game class. This class is the driver class and it follows the Holder
- * pattern. It houses references toop ALL of the components of the game
+ * pattern. It houses references too ALL of the components of the game
  * 
  * @author Brandon Loehle 5/30/16
  * @author Joe Passanante 11/28/17
@@ -29,9 +29,9 @@ public class Game extends Canvas{
 	public static final Dimension canvasSize = new Dimension(1920, 1080);
 	public static final double aspectRatio   = (double)canvasSize.getWidth()/(double)canvasSize.getHeight();
 	static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-	static int WindowWidth = (int) (1.00 * screenSize.getWidth());
-	static int WindowHeight = (int) (screenSize.getHeight());
-	public static final Dimension windowSize = new Dimension(WindowWidth,WindowHeight-16);
+	static int WindowWidth = (int) (0.9 * screenSize.getWidth());
+	static int WindowHeight = (int) (0.9 *screenSize.getHeight());
+	public static final Dimension windowSize = new Dimension(WindowWidth,WindowHeight);
 	public static final int WIDTH  = (int)canvasSize.getWidth();
 	public static final int HEIGHT = (int)canvasSize.getHeight();
 	public static final int high = highScore();
