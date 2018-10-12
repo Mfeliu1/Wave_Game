@@ -13,7 +13,7 @@ import java.util.Random;
  *
  */
 
-public class EnemyBossBullet extends Enemy {
+public class EnemyBossBombBullet extends Enemy {
 
 	// instances
 	private Handler handler;
@@ -24,11 +24,11 @@ public class EnemyBossBullet extends Enemy {
 
 	// constructor
 	// used to initialize the state of the object
-	public EnemyBossBullet(double x, double y, ID id, Handler handler) {
+	public EnemyBossBombBullet(double x, double y, ID id, Handler handler,int velX,int velY) {
 		super(x, y, id);
 		this.handler = handler;
-		velX = (r.nextInt((max - min) + 1) + min);// OFFICIAL WAY TO GET A RANGE FOR randInt()
-		velY = 30;
+		this.velX = velX;
+		this. velY = velY;
 		sizeX = 16;
 		sizeY = 16;
 	}
@@ -39,17 +39,17 @@ public class EnemyBossBullet extends Enemy {
 		this.x += velX;
 		this.y += velY;
 
-		if (this.y >= Game.HEIGHT)
-			handler.removeObject(this);
+		if (this.y >= Game.HEIGHT || this.y < 0 || this.x > Game.WIDTH  || this.x < 0) {
+			handler.removeObject(this);}
 
-		handler.addObject(new Trail(x-sizeX/2, y-sizeY/2, ID.Trail, Color.red,(int)sizeX,(int)sizeY, 0.025, this.handler));
+		handler.addObject(new Trail(x-sizeX/2, y-sizeY/2, ID.Trail, Color.green,(int)sizeX,(int)sizeY, 0.025, this.handler));
 
 	}
 	
 	// is the abstract base class for all graphics contexts that allow an application to draw 
 	// onto components that are realized on various devices, as well as onto off-screen images
 	public void render(Graphics g) {
-		g.setColor(Color.red);
+		g.setColor(Color.green);
 		g.fillRect((int) (x-sizeX/2), (int) (y-sizeY/2), (int)sizeX,(int)sizeY);
 	}
 

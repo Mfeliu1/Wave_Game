@@ -26,16 +26,20 @@ public class EnemyBoss extends GameObject {
 	Random r = new Random();
 	private Image img;
 	private int spawn;
+	private int difficulty = 1;
+	private int bombTimer = 120;
 
 	// constructor
 	// used to initialize the state of the object
-	public EnemyBoss(ID id, Handler handler) {
+	public EnemyBoss(ID id, Handler handler,int diff) {
 		super(Game.WIDTH / 2 - 48, -120, id);
 		this.handler = handler;
 		velX = 0;
 		velY = 2;
 		img = getImage("/images/EnemyBoss.png");
 		this.health = 1000;//full health is 1000
+		difficulty = diff;
+		
 	}
 	
 	// methods
@@ -58,11 +62,20 @@ public class EnemyBoss extends GameObject {
 			spawn = r.nextInt(5);
 			if (spawn == 0) {
 				handler.addObject(
-						new EnemyBossBullet((int) this.x + 48, (int) this.y + 70, ID.EnemyBossBullet, handler));
+						new EnemyBossBullet((int) this.x + 48, (int) this.y + 80, ID.EnemyBossBullet, handler));
 				this.health -= 3;
 			}
 		}
-
+		if (difficulty > 0) {
+			bombTimer--;
+			if (bombTimer < 0) {
+				bombTimer = 120;
+				handler.addObject(
+						new EnemyBossBomb((int) this.x + 48, (int) this.y + 80, ID.EnemyBossBomb, handler));
+			}
+		}
+		
+		
 		// if (this.y <= 0 || this.y >= Game.HEIGHT - 40) velY *= -1;
 		if (this.x <= 0 || this.x >= Game.WIDTH - 96)
 			velX *= -1;

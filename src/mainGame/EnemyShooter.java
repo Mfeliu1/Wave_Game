@@ -61,9 +61,11 @@ public class EnemyShooter extends Enemy {
 		//handler.addObject(new Trail(x, y, ID.Trail, Color.yellow, this.sizeX, this.sizeY, 0.025, this.handler));
 		
 		timer--;
+		
+		
 		if (timer <= 0) {
 			shoot();
-			updateEnemy();
+			
 			timer = 20;
 		}
 
@@ -84,8 +86,8 @@ public class EnemyShooter extends Enemy {
 	}
 
 	public void updateEnemy() {
-		this.sizeX--;
-		this.sizeY--;
+		this.sizeX*= .95;
+		this.sizeY*=.95;
 
 		if (sizeX <= 1 || sizeY <= 1) {
 			handler.removeObject(this);

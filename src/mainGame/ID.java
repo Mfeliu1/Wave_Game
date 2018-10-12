@@ -27,8 +27,10 @@ public enum ID {
 	BossEye(1),
 	//non-enemies
 	EnemyBossBullet(-1),
+	EnemyBossBomb(-1),
 	EnemyBurstWarning(-1),
 	EnemyShooterBullet(-1),
+	EnemyBossBombBullet(-1),
 	Firework(-1),
 	FireworkSpark(-1),
 	CircleTrail(-1),
