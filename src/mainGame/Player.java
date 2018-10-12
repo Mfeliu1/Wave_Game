@@ -134,8 +134,11 @@ public class Player extends GameObject {
 			}
 			
 			if (tempObject.getId() == ID.PickupSize && (getBounds().intersects(tempObject.getBounds()))) {
+				if (playerWidth>3) {
 				playerWidth/=1.2;
-				playerHeight/=1.2;
+				playerHeight/=1.2;}else {
+					hud.setScore(hud.getScore()+1000);
+				}
 				handler.removeObject(tempObject);
 			}
 			
