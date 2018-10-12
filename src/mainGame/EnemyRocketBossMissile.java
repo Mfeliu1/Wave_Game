@@ -51,7 +51,7 @@ public class EnemyRocketBossMissile extends Enemy {
 		}
 		double angle = EnemyRocketBoss.GetAngleOfLineBetweenTwoPoints(new Point.Double(Math.cos(Math.toRadians(direction-90))*5 +this.x, Math.sin(Math.toRadians(direction-90))*5 +this.y), new Point.Double(player.x,player.y));
 		
-		this.direction = this.direction-Math.max(-trackSpeed,Math.min(EnemyRocketBoss.angleDifference(this.direction,angle),5));
+		this.direction = this.direction-Math.max(-trackSpeed,Math.min(EnemyRocketBoss.angleDifference(this.direction,angle),trackSpeed));
 
 		//handler.addObject(new Trail(x, y, ID.Trail, Color.cyan, 16, 16, 0.025, this.handler));
 
