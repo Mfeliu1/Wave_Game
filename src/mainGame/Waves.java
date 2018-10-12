@@ -43,7 +43,7 @@ public class Waves implements GameMode {
 		case EnemyBurst: return new EnemyBurst(-200, 200, 15, 15, 200, side[r.nextInt(4)], ID.EnemyBurst, handler);
 		//case BossEye: return new EnemyBoss(ID.EnemyBoss, handler);
 		case EnemyBoss: return new EnemyBoss(ID.EnemyBoss, handler,currentLevelNum/10);
-		case EnemyRocketBoss: return new EnemyRocketBoss(100,100,ID.EnemyRocketBoss,this.player, this.handler,this.hud, this);
+		case EnemyRocketBoss: return new EnemyRocketBoss(100,100,ID.EnemyRocketBoss,this.player, this.handler,this.hud, this,currentLevelNum/10);
 		case EnemyFast: return new EnemyFast(spawnLoc.getX(), spawnLoc.getY(), ID.EnemySmart, handler);
 		default: return new EnemyBasic(spawnLoc.getX(),spawnLoc.getY(), 9, 9, ID.EnemyBasic, handler);
 		}

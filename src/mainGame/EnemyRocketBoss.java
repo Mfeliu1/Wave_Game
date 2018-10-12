@@ -27,7 +27,9 @@ public class EnemyRocketBoss extends GameObject {
 	private HUD hud;
 	private GameMode mode;
 	private boolean colliding = false;
-	public EnemyRocketBoss(double x, double y, ID id, Player p, Handler h, HUD hud, GameMode mode) {
+	private int rocketTimer = 120;
+	private int difficulty = 1;
+	public EnemyRocketBoss(double x, double y, ID id, Player p, Handler h, HUD hud, GameMode mode, int diff) {
 		super(x, y, id);
 		this.player = p;
 		img = getImage("/images/Rocket_Boss.png");
@@ -35,10 +37,18 @@ public class EnemyRocketBoss extends GameObject {
 		handler = h;
 		this.hud = hud;
 		this.mode = mode; 
+		difficulty = diff;
 	}
 
 	@Override
 	public void tick() {
+		if (difficulty > 1){
+			rocketTimer--;
+			if (rocketTimer < 0) {
+				rocketTimer = 120;
+				handler.addObject(new EnemyRocketBossMissile(Math.cos(Math.toRadians(this.drawAngle+90))*40 +this.x,Math.sin(Math.toRadians(this.drawAngle+90))*40 +this.y,ID.EnemyRocketBossMissile, handler,this.drawAngle,10,hud,player, difficulty > 2 ? 0.5 : 0 ));
+			}
+		}
 		if(this.health%150 == 0){
 			handler.addObject(mode.getEnemyFromID(ID.EnemyBurst, new Point(100,100)));
 		}
@@ -53,7 +63,7 @@ public class EnemyRocketBoss extends GameObject {
 			if (!colliding) {
 			this.dash_x = (player.getX()+player.playerWidth/2) + player.velX*1.5;
 			this.dash_y = (player.getY()+player.playerHeight/2) + player.velY*1.5;
-			double angle = this.GetAngleOfLineBetweenTwoPoints(new Point.Double(this.x+40, this.y), new Point.Double(dash_x,dash_y));
+			double angle = EnemyRocketBoss.GetAngleOfLineBetweenTwoPoints(new Point.Double(this.x+40, this.y), new Point.Double(dash_x,dash_y));
 			this.dash_x = (player.getX()+player.playerWidth/2)+Math.cos(Math.toRadians(angle))*100;
 			this.dash_y = (player.getY()+player.playerHeight/2)+Math.sin(Math.toRadians(angle))*100;
 			if(cooldown<=0){
@@ -71,14 +81,14 @@ public class EnemyRocketBoss extends GameObject {
 			handler.removeObject(this);
 		}
 	}
-    public double GetAngleOfLineBetweenTwoPoints(Point.Double p1, Point.Double p2)
+    public static double GetAngleOfLineBetweenTwoPoints(Point.Double p1, Point.Double p2)
     {
         double xDiff = p2.x - p1.x;
         double yDiff = p2.y - p1.y;
         return Math.toDegrees(Math.atan2(yDiff, xDiff));
     }
     
-    public double angleDifference(double angleFrom, double angleTo) {
+    public static double angleDifference(double angleFrom, double angleTo) {
         return ((((angleFrom - angleTo) % 360) + 540) % 360) - 180;
     }
     
@@ -135,6 +145,7 @@ public class EnemyRocketBoss extends GameObject {
 		Path2D bounds = new Path2D.Double(rec,trans);
 		
 	    g2d.setTransform(old);
+	    
 	    
 	    Rectangle2D playerBounds = new Rectangle2D.Double(player.x,player.y,player.getPlayerWidth(),player.getPlayerHeight());
 		//g2d.fill(playerBounds);
