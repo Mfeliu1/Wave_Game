@@ -91,6 +91,8 @@ public class Player extends GameObject {
 						System.exit(1);
 					} //end catch
 				game.gameState = STATE.GameOver;
+				
+				handler.clearPlayer();
 			}
  
 			else if (hud.getExtraLives() > 0) {// has an extra life, game continues

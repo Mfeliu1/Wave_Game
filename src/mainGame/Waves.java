@@ -190,8 +190,13 @@ public class Waves implements GameMode {
 		this.currentEnemy = null;
 		this.currentLevel =  null;
 		handler.clearEnemies();
-		if(hardReset)
+		if(hardReset) {
 			this.currentLevelNum = 0;
+			player.playerWidth = 32;
+			player.playerHeight = 32;
+			hud.setExtraLives(0);
+			hud.resetHealth();
+			}
 	}
 	@Override
 	public void resetMode() {

@@ -63,6 +63,8 @@ public class KeyInput extends KeyAdapter {
 				if (key == KeyEvent.VK_ESCAPE) {
 				game.gm.resetGames();
 				game.gameState = STATE.Menu;
+				handler.clearPlayer();
+				
 				}
 				// if the w key is pressed, the player would move up
 				if (key == KeyEvent.VK_W || key == KeyEvent.VK_UP) {
