@@ -1,5 +1,6 @@
 package mainGame;
 
+import java.awt.Point;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
@@ -68,24 +69,25 @@ public class KeyInput extends KeyAdapter {
 				}
 				// if the w key is pressed, the player would move up
 				if (key == KeyEvent.VK_W || key == KeyEvent.VK_UP) {
-					tempObject.setVelY(-(this.speed));
+					//tempObject.setVelY(-(this.speed));
 					keyDown[0] = true;
 				}
 				// if the a key is pressed, the player would move left
 				if (key == KeyEvent.VK_A || key == KeyEvent.VK_LEFT) {
-					tempObject.setVelX(-(this.speed));
+					//tempObject.setVelX(-(this.speed));
 					keyDown[1] = true;
 				}
 				// if the s key is pressed, the player would move down
 				if (key == KeyEvent.VK_S || key == KeyEvent.VK_DOWN) {
-					tempObject.setVelY(this.speed);
+					//tempObject.setVelY(this.speed);
 					keyDown[2] = true;
 				}
 				// if the d key is pressed, the player would move right
 				if (key == KeyEvent.VK_D || key == KeyEvent.VK_RIGHT) {
-					tempObject.setVelX(this.speed);
+					//tempObject.setVelX(this.speed);
 					keyDown[3] = true;
 				}
+				changeDir();
 				// if the spacebar key is pressed, the current level the player is currently in would skip to the next level
 				if (key == KeyEvent.VK_SPACE) {
 					game.gm.skip();
@@ -110,7 +112,7 @@ public class KeyInput extends KeyAdapter {
 	// keyevent indicates that a keystroke occurred in a component
 	// invoked when a key has been released
 	public void keyReleased(KeyEvent e) {
-		int key = e.getKeyCode();
+		int key = e.getKeyCode(); 
 
 		for (int i = 0; i < handler.object.size(); i++) {
 			GameObject tempObject = handler.object.get(i);
@@ -128,15 +130,35 @@ public class KeyInput extends KeyAdapter {
 					keyDown[4] = false;
 				}
 
+				/*
 				// vertical movement
 				if (!keyDown[0] && !keyDown[2])
 					tempObject.setVelY(0);
 				// horizontal movement
 				if (!keyDown[1] && !keyDown[3])
 					tempObject.setVelX(0);
+				*/
+				changeDir();
 			}
 
 		}
 	}
+	
+	private void changeDir() {
+		if (keyDown[0] == false && keyDown[1] == false && keyDown[2] == false && keyDown[3] == false) {player.velX = 0; player.velY = 0;}else {
+			int goX = 0;
+			int goY = 0;
+			if (keyDown[0]) {goY--;} 
+			if (keyDown[2]) {goY++;} 
+			if (keyDown[1]) {goX--;} 
+			if (keyDown[3]) {goX++;}
+			
+			double rad = Math.atan2(goY,goX);
+			player.velX = Math.cos(rad)*Player.playerSpeed;
+			player.velY = Math.sin(rad)*Player.playerSpeed;
+			
+		}
+	}
+	
 
 }
