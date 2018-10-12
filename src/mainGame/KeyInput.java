@@ -60,6 +60,10 @@ public class KeyInput extends KeyAdapter {
 				if(key == KeyEvent.VK_P && game.devMode == true){
 					game.paused = !game.paused;
 				}
+				if (key == KeyEvent.VK_ESCAPE) {
+				game.gm.resetGames();
+				game.gameState = STATE.Menu;
+				}
 				// if the w key is pressed, the player would move up
 				if (key == KeyEvent.VK_W || key == KeyEvent.VK_UP) {
 					tempObject.setVelY(-(this.speed));
