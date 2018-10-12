@@ -128,7 +128,11 @@ public class EnemyRocketBoss extends GameObject {
 		g2d.drawImage(inDash ? img : imgOff, 0, 0, 80, 296, null);
 		
 		Rectangle2D rec = new Rectangle.Double(30, 0, 20,inDash ?  230 : 180);
-		Path2D bounds = new Path2D.Double(rec,g2d.getTransform());
+		AffineTransform trans = new AffineTransform();
+		trans.translate(Math.cos(Math.toRadians(this.drawAngle-90))*40 +this.x, Math.sin(Math.toRadians(this.drawAngle-90))*40 +this.y);
+		trans.rotate(Math.toRadians(this.drawAngle + 90));
+		
+		Path2D bounds = new Path2D.Double(rec,trans);
 		
 	    g2d.setTransform(old);
 	    
