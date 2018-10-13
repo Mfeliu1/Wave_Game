@@ -15,7 +15,7 @@ import java.awt.geom.Rectangle2D;
 import java.net.URL;
 
 public class EnemyRocketBoss extends GameObject {
-	private Image img, imgOff;
+	private static Image img, imgOff;
 	private double dash_x,dash_y; //current target
 	private boolean inDash = false; // in dash
 	private int cooldown = 10; // dash cooldown
@@ -32,8 +32,9 @@ public class EnemyRocketBoss extends GameObject {
 	public EnemyRocketBoss(double x, double y, ID id, Player p, Handler h, HUD hud, GameMode mode, int diff) {
 		super(x, y, id);
 		this.player = p;
+		if(img == null) {
 		img = getImage("/images/Rocket_Boss.png");
-		imgOff = getImage("/images/Rocket_Boss_Off.png");
+		imgOff = getImage("/images/Rocket_Boss_Off.png");}
 		handler = h;
 		this.hud = hud;
 		this.mode = mode; 

@@ -19,17 +19,19 @@ import javax.imageio.ImageIO;
 public class EnemyFast extends Enemy {
 
 	private Handler handler;
-	private Image img;
+	private static Image img;
 
 	public EnemyFast(double x, double y, ID id, Handler handler) {
 		super(x, y, id);
 		this.handler = handler;
 		velX = 2*(Math.random()-Math.random());
 		velY = -12;
+		if (img == null) {
 		try {
 			img = ImageIO.read(new File("src/images/Rocket_Boss.png"));
 		} catch (Exception e){
 			e.printStackTrace();
+		}
 		}
 	}
 

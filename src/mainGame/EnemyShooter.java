@@ -26,7 +26,7 @@ public class EnemyShooter extends Enemy {
 	private double bulletVelX;
 	private double bulletVelY;
 	private int bulletSpeed;
-	private Image img = null;
+	private static Image img = null;
 	
 
 	public EnemyShooter(double x, double y, int sizeX, int sizeY, int bulletSpeed, ID id, Handler handler) {
@@ -38,6 +38,7 @@ public class EnemyShooter extends Enemy {
 		this.sizeY = 75;
 		this.timer = 60;
 		this.bulletSpeed = bulletSpeed;
+		if (img == null) {
 		try {
 			img = ImageIO.read(new File("src/images/spaceship1.png"));
 		} catch (Exception e){
@@ -46,6 +47,7 @@ public class EnemyShooter extends Enemy {
 		for (int i = 0; i < handler.object.size(); i++) {
 			if (handler.object.get(i).getId() == ID.Player)
 				player = handler.object.get(i);
+		}
 		}
 	}
 

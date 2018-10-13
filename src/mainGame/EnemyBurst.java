@@ -24,7 +24,7 @@ public class EnemyBurst extends Enemy {
 	private int size;
 	private String side;
 	private Random r = new Random();
-	private Image img;
+	private static Image img;
 
 	public EnemyBurst(double x, double y, double velX, double velY, int size, String side, ID id, Handler handler) {
 		super(x, y, id);
@@ -34,10 +34,12 @@ public class EnemyBurst extends Enemy {
 		this.timer = 60;
 		this.side = side;
 		this.size = size;
+		if (img == null) {
 		try {
 			img = ImageIO.read(new File("src/images/asteroid.png"));
 		} catch (Exception e){
 			e.printStackTrace();
+		}
 		}
 		if (this.side.equals("left")) {
 			handler.object.add(new EnemyBurstWarning(0, 0, 25, Game.HEIGHT, ID.EnemyBurstWarning, handler));

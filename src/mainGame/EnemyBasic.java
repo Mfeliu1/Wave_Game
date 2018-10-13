@@ -18,7 +18,7 @@ import javax.imageio.ImageIO;
 
 public class EnemyBasic extends Enemy {
 
-	private Image img;
+	private static Image img;
 	private Handler handler;
 	
 	public EnemyBasic(double x, double y, int velX, int velY, ID id, Handler handler) {
@@ -26,12 +26,15 @@ public class EnemyBasic extends Enemy {
 		this.handler = handler;
 		this.velX = velX;
 		this.velY = velY;
+		if (img == null) {
 		try {
 			img = ImageIO.read(new File("src/images/spaceship2.png"));
 		} catch (Exception e){
 			e.printStackTrace();
 		}
+		}
 	}
+		
 
 	public void tick() {
 		if (this.y <= 0){
