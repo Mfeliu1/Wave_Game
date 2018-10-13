@@ -9,15 +9,17 @@ public class EnemyBossBomb extends Enemy {
 	// instances
 	private Handler handler;
 	int explodeHeight = (int) (Math.random()*Game.HEIGHT);
-	double sizeX, sizeY;
+	private double sizeX, sizeY;
+	private int shots;
 	// constructor
 	// used to initialize the state of the object
-	public EnemyBossBomb(double x, double y, ID id, Handler handler) {
+	public EnemyBossBomb(double x, double y, ID id, Handler handler,int shots) {
 		super(x, y, id);
 		this.handler = handler;
 		velY = 5;
 		sizeX = 32;
 		sizeY = 32;
+		this.shots = shots;
 	}
 
 	// methods
@@ -26,14 +28,9 @@ public class EnemyBossBomb extends Enemy {
 		this.y += velY;
 		if (y>explodeHeight) {
 			handler.removeObject(this);
-			handler.addObject(new EnemyBossBombBullet((int) this.x + 48, (int) this.y + 80, ID.EnemyBossBombBullet, handler,0,16));
-			handler.addObject(new EnemyBossBombBullet((int) this.x + 48, (int) this.y + 80, ID.EnemyBossBombBullet, handler,16,16));
-			handler.addObject(new EnemyBossBombBullet((int) this.x + 48, (int) this.y + 80, ID.EnemyBossBombBullet, handler,16,0));
-			handler.addObject(new EnemyBossBombBullet((int) this.x + 48, (int) this.y + 80, ID.EnemyBossBombBullet, handler,16,-16));
-			handler.addObject(new EnemyBossBombBullet((int) this.x + 48, (int) this.y + 80, ID.EnemyBossBombBullet, handler,0,-16));
-			handler.addObject(new EnemyBossBombBullet((int) this.x + 48, (int) this.y + 80, ID.EnemyBossBombBullet, handler,-16,-16));
-			handler.addObject(new EnemyBossBombBullet((int) this.x + 48, (int) this.y + 80, ID.EnemyBossBombBullet, handler,-16,0));
-			handler.addObject(new EnemyBossBombBullet((int) this.x + 48, (int) this.y + 80, ID.EnemyBossBombBullet, handler,-16,16));
+			for (int i = 0; i < shots; i++) {
+			handler.addObject(new EnemyBossBombBullet((int) this.x, (int) this.y, ID.EnemyBossBombBullet, handler,(int)(16*Math.cos(Math.toRadians(360*i/shots))),(int)(16*Math.sin(Math.toRadians(360*i/shots)))));
+			}
 		}
 
 	}

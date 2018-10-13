@@ -71,14 +71,17 @@ public class EnemyBoss extends GameObject {
 			if (bombTimer < 0) {
 				bombTimer = 120;
 				handler.addObject(
-						new EnemyBossBomb((int) this.x + 48, (int) this.y + 80, ID.EnemyBossBomb, handler));
+						new EnemyBossBomb((int) this.x + 48, (int) this.y + 80, ID.EnemyBossBomb, handler,difficulty > 1 ? ( difficulty > 2 ? 16 : 8 ) : 4));
 			}
 		}
 		
 		
 		// if (this.y <= 0 || this.y >= Game.HEIGHT - 40) velY *= -1;
-		if (this.x <= 0 || this.x >= Game.WIDTH - 96)
+		if (this.x <= 0 || this.x >= Game.WIDTH - 96) {
 			velX *= -1;
+			handler.addObject(new EnemyBossBullet((int) this.x, (int) this.y + 80, ID.EnemyBossBullet, handler));
+			handler.addObject(new EnemyBossBullet((int) this.x + 96, (int) this.y + 80, ID.EnemyBossBullet, handler));
+		}
 
 		// handler.addObject(new Trail(x, y, ID.Trail, Color.red, 96, 96, 0.025,
 		// this.handler));
