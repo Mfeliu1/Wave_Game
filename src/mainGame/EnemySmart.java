@@ -21,17 +21,18 @@ public class EnemySmart extends Enemy {
 	private Handler handler;
 	private GameObject player;
 	private int speed;
-	private Image img;
+	static private Image img;
 
 	public EnemySmart(double x, double y, int speed, ID id, Handler handler) {
 		super(x, y, id);
 		this.handler = handler;
 		this.speed = speed;
+		if (img == null) {
 		try {
 			img = ImageIO.read(new File("src/images/spaceship3.png"));
 		} catch (Exception e){
 			e.printStackTrace();
-		}
+		}}
 		for (int i = 0; i < handler.object.size(); i++) {
 			if (handler.object.get(i).getId() == ID.Player)
 				player = handler.object.get(i);
