@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Random;
 
+import javax.imageio.ImageIO;
 
 import mainGame.Game.STATE;
 
@@ -31,6 +32,7 @@ public class Player extends GameObject {
 	private int damage;
 	protected int playerWidth, playerHeight;
 	public static int playerSpeed = 10;
+	public static Image img;
 
 	public Player(double x, double y, ID id, Handler handler, HUD hud, Game game) {
 		super(x, y, id);
@@ -42,6 +44,14 @@ public class Player extends GameObject {
 		//so the image scales properly
 		playerWidth = 32;
 		playerHeight = 32;
+		
+		if (img == null) {
+			try {
+				img = ImageIO.read(new File("src/images/playership.png"));
+			} catch (Exception e){
+				e.printStackTrace();
+			}
+			}
 		
 
 	}// end of player initializer
@@ -62,6 +72,7 @@ public class Player extends GameObject {
 		//The thing above is the trail code that needs to be deleted. 
 		collision();
 		checkIfDead();
+		
 	}
 	
 	public Image getImage(String path) {
