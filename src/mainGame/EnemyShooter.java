@@ -74,6 +74,8 @@ public class EnemyShooter extends Enemy {
 	}
 
 	public void shoot() {
+		if (player != null) {
+			
 		double diffX = this.x - player.getX() - 16;
 		double diffY = this.y - player.getY() - 16;
 		double distance = Math.sqrt(((this.x - player.getX()) * (this.x - player.getX()))
@@ -85,6 +87,13 @@ public class EnemyShooter extends Enemy {
 
 		handler.addObject(
 				new EnemyShooterBullet(this.x -10, this.y-10, bulletVelX, bulletVelY, ID.EnemyShooterBullet, this.handler));
+		}else {
+			System.err.println("player is null on shooter!");//bpm
+			for (int i = 0; i < handler.object.size(); i++) {
+				if (handler.object.get(i).getId() == ID.Player)
+					player = handler.object.get(i);
+			}
+		}
 	}
 
 	public void updateEnemy() {
