@@ -55,7 +55,7 @@ public class Upgrades {
 	}
 	//The player takes less hit damage when an enemy hits them
 	public void improvedDamageResistance() {
-		player.setDamage(1);
+		player.setDamage(player.getDamage()-.25);
 	}
 	//Skip a level (p.s set dev mode to false to test if this works)
 	public void levelSkipAbility() {

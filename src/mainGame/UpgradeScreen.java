@@ -44,8 +44,10 @@ public class UpgradeScreen {
 		this.hud = hud;
 		tempCounter = 0;
 		addPaths();
+		resetPaths();
 		setIndex();
 		text = "";
+		
 	}
 	//nothing needs to be in this function since it's just
 	//a screen with text
@@ -89,6 +91,19 @@ public class UpgradeScreen {
 	//
 	public int getIndex(int maxIndex) {
 		int index = r.nextInt(maxIndex);
+		if (index == 1 && game.player.getPlayerHeight() <= 3) {
+			return getIndex(maxIndex);
+		}
+		if (index == 4 && hud.getRegen()) {
+			return getIndex(maxIndex);
+		}
+		if (index == 8 && Player.playerSpeed > 10) {
+			return getIndex(maxIndex);
+		}
+		if (index == 5 && game.player.getDamage()<= 1) 
+		{
+			return getIndex(maxIndex);
+		}
 		return index;
 	}
 

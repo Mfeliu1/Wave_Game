@@ -157,5 +157,9 @@ public class HUD {
 	
 		public static int thisHighScore() {
 		return highscore;
-	}	
+	}
+
+		public boolean getRegen() {
+			return regen;
+		}	
 }

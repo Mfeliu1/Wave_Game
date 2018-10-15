@@ -29,7 +29,7 @@ public class Player extends GameObject {
 	Handler handler;
 	private HUD hud;
 	private Game game;
-	private int damage;
+	private double damage;
 	protected int playerWidth, playerHeight;
 	public static int playerSpeed = 10;
 	public static Image img;
@@ -188,8 +188,8 @@ public class Player extends GameObject {
 		return new Rectangle((int) this.x, (int) this.y, playerWidth,playerHeight);//was this,this,60,60 -bpm
 	}
 	//how mucvh damage has the player taken?
-	public void setDamage(int damage) {
-		this.damage = damage;
+	public void setDamage(double d) {
+		this.damage = d;
 	}
 	//
 	public void setPlayerSize(int size) {
@@ -202,6 +202,10 @@ public class Player extends GameObject {
 	}
 	public int getPlayerHeight(){
 		return this.playerHeight;
+	}
+
+	public double getDamage() {
+		return damage;
 	}
 	
 }
