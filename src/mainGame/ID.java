@@ -25,6 +25,7 @@ public enum ID {
 	EnemyBoss(1),
 	EnemyRocketBoss(2),
 	BossEye(1),
+	EnemyShooterMover(3),
 	//non-enemies
 	EnemyBossBullet(-1),
 	EnemyBossBomb(-1),

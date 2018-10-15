@@ -24,8 +24,15 @@ public class EnemyBasic extends Enemy {
 	public EnemyBasic(double x, double y, int velX, int velY, ID id, Handler handler) {
 		super(x, y, id);
 		this.handler = handler;
+		if (Math.random() > .5) {
+			velX*=-1;
+		}
+		if (Math.random() > .5) {
+			velY*=-1;
+		}
 		this.velX = velX;
 		this.velY = velY;
+		
 		if (img == null) {
 		try {
 			img = ImageIO.read(new File("src/images/spaceship2.png"));

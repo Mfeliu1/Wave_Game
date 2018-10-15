@@ -48,7 +48,10 @@ public class Waves implements GameMode {
 		case EnemyBoss: return new EnemyBoss(ID.EnemyBoss, handler,currentLevelNum/10);
 		case EnemyRocketBoss: return new EnemyRocketBoss(100,100,ID.EnemyRocketBoss,this.player, this.handler,this.hud, this,currentLevelNum/10);
 		case EnemyFast: return new EnemyFast(spawnLoc.getX(), spawnLoc.getY(), ID.EnemySmart, handler);
-		default: return new EnemyBasic(spawnLoc.getX(),spawnLoc.getY(), 9, 9, ID.EnemyBasic, handler);
+		case EnemyShooterMover: return new EnemyShooterMover(spawnLoc.getX(),spawnLoc.getY(), 100, 100, -20 + (int)(Math.random()*5), ID.EnemyShooterMover, this.handler);
+		default: 
+			System.err.println("Enemy not found");
+			return new EnemyBasic(spawnLoc.getX(),spawnLoc.getY(), 9, 9, ID.EnemyBasic, handler);
 		}
 	}
 	
@@ -83,6 +86,26 @@ public class Waves implements GameMode {
 		System.out.println(returnID + "| " + this.lastEnemy);
 		if(returnID == this.lastEnemy){
 			returnID = this.randomEnemy();
+		}
+		this.lastEnemy = returnID;
+		return returnID;
+	}
+	
+	/**
+	 * Generates a random enemy ID
+	 * @return ID (for entities)
+	 */
+	private ID randomEnemyHard(){	
+		int r = (int)(Math.random()*1);
+		ID returnID = null;
+		System.out.println("Hard Enemy type of level " + this.currentLevelNum + " is " + r);
+		switch(r){ //pick what enemy the random integer represents
+			case 0: returnID = ID.EnemyShooterMover;break;
+			default: returnID = randomEnemyHard(); break;
+		}
+		System.out.println(returnID + "| " + this.lastEnemy);
+		if(returnID == this.lastEnemy){
+			returnID = this.randomEnemyHard();
 		}
 		this.lastEnemy = returnID;
 		return returnID;
@@ -144,17 +167,23 @@ public class Waves implements GameMode {
 	private void createNewEnemyLists() {
 		ArrayList<ID>newEnemy = new ArrayList<ID>();
 		ArrayList<Integer>newSpawn = new ArrayList<Integer>();
-		int curr = 0;
+		int curr = this.currentLevelNum/5;
 		do{
-			curr++;
-			ID e = this.randomEnemy();
+			curr--;ID e = this.randomEnemy();
+			if (curr >= 1) {//potential for a harder enemy to spawn
+			if (curr >= 3 || Math.random() > .5) {
+				 e = this.randomEnemyHard();
+				 curr--;
+			}
+			}
+			
 			newEnemy.add(e);
 			int s = (e.getDifficuty() + (int)(Math.random()*((e.getDifficuty()*0.1))));
 			if(e.getDifficuty()==1)
 				s = 1;
 			newSpawn.add(s);
 			System.out.println("----" + e + "-----" + s);
-		}while(curr<=(this.currentLevelNum/15));
+		}while(curr>= 0);
 		this.currentEnemy = newEnemy;
 		this.currentEnemySpawns = newSpawn;
 		
