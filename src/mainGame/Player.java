@@ -60,8 +60,8 @@ public class Player extends GameObject {
 	public void tick() {
 		this.x += velX;
 		this.y += velY;
-		x = Game.clamp(x, 0, Game.canvasSize.getWidth()  - 38);
-		y = Game.clamp(y, 0, Game.canvasSize.getHeight() - 60);
+		x = Game.clamp(x, 0, Game.canvasSize.getWidth()  - playerWidth);
+		y = Game.clamp(y, 0, Game.canvasSize.getHeight() - playerHeight);
 		/**
 		 * Literallyyv JUST REMOVE THE TRRAAIIILLLL to make the player image to show up
 		 * - Katie Rosell, 10/25
