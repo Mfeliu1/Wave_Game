@@ -166,7 +166,7 @@ public class Player extends GameObject {
 			}
 			
 			if (tempObject.getId() == ID.PickupFreeze && (getBounds().intersects(tempObject.getBounds()))) {
-				handler.timer = 300;
+				handler.timer = 900;
 				handler.removeObject(tempObject);
 			}
 			}
