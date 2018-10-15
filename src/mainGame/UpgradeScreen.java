@@ -129,6 +129,7 @@ public class UpgradeScreen {
 		FontRenderContext frc = new FontRenderContext(at, true, true);
 		int textWidth = (int) (font.getStringBounds(text, frc).getWidth());
 		return textWidth;
+		
 	}
 
 	/**
