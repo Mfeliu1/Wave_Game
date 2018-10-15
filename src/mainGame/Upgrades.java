@@ -39,7 +39,7 @@ public class Upgrades {
 	}
 	//Shrink the player's size
 	public void decreasePlayerSize() {
-		player.setPlayerSize(24);
+		player.setPlayerSize((int) (player.getPlayerHeight()/1.2));
 	}
 	//Add another life for the player
 	public void extraLife() {
@@ -120,11 +120,11 @@ public class Upgrades {
 	}
 	//re add all the upgrades again
 	public void resetUpgrades() {
-		Player.playerSpeed = 20;
+		Player.playerSpeed = 10;
 		hud.resetHealth();
 		hud.resetRegen();
 		hud.setExtraLives(0);
-		player.setPlayerSize(130);
+		player.setPlayerSize(32);
 		upgradeScreen.resetPaths();
 	}
 }
