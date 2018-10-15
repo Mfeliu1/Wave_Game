@@ -137,10 +137,10 @@ public class HUD {
 
 	public void healthIncrease() {
 		doubleHealth = true;
-		healthMax = 200;
+		healthMax +=20;
 		this.health = healthMax;
 		healthBarModifier = 1;
-		healthBarWidth = 800;
+		healthBarWidth = (int) (healthMax*4);
 	}
 
 	public void resetHealth() {

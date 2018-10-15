@@ -61,6 +61,10 @@ public class KeyInput extends KeyAdapter {
 				if(key == KeyEvent.VK_P && game.devMode == true){
 					game.paused = !game.paused;
 				}
+				
+				if(key == KeyEvent.VK_U){
+					game.gameState = STATE.Upgrade;
+				}
 				if (key == KeyEvent.VK_ESCAPE) {
 				game.gm.resetGames();
 				game.gameState = STATE.Menu;
@@ -93,7 +97,7 @@ public class KeyInput extends KeyAdapter {
 					game.gm.skip();
 				}
 				// if the enter key is pressed while having an ability, the ability would be used 
-				if (key == KeyEvent.VK_ENTER) {
+				if (key == KeyEvent.VK_ENTER || key == KeyEvent.VK_E) {
 					ability = upgrades.getAbility();
 					if (ability.equals("clearScreen")) {
 						upgrades.clearScreenAbility();

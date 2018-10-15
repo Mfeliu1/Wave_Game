@@ -91,29 +91,29 @@ public class Upgrades {
 	 *            is to the image of the upgrade that was pressed by the user
 	 */
 	public void activateUpgrade(String path) {
-		if (path.equals("images/clearscreenability.png")) {
+		if (path.equals("/images/clearscreenability.png")) {
 			ability = "clearScreen";
 			hud.setAbility(ability);
 			hud.setAbilityUses(3);
-		} else if (path.equals("images/decreaseplayersize.png")) {
+		} else if (path.equals("/images/decreaseplayersize.png")) {
 			decreasePlayerSize();
-		} else if (path.equals("images/extralife.png")) {
+		} else if (path.equals("/images/extralife.png")) {
 			extraLife();
-		} else if (path.equals("images/healthincrease.png")) {
+		} else if (path.equals("/images/healthincrease.png")) {
 			healthIncrease();
-		} else if (path.equals("images/healthregeneration.png")) {
+		} else if (path.equals("/images/healthregeneration.png")) {
 			healthRegeneration();
-		} else if (path.equals("images/improveddamageresistance.png")) {
+		} else if (path.equals("/images/improveddamageresistance.png")) {
 			improvedDamageResistance();
-		} else if (path.equals("images/levelskipability.png")) {
+		} else if (path.equals("/images/levelskipability.png")) {
 			ability = "levelSkip";
 			hud.setAbility(ability);
 			hud.setAbilityUses(1);
-		} else if (path.equals("images/freezetimeability.png")) {
+		} else if (path.equals("/images/freezetimeability.png")) {
 			ability = "freezeTime";
 			hud.setAbility(ability);
 			hud.setAbilityUses(5);
-		} else if (path.equals("images/speedboost.png")) {
+		} else if (path.equals("/images/speedboost.png")) {
 			speedBoost();
 		}
 

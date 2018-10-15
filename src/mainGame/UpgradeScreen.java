@@ -31,9 +31,9 @@ public class UpgradeScreen {
 	private Handler handler;
 	private HUD hud;
 	private String text;
-	private String[] paths = { "images/clearscreenability.png", "images/decreaseplayersize.png", "images/extralife.png",
-			"images/healthincrease.png", "images/healthregeneration.png", "images/improveddamageresistance.png",
-			"images/levelskipability.png", "images/freezetimeability.png", "images/speedboost.png" };
+	private String[] paths = { "/images/clearscreenability.png", "/images/decreaseplayersize.png", "/images/extralife.png",
+			"/images/healthincrease.png", "/images/healthregeneration.png", "/images/improveddamageresistance.png",
+			"/images/levelskipability.png", "/images/freezetimeability.png", "/images/speedboost.png" };
 	private ArrayList<String> imagePaths = new ArrayList<String>();
 	private Random r = new Random();
 	private int index1, index2, index3, tempCounter;
@@ -69,15 +69,15 @@ public class UpgradeScreen {
 	 * Reset the paths to each picture
 	 */
 	public void resetPaths() {
-		paths[0] = "images/clearscreenability.png";
-		paths[1] = "images/decreaseplayersize.png";
-		paths[2] = "images/extralife.png";
-		paths[3] = "images/healthincrease.png";
-		paths[4] = "images/healthregeneration.png";
-		paths[5] = "images/improveddamageresistance.png";
-		paths[6] = "images/levelskipability.png";
-		paths[7] = "images/freezetimeability.png";
-		paths[8] = "images/speedboost.png";
+		paths[0] = "/images/clearscreenability.png";
+		paths[1] = "/images/decreaseplayersize.png";
+		paths[2] = "/images/extralife.png";
+		paths[3] = "/images/healthincrease.png";
+		paths[4] = "/images/healthregeneration.png";
+		paths[5] = "/images/improveddamageresistance.png";
+		paths[6] = "/images/levelskipability.png";
+		paths[7] = "/images/freezetimeability.png";
+		paths[8] = "/images/speedboost.png";
 
 	}
 	//generate paths for locating the image
@@ -97,15 +97,15 @@ public class UpgradeScreen {
 	 * index's will load 3 different upgrade options for the user
 	 */
 	public void setIndex() {
-		index1 = getIndex(9);
-		index2 = getIndex(9);
+		index1 = getIndex(8);
+		index2 = getIndex(8);
 		if (index2 == index1) {
 			index2++;
 			if (index2 > 8) {
 				index2 = 1;
 			}
 		}
-		index3 = getIndex(9);
+		index3 = getIndex(8);
 		if (index3 == index1) {
 			index3--;
 		}
@@ -120,7 +120,7 @@ public class UpgradeScreen {
 			URL imageURL = Game.class.getResource(path);
 			image = Toolkit.getDefaultToolkit().getImage(imageURL);
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			System.err.println(e.getMessage() + " path:"+path);
 		}
 		return image;
 	}
@@ -165,5 +165,8 @@ public class UpgradeScreen {
 		} else {
 			paths[index3] = null;
 		}
+	}
+	public void resetIndexes() {
+		setIndex();
 	}
 }
