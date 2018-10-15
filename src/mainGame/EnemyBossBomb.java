@@ -38,7 +38,7 @@ public class EnemyBossBomb extends Enemy {
 	// is the abstract base class for all graphics contexts that allow an application to draw 
 	// onto components that are realized on various devices, as well as onto off-screen images
 	public void render(Graphics g) {
-		g.setColor(Color.green);
+		g.setColor(Color.PINK);
 		g.fillRect((int) (x-sizeX/2), (int) (y-sizeY/2), (int)sizeX,(int)sizeY);
 	}
 
