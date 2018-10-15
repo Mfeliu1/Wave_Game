@@ -106,11 +106,10 @@ public class UpgradeScreen {
 			}
 		}
 		index3 = getIndex(8);
-		if (index3 == index1) {
-			index3--;
-		}
-		if (index3 == index2) {
-			index3--;
+		while (index3 == index1 || index2 == index3 || index1 == index2)
+		{
+			index2 = getIndex(8);
+			index3 = getIndex(8);
 		}
 	}
 	//get the Image
