@@ -62,7 +62,7 @@ public class Game extends Canvas{
 	 * Used to switch between each of the screens shown to the user
 	 */
 	public enum STATE {
-		Menu, Help, Game, GameOver, Upgrade,
+		Menu, Help, Game, GameOver, Upgrade
 	};
 	
 	public enum GAME_AUDIO {
@@ -76,6 +76,9 @@ public class Game extends Canvas{
 		handler = new Handler();
 		hud = new HUD();
 		menu = new Menu(this, this.handler, this.hud);
+		
+		this.upgradeScreen = new UpgradeScreen(this, handler, hud);
+		
 		player = new Player(canvasSize.getWidth() / 2 - 32, canvasSize.getHeight() / 2 - 32, ID.Player, handler, this.hud, this);
 		upgrades = new Upgrades(this, this.handler, this.hud, this.upgradeScreen, this.player);
 		gameOver = new GameOver(this, this.handler, this.hud);

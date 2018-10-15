@@ -8,6 +8,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Random;
 
+import mainGame.Game.STATE;
+
 public class Waves implements GameMode {
 	private Player player;
 	private int currentLevelNum = 0;
@@ -119,6 +121,7 @@ public class Waves implements GameMode {
 				System.out.println("New Boss Level");
 				currentLevel = new Level(handler, this, this.game, this.player,0,randomBoss(), bossLimit, -1 , false, false);
 			}else{
+				//if (currentLevelNum%11 == 0) {game.gameState = STATE.Upgrade;}
 				System.out.println("New Normal Level");
 				this.createNewEnemyLists();
 				System.out.println(this.currentEnemy.size());
