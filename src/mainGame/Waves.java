@@ -71,16 +71,15 @@ public class Waves implements GameMode {
 	 * @return ID (for entities)
 	 */
 	private ID randomEnemy(){	
-		int r = (int)(Math.random()*6); //0-6 can be generated
+		int r = (int)(Math.random()*5); //0-6 can be generated
 		ID returnID = null;
 		System.out.println("Enemy type of level " + this.currentLevelNum + " is " + r);
 		switch(r){ //pick what enemy the random integer represents
-			case 0: returnID = ID.EnemySweep; break;
-			case 1: returnID = ID.EnemySmart; break;
-			case 2: returnID = ID.EnemyBasic; break;
-			case 3: returnID = ID.EnemyShooter; break;
-			case 4: returnID = ID.EnemyBurst; break;
-			case 5: returnID = ID.EnemyFast; break;
+			case 0: returnID = ID.EnemySmart; break;
+			case 1: returnID = ID.EnemyBasic; break;
+			case 2: returnID = ID.EnemyShooter; break;
+			case 3: returnID = ID.EnemyBurst; break;
+			case 4: returnID = ID.EnemyFast; break;
 			default: returnID = randomEnemy(); break;
 		}
 		System.out.println(returnID + "| " + this.lastEnemy);
@@ -96,11 +95,12 @@ public class Waves implements GameMode {
 	 * @return ID (for entities)
 	 */
 	private ID randomEnemyHard(){	
-		int r = (int)(Math.random()*1);
+		int r = (int)(Math.random()*2);
 		ID returnID = null;
 		System.out.println("Hard Enemy type of level " + this.currentLevelNum + " is " + r);
 		switch(r){ //pick what enemy the random integer represents
 			case 0: returnID = ID.EnemyShooterMover;break;
+			case 1: returnID = ID.EnemySweep; break;
 			default: returnID = randomEnemyHard(); break;
 		}
 		System.out.println(returnID + "| " + this.lastEnemy);
