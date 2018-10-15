@@ -27,10 +27,11 @@ public class Waves implements GameMode {
 	private LevelText t;
 	private ID lastEnemy = null;
 	private ID lastBoss = (Math.random()*1 == 0 ? ID.EnemyBoss:ID.EnemyRocketBoss);
-	public Waves(Player p,Handler h, HUD _hud){
+	public Waves(Player p,Handler h, HUD _hud, Game g){
 		player = p;
 		handler = h;
 		hud = _hud;
+		game = g;
 	}
 	
 	//Links the ID of an enemy to actual creation.
@@ -121,7 +122,8 @@ public class Waves implements GameMode {
 				System.out.println("New Boss Level");
 				currentLevel = new Level(handler, this, this.game, this.player,0,randomBoss(), bossLimit, -1 , false, false);
 			}else{
-				//if (currentLevelNum%11 == 0) {game.gameState = STATE.Upgrade;}
+				if (currentLevelNum%10 == 0) {game.gameState = STATE.Upgrade;
+				game.paused = true;}
 				System.out.println("New Normal Level");
 				this.createNewEnemyLists();
 				System.out.println(this.currentEnemy.size());

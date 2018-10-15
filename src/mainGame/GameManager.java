@@ -34,7 +34,7 @@ public class GameManager {
 		_game = game;
 		_hud = hud;
 		_currentGame = CURRENTGAME.Waves;
-		_waves = new Waves(_game.player, _game.handler,_hud);
+		_waves = new Waves(_game.player, _game.handler,_hud,_game);
 	}
 	/**
 	 * Checks what the current gamemode is and ticks that mode. 
