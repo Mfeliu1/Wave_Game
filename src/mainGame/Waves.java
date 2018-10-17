@@ -41,7 +41,7 @@ public class Waves implements GameMode {
 		switch(enemy){
 		case EnemyBasic:  return new EnemyBasic(spawnLoc.getX(), spawnLoc.getY(), 9, 9, ID.EnemyBasic, handler);
 		case EnemySmart: return new EnemySmart(spawnLoc.getX(), spawnLoc.getY(), -5, ID.EnemySmart, handler);
-		case EnemySweep: return new EnemySweep(getSpawnLocTop().getX(), getSpawnLocTop().getY(), 9, 2, ID.EnemySweep, handler);
+		case EnemySweep: return new EnemySweep(spawnLoc.getX(), spawnLoc.getY(), 9, 2, ID.EnemySweep, handler);
 		case EnemyShooter: return new EnemyShooter(spawnLoc.getX(),spawnLoc.getY(), 100, 100, -20 + (int)(Math.random()*5), ID.EnemyShooter, this.handler);
 		case EnemyBurst: return new EnemyBurst(-200, 200, 15, 15, 200, side[r.nextInt(4)], ID.EnemyBurst, handler);
 		//case BossEye: return new EnemyBoss(ID.EnemyBoss, handler);
@@ -56,17 +56,6 @@ public class Waves implements GameMode {
 		}
 	}
 	
-	private Point getSpawnLocTop(){
-		int x = (int)((Math.random()*(Game.canvasSize.getWidth()*1.2))-Game.canvasSize.getWidth()*0.1); //20% increase for a 10% margin.
-		int y = (int)((Math.random()*(Game.canvasSize.getHeight()/3))-Game.canvasSize.getHeight()*0.1);
-		if(Math.sqrt(Math.pow((player.getX()-x), 2) + Math.pow((player.getY()-y), 2))<=player.playerWidth*5){ //don't spawn within 5X of player size
-			return getSpawnLocTop(); //try another point
-		}
-		if(x>=Game.WIDTH-50 || y>=Game.HEIGHT-50 || y < 50 || x < 50){
-			return getSpawnLocTop(); //try another point
-		}
-		return new Point(x,y);
-	}
 	/**
 	 * Generates a random enemy ID
 	 * @return ID (for entities)
