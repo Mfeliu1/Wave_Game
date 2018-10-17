@@ -30,6 +30,9 @@ public class EnemySweep extends Enemy {
 		if (Math.random() > .5) {
 			this.velX*=-1;
 		}
+		if (Math.random() > .5) {
+			this.velY*=-1;
+		}
 		
 	}
 
