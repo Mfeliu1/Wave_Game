@@ -108,7 +108,7 @@ public class Player extends GameObject {
  
 			else if (hud.getExtraLives() > 0) {// has an extra life, game continues
 				hud.setExtraLives(hud.getExtraLives() - 1);
-				hud.setHealth(100);
+				hud.restoreHealth();
 			}
 		}
 	}
