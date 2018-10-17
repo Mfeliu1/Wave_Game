@@ -39,6 +39,8 @@ public class HUD {
 		greenValue = Game.clamp(greenValue, 0, 255);
 
 		greenValue = health * healthBarModifier;
+		
+		greenValue = Game.clamp(greenValue, 0, 255);
 
 		score++;
 
