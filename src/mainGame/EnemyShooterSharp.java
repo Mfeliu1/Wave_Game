@@ -26,7 +26,7 @@ public class EnemyShooterSharp extends Enemy {
 	private int timer;
 	private GameObject player;
 	private double bulletVelX;
-	private double bulletVelY;
+	private double bulletVelY, speed;
 	private int bulletSpeed;
 	private static Image img = null;
 	
@@ -39,6 +39,7 @@ public class EnemyShooterSharp extends Enemy {
 		this.sizeX = 200;
 		this.sizeY = 150;
 		this.timer = 60;
+		speed = 1;
 		this.bulletSpeed = Math.abs(bulletSpeed);
 		if (img == null) {
 		try {
@@ -91,6 +92,9 @@ public class EnemyShooterSharp extends Enemy {
 			double dir = pointDirection(new Point.Double(this.x,this.y),new Point.Double(newX,newY));
 			bulletVelX = Math.cos(dir)*bulletSpeed;
 			bulletVelY = Math.sin(dir)*bulletSpeed;
+			
+			velX = Math.cos(dir)*speed;
+			velY = Math.sin(dir)*speed;
 			//supposed to shoot where they're going, not 100% accurate in terms of time yet though
 			
 			handler.addObject(
