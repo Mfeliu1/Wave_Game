@@ -68,6 +68,7 @@ public class EnemyRocketBoss extends GameObject {
 			this.dash_x = (player.getX()+player.playerWidth/2)+Math.cos(Math.toRadians(angle))*100;
 			this.dash_y = (player.getY()+player.playerHeight/2)+Math.sin(Math.toRadians(angle))*100;
 			if(cooldown<=0){
+				AudioUtil.playClip("/gameSound/MissileSound.wav", false);
 				this.drawAngle = angle;
 				this.inDash = true;
 				cooldown = 60 - (int)(Math.random()*25); //lazy way to make cooldown shorter

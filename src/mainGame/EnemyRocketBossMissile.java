@@ -27,6 +27,7 @@ public class EnemyRocketBossMissile extends Enemy {
 	public EnemyRocketBossMissile(double x, double y, ID id, Handler handler, double dir, double spd, HUD _hud, Player play,double track) {
 		super(x, y, id);
 		this.handler = handler;
+		AudioUtil.playClip("/gameSound/MissileSound.wav", false);
 		if (img == null) {
 		try {
 			img = ImageIO.read(new File("src/images/Rocket_Boss.png"));
