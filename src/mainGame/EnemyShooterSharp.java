@@ -85,18 +85,19 @@ public class EnemyShooterSharp extends Enemy {
 		
 		////////////////////////////// pythagorean theorem
 		////////////////////////////// above//////////////////////////////////////////////////
-		if (Math.random() > .5) {
-			double timeTo = (distance/bulletSpeed)-1;
+			double timeTo = (distance/bulletSpeed);
 			double newX = player.getX()+(player.getVelX()*timeTo);
 			double newY = player.getY()+(player.getVelY()*timeTo);
 			double dir = pointDirection(new Point.Double(this.x,this.y),new Point.Double(newX,newY));
 			bulletVelX = Math.cos(dir)*bulletSpeed;
 			bulletVelY = Math.sin(dir)*bulletSpeed;
+			//supposed to shoot where they're going, not 100% accurate in terms of time yet though
 			
-		}else {
+			handler.addObject(
+					new EnemyShooterBullet(this.x -10, this.y-10, bulletVelX, bulletVelY, ID.EnemyShooterBullet, this.handler));
 		bulletVelX = -((this.bulletSpeed / distance) * diffX); // numerator affects speed of enemy
 		bulletVelY = -((this.bulletSpeed / distance) * diffY);// numerator affects speed of enemy}
-		}
+		
 		handler.addObject(
 				new EnemyShooterBullet(this.x -10, this.y-10, bulletVelX, bulletVelY, ID.EnemyShooterBullet, this.handler));
 		}else {
