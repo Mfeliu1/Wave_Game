@@ -49,6 +49,7 @@ public class Waves implements GameMode {
 		case EnemyRocketBoss: return new EnemyRocketBoss(100,100,ID.EnemyRocketBoss,this.player, this.handler,this.hud, this,currentLevelNum/10);
 		case EnemyFast: return new EnemyFast(spawnLoc.getX(), spawnLoc.getY(), ID.EnemySmart, handler);
 		case EnemyShooterMover: return new EnemyShooterMover(spawnLoc.getX(),spawnLoc.getY(), 100, 100, -20 + (int)(Math.random()*5), ID.EnemyShooterMover, this.handler);
+		case EnemyShooterSharp: return new EnemyShooterSharp(spawnLoc.getX(),spawnLoc.getY(), 200, 200, -20 + (int)(Math.random()*5), ID.EnemyShooter, this.handler);
 		default: 
 			System.err.println("Enemy not found");
 			return new EnemyBasic(spawnLoc.getX(),spawnLoc.getY(), 9, 9, ID.EnemyBasic, handler);
@@ -95,12 +96,13 @@ public class Waves implements GameMode {
 	 * @return ID (for entities)
 	 */
 	private ID randomEnemyHard(){	
-		int r = (int)(Math.random()*2);
+		int r = (int)(Math.random()*3);
 		ID returnID = null;
 		System.out.println("Hard Enemy type of level " + this.currentLevelNum + " is " + r);
 		switch(r){ //pick what enemy the random integer represents
 			case 0: returnID = ID.EnemyShooterMover;break;
 			case 1: returnID = ID.EnemySweep; break;
+			case 2: returnID = ID.EnemyShooterSharp; break;
 			default: returnID = randomEnemyHard(); break;
 		}
 		System.out.println(returnID + "| " + this.lastEnemy);
