@@ -28,10 +28,11 @@ public class EnemyBoss extends GameObject {
 	private int spawn;
 	private int difficulty = 1;
 	private int bombTimer = 120;
-
+	private HUD hud;
+	
 	// constructor
 	// used to initialize the state of the object
-	public EnemyBoss(ID id, Handler handler,int diff) {
+	public EnemyBoss(ID id, Handler handler,int diff,HUD h) {
 		super(Game.WIDTH / 2 - 48, -120, id);
 		this.handler = handler;
 		velX = 0;
@@ -39,6 +40,7 @@ public class EnemyBoss extends GameObject {
 		img = getImage("/images/EnemyBoss.png");
 		this.health = 1000;//full health is 1000
 		difficulty = diff;
+		hud = h;
 		
 	}
 	
@@ -85,6 +87,7 @@ public class EnemyBoss extends GameObject {
 
 		// handler.addObject(new Trail(x, y, ID.Trail, Color.red, 96, 96, 0.025,
 		// this.handler));
+		hud.levelProgress = (1000-this.health)/(10);
 		if (this.health <= 0) {
 			System.out.println("Removing Boss");
 			handler.removeObject(this);

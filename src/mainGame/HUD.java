@@ -32,6 +32,7 @@ public class HUD {
 	private Color scoreColor = Color.white;
 
 	private int extraLives = 0;
+	public int levelProgress;
 
 	public void tick() {
 		health = Game.clamp(health, 0, health);
@@ -68,6 +69,7 @@ public class HUD {
 		g.drawString("Score: " + score, 15, 25);
 		g.drawString("Level: " + level, 15, 75);
 		g.drawString("Extra Lives: " + extraLives, 15, 125);
+		g.drawString("Level Progress: " + levelProgress + "%", 15, 175);
 		
 		g.drawString("High Score: " + highscore, 1500, 25);
 		
