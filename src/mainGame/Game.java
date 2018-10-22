@@ -27,10 +27,10 @@ public class Game extends Canvas{
 	private static final long serialVersionUID = 1L;
 
 	public static final Dimension canvasSize = new Dimension(1920, 1080);
-	public static final double aspectRatio   = (double)canvasSize.getWidth()/(double)canvasSize.getHeight();
+	public static final double aspectRatio = (double)canvasSize.getWidth()/(double)canvasSize.getHeight();
 	static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-	static int WindowWidth = (int) (0.9 * screenSize.getWidth());
-	static int WindowHeight = (int) (0.9 *screenSize.getHeight());
+	static int WindowWidth = (int) (1 * screenSize.getWidth());
+	static int WindowHeight = (int) (1 *screenSize.getHeight());
 	public static final Dimension windowSize = new Dimension(WindowWidth,WindowHeight);
 	public static final int WIDTH  = (int)canvasSize.getWidth();
 	public static final int HEIGHT = (int)canvasSize.getHeight();

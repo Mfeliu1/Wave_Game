@@ -13,10 +13,19 @@ import javax.swing.JFrame;
 public class Window extends JFrame{
 // Draws canvas, cannot be resized due to MAC issues
 	private static final long serialVersionUID = 1L;
+
 	public Window(int width, int height, String title, Game game){
 		super(title);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setResizable(false);
+
+		// Set fullscreen
+		if (System.getProperty("os.name").toLowerCase().contains("mac")) { //If user is on macOS
+			//TODO: Mac-specific fullscreen code here
+		} else {
+			setUndecorated(true);
+		}
+
 		add(game);
 		setVisible(true);
 		setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -24,7 +33,7 @@ public class Window extends JFrame{
 		//GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
 		pack();
 		game.start();
-		setLocationRelativeTo(null);		
+		setLocationRelativeTo(null);
 	}
 }
 
