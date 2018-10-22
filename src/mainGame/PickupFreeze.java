@@ -19,7 +19,7 @@ public class PickupFreeze extends Pickup{
 	// constructor
 	// used to initialize the state of the object
 	public PickupFreeze(double x, double y) {
-		super(x, y, ID.PickupFreeze,"src/images/dr.png");
+		super(x, y, ID.PickupFreeze,"src/images/freezeAbilitySnowflake.png");
 	}
 
 	// methods

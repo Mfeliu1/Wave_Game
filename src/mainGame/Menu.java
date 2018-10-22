@@ -123,7 +123,7 @@ public class Menu {
 			Font font2 = new Font("impact", Font.PLAIN, 30); //also make a new font
 			Font font3 = new Font("impact", Font.PLAIN, 30); //also make a new font
 			PowerCoin = getImage("/images/PickupCoin.png");
-			PowerSlow = getImage("/images/dr.png");
+			PowerSlow = getImage("/images/freezeAbilitySnowflake.png");
 			PowerHealth = getImage("/images/PickupHealth.png");
 			PowerLife = getImage("/images/PickupLife.png");
 			PowerSpeed = getImage("/images/PickupSpeed.png");
