@@ -126,7 +126,7 @@ public class Menu {
 			PowerSlow = getImage("/images/freezeAbilitySnowflake.png");
 			PowerHealth = getImage("/images/PickupHealth.png");
 			PowerLife = getImage("/images/PickupLife.png");
-			PowerSpeed = getImage("/images/PickupSpeed.png");
+			PowerSpeed = getImage("/images/ShrinkAbility0.png");
 			//Help text
 			g.setFont(font); //set the font with its parameters above 
 			g.setColor(Color.white);

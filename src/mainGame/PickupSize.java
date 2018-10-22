@@ -19,7 +19,7 @@ public class PickupSize extends Pickup{
 	// constructor
 	// used to initialize the state of the object
 	public PickupSize(double x, double y) {
-		super(x, y, ID.PickupSize,"src/images/PickupSpeed.png");
+		super(x, y, ID.PickupSize,"src/images/ShrinkAbility0.png");
 	}
 
 	// methods
