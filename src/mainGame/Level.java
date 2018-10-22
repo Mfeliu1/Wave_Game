@@ -19,6 +19,7 @@ public class Level {
 	private int currentTick = 0;
 	private Player player;
 	private boolean bossDead = false;
+	private HUD hud;
 	int dif = 0;
 	int x;
 	/**
@@ -34,7 +35,7 @@ public class Level {
 	 * @param spawnPowerUp - True/False for spawning PowerUps(Not Implemented)
 	 * @param upgrades - True/False if when the level is completed the player can choose a upgrade (Not Implemented)
 	 */
-	public Level(Handler h, GameMode mode, Game g,Player p,int dif, ArrayList<ID> enemyList, ArrayList<Integer>maxSpawn,int maxTick,boolean spawnPowerUp, boolean upgrades){
+	public Level(Handler h, GameMode mode, Game g,Player p,int dif, ArrayList<ID> enemyList, ArrayList<Integer>maxSpawn,int maxTick,boolean spawnPowerUp, boolean upgrades, HUD _hud){
 		this.handler = h;
 		this.mode = mode;
 		this.enemyList = enemyList;
@@ -42,6 +43,7 @@ public class Level {
 		this.maxTick = maxTick;
 		this.player = p;
 		this.spawnTicks = new ArrayList<Integer>();
+		this.hud = _hud;
 		for(int i = 0; i<enemyList.size();i++){
 			spawnTicks.add(0);
 		}
@@ -53,6 +55,8 @@ public class Level {
 	 * This ensures that the enemies are evenly spawned throughout the level. 
 	 */
 	public void tick(){
+		if (hud != null) {
+		hud.levelProgress = (int) (((double)currentTick/(double)maxTick)*100);}
 		if(currentTick>=maxTick && maxTick>=0) this.levelRunning = false;
 		if(running()==false) return;
 		this.currentTick++;

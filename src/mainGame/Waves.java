@@ -45,7 +45,7 @@ public class Waves implements GameMode {
 		case EnemyShooter: return new EnemyShooter(spawnLoc.getX(),spawnLoc.getY(), 100, 100, -20 + (int)(Math.random()*5), ID.EnemyShooter, this.handler);
 		case EnemyBurst: return new EnemyBurst(-200, 200, 15, 15, 200, side[r.nextInt(4)], ID.EnemyBurst, handler);
 		//case BossEye: return new EnemyBoss(ID.EnemyBoss, handler);
-		case EnemyBoss: return new EnemyBoss(ID.EnemyBoss, handler,currentLevelNum/10);
+		case EnemyBoss: return new EnemyBoss(ID.EnemyBoss, handler,currentLevelNum/10,hud);
 		case EnemyRocketBoss: return new EnemyRocketBoss(100,100,ID.EnemyRocketBoss,this.player, this.handler,this.hud, this,currentLevelNum/10);
 		case EnemyFast: return new EnemyFast(spawnLoc.getX(), spawnLoc.getY(), ID.EnemySmart, handler);
 		case EnemyShooterMover: return new EnemyShooterMover(spawnLoc.getX(),spawnLoc.getY(), 100, 100, -20 + (int)(Math.random()*5), ID.EnemyShooterMover, this.handler);
@@ -134,7 +134,7 @@ public class Waves implements GameMode {
 				ArrayList<Integer>bossLimit = new ArrayList<Integer>();
 				bossLimit.add(1);
 				System.out.println("New Boss Level");
-				currentLevel = new Level(handler, this, this.game, this.player,0,randomBoss(), bossLimit, -1 , false, false);
+				currentLevel = new Level(handler, this, this.game, this.player,0,randomBoss(), bossLimit, -1 , false, false,null);
 			}else{
 				if ((currentLevelNum%5)-1 == 0 && currentLevelNum > 1) {game.gameState = STATE.Upgrade;
 				game.paused = true;}
@@ -142,7 +142,7 @@ public class Waves implements GameMode {
 				this.createNewEnemyLists();
 				System.out.println(this.currentEnemy.size());
 				System.out.println(this.currentEnemySpawns.size());
-				currentLevel = new Level(handler, this, this.game, this.player,0, this.currentEnemy,this.currentEnemySpawns,60*(20),false,false);
+				currentLevel = new Level(handler, this, this.game, this.player,0, this.currentEnemy,this.currentEnemySpawns,60*(20),false,false,hud);
 			}
 			
 		}

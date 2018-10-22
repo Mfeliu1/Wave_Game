@@ -78,6 +78,7 @@ public class EnemyRocketBoss extends GameObject {
 			}
 			}
 		}
+		hud.levelProgress = (1000-this.health)/10;
 		if(health<=0){
 			System.out.println("Removing Boss");
 			handler.removeObject(this);
