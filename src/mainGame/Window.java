@@ -18,12 +18,12 @@ public class Window extends JFrame{
 		super(title);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setResizable(false);
-
 		// Set fullscreen
-		if (System.getProperty("os.name").toLowerCase().contains("mac")) { //If user is on macOS
-			//TODO: Mac-specific fullscreen code here
+		if (System.getProperty("os.name").toLowerCase().contains("mac")) { //If user is on macOSX
+			com.apple.eawt.FullScreenUtilities.setWindowCanFullScreen(this,true);
+			com.apple.eawt.Application.getApplication().requestToggleFullScreen(this);
 		} else {
-			setUndecorated(true);
+			setUndecorated(true); 
 		}
 
 		add(game);
