@@ -39,6 +39,7 @@ public class Player extends GameObject {
 		super(x, y, id);
 		this.handler = handler;
 		this.hud = hud;
+		hud.player = this;
 		this.game = game;
 		this.damage = 2;
 		//Player Width and Height change the size of the image, use the same number for both 
