@@ -33,6 +33,7 @@ public class Player extends GameObject {
 	protected int playerWidth, playerHeight;
 	public static int playerSpeed = 10;
 	public static Image img;
+	public static Color playerColor = Color.WHITE;
 
 	public Player(double x, double y, ID id, Handler handler, HUD hud, Game game) {
 		super(x, y, id);
@@ -68,7 +69,8 @@ public class Player extends GameObject {
 		 */
 		//The color of the player?
 		// add the trail that follows it
-		handler.addObject(new Trail(x, y, ID.Trail, Color.white, playerWidth, playerHeight, 0.05, this.handler));
+		handler.addObject(new Trail(x, y, ID.Trail, playerColor, playerWidth, playerHeight, 0.05, this.handler));
+		playerColor = Color.white;
 		//The thing above is the trail code that needs to be deleted. 
 		collision();
 		checkIfDead();
@@ -128,6 +130,7 @@ public class Player extends GameObject {
 				if (getBounds().intersects(tempObject.getBounds())) {// player hit an enemy
 					AudioUtil.playClip("../gameSound/explosion.wav", false);
 					hud.health -= damage;
+					playerColor = Color.RED;
 					hud.updateScoreColor(Color.red);
 				}
 			}
@@ -178,7 +181,7 @@ public class Player extends GameObject {
 	
 	@Override
 	public void render(Graphics g) {
-		g.setColor(Color.white);
+		g.setColor(playerColor);
 		g.fillRect((int) x, (int) y, playerWidth, playerHeight);
 		//g.drawImage(img, (int) this.x, (int) this.y, playerWidth, playerHeight, null);
 	}
