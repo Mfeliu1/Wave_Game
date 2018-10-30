@@ -6,9 +6,8 @@ import javax.sound.sampled.Clip;
 
 public class AudioUtil {
 
-    private static Clip gameClip;
-    private static Clip menuClip;
-    private static Clip clip;
+    private static Clip gameClip, menuClip, clip;
+
 	public static void playClip(final String path, boolean repeat) {
 		try {
 			if (clip != null && clip.isRunning()) {
@@ -26,10 +25,7 @@ public class AudioUtil {
 			clip.stop();
 			clip.close();
 		}
-	}
-	//comment
-	
-	
+	}	
 	
 	public static void stopCurrentClip() {
 		if (clip != null) {
