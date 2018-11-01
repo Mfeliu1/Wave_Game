@@ -66,15 +66,19 @@ public class KeyInput extends KeyAdapter {
         Set<InputAction> actions = new HashSet<>();
         if (currState.dpadLeft) {
             actions.add(InputAction.MOVE_LEFT);
+            keyDown[1] = true;
         }
         if (currState.dpadRight) {
             actions.add(InputAction.MOVE_RIGHT);
+            keyDown[3] = true;
         }
         if (currState.dpadUp) {
             actions.add(InputAction.MOVE_UP);
+            keyDown[0] = true;
         }
         if (currState.dpadDown) {
             actions.add(InputAction.MOVE_DOWN);
+            keyDown[2] = true;
         }
         return actions;
     }
