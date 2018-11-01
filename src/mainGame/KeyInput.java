@@ -3,6 +3,12 @@ package mainGame;
 import java.awt.Point;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+
+import com.studiohartman.jamepad.ControllerManager;
+import com.studiohartman.jamepad.ControllerState;
 
 import mainGame.Game.STATE;
 
@@ -25,6 +31,7 @@ public class KeyInput extends KeyAdapter {
 	private Player player;
 	private Upgrades upgrades;
 	private String ability;
+	private final ControllerManager controllers;
 
 	// constructor
 	// used to initialize the state of the object
@@ -36,6 +43,8 @@ public class KeyInput extends KeyAdapter {
 		this.player = player;
 		this.hud = hud;
 		this.upgrades = upgrades;
+		controllers = new ControllerManager();
+		controllers.initSDLGamepad();
 		keyDown[0] = false;
 		keyDown[1] = false;
 		keyDown[2] = false;
@@ -43,6 +52,33 @@ public class KeyInput extends KeyAdapter {
 		keyDown[4] = false;
 
 	}
+
+	public enum InputAction {
+	    MOVE_UP, MOVE_DOWN, MOVE_LEFT, MOVE_RIGHT
+	}
+	
+	Set<InputAction> actions() { //Still needs testing with controller
+        ControllerState currState = controllers.getState(0);
+        if (!currState.isConnected) {
+            return Collections.emptySet();
+        }
+
+        Set<InputAction> actions = new HashSet<>();
+        if (currState.dpadLeft) {
+            actions.add(InputAction.MOVE_LEFT);
+        }
+        if (currState.dpadRight) {
+            actions.add(InputAction.MOVE_RIGHT);
+        }
+        if (currState.dpadUp) {
+            actions.add(InputAction.MOVE_UP);
+        }
+        if (currState.dpadDown) {
+            actions.add(InputAction.MOVE_DOWN);
+        }
+        return actions;
+    }
+	
 	// methods
 	// keyevent indicates that a keystroke occurred in a component
 	// invoked when a key has been pressed

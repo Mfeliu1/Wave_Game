@@ -7,5 +7,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="AppleJavaExtensions.jar"/>
+	<classpathentry kind="lib" path="Jamepad.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
