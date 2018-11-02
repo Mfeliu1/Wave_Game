@@ -26,9 +26,9 @@ public class Game extends Canvas{
 
 	private static final long serialVersionUID = 1L;
 
-	public static final Dimension canvasSize = new Dimension(1920, 1080);
-	public static final double aspectRatio = (double)canvasSize.getWidth()/(double)canvasSize.getHeight();
 	static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+	public static final double aspectRatio = screenSize.getWidth()/screenSize.getHeight();
+	public static final Dimension canvasSize = canvasSize();
 	static int WindowWidth = (int) (1 * screenSize.getWidth());
 	static int WindowHeight = (int) (1 *screenSize.getHeight());
 	public static final Dimension windowSize = new Dimension(WindowWidth,WindowHeight);
@@ -287,4 +287,17 @@ public class Game extends Canvas{
 		return image;
 	}
 
+	public static Dimension canvasSize() {
+		// Choose canvas size that conforms to screen aspect ratio
+		if (aspectRatio > 1.7) {
+			// Screen aspect ratio is 16:9 or wider
+			return new Dimension(1920,1080);
+		} else if (aspectRatio < 1.4) {
+			// Screen aspect ratio is 4:3 or taller
+			return new Dimension(1920,1440);
+		} else {
+			// Screen aspect ratio is somewhere in between, probably 16:10
+			return new Dimension(1920,1200);
+		}
+	}
 }
