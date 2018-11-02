@@ -57,7 +57,7 @@ public class KeyInput extends KeyAdapter {
 	    MOVE_UP, MOVE_DOWN, MOVE_LEFT, MOVE_RIGHT
 	}
 	
-	Set<InputAction> actions() { //Still needs testing with controller
+	Set<InputAction> actions() { //Still needs testing with controllers
         ControllerState currState = controllers.getState(0);
         if (!currState.isConnected) {
             return Collections.emptySet();
