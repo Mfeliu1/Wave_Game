@@ -137,6 +137,7 @@ public class Menu {
 			g.drawString("  Avoid enemies as difficulty increases", 35, 240);
 			g.drawString("  Boss levels occur every five levels", 35, 300);
 			g.drawString("  Players can pick up various powerups", 35, 360);
+			g.drawString("  Players can gain a new powerup every ten levels", 35, 420);
 			g.drawString("  Power-Ups:", 1100, 180);
 			g.drawString("		-  Screen freeze powerup", 1125, 240);
 			g.drawImage(PowerSlow, 1655, 205, 40, 40, null);

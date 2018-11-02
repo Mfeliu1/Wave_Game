@@ -53,7 +53,7 @@ public class MenuFireworks extends GameObject {
 	//render the circle object
 	public void render(Graphics g) {
 		g.setColor(this.color);
-		g.fillOval((int) this.x, (int) this.y, sizeX, sizeY);
+		g.fillOval((int) this.x-sizeX/2, (int) this.y-sizeY/2, sizeX, sizeY);
 	}
 	/**
 	 * In the tick function it checks where the circle fire work is on
