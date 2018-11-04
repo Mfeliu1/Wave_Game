@@ -38,7 +38,7 @@ public class AudioUtil {
 	public static void playMenuClip(boolean repeat) {
 		try {
 			closeMenuClip();
-			AudioInputStream inputStream = AudioSystem.getAudioInputStream(new File(AudioUtil.class.getResource("../gameSound/WWRY.wav").toURI()));
+			AudioInputStream inputStream = AudioSystem.getAudioInputStream(new File(AudioUtil.class.getResource("../gameSound/opening.wav").toURI()));
 	        menuClip = AudioSystem.getClip();
 			menuClip.open(inputStream);
 	        if (repeat) {
