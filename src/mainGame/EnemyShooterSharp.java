@@ -43,7 +43,7 @@ public class EnemyShooterSharp extends Enemy {
 		this.bulletSpeed = Math.abs(bulletSpeed);
 		if (img == null) {
 		try {
-			img = ImageIO.read(new File("src/images/spaceship1.png"));
+			img = ImageIO.read(new File("src/images/spaceship1Red.png"));
 		} catch (Exception e){
 			e.printStackTrace();
 		}

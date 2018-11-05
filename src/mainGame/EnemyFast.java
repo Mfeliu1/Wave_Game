@@ -28,7 +28,7 @@ public class EnemyFast extends Enemy {
 		velY = -12;
 		if (img == null) {
 		try {
-			img = ImageIO.read(new File("src/images/Rocket_Boss.png"));
+			img = ImageIO.read(new File("src/images/Rocket_BossRed.png"));
 		} catch (Exception e){
 			e.printStackTrace();
 		}

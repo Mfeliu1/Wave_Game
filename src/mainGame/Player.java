@@ -139,6 +139,7 @@ public class Player extends GameObject {
 				// Allows player time to get out of upper area where they will get hurt once the
 				// boss starts moving
 				if (this.y <= 138 && tempObject.isMoving) {
+					AudioUtil.playClip("../gameSound/damaged.wav", false);
 					hud.health -= 2;
 					hud.updateScoreColor(Color.red);
 				}
