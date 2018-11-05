@@ -96,7 +96,7 @@ public class HUD {
 		if ((2 -player.getDamage()) == 0.0) {
 			g.drawImage(HUDshield1, 440, 1010, 40, 40, null);
 			g.drawString("" + (2 -player.getDamage()), 500, 1040);
-		} else if ((2 -player.getDamage()) == 0.25) {
+		} else if ((2 -player.getDamage()) == 0.25) { 
 			g.drawImage(HUDshield2, 440, 1010, 40, 40, null);
 			g.drawString("" + (2 -player.getDamage()), 500, 1040);
 		} else if ((2 -player.getDamage()) == 0.50) {
