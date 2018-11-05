@@ -3,6 +3,9 @@ package mainGame;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.net.URL;
 
 /**
  * The main Heads Up Display of the game
@@ -34,6 +37,13 @@ public class HUD {
 	private int extraLives = 0;
 	public int levelProgress;
 	public Player player;
+	
+	private Image img;
+	private Image HUDshield1;
+	private Image HUDshield2;
+	private Image HUDshield3;
+	private Image HUDshield4;
+	private Image HUDshield5;
 
 	public void tick() {
 		health = Game.clamp(health, 0, health);
@@ -57,6 +67,13 @@ public class HUD {
 
 	public void render(Graphics g) {
 		Font font = new Font("Amoebic", 1, 30);
+		
+		g.drawImage(img, 0, 0, Game.WIDTH, Game.HEIGHT, null);
+		HUDshield1 = getImage("/images/shield1.png");
+		HUDshield2 = getImage("/images/shield2.png");
+		HUDshield3 = getImage("/images/shield3.png");
+		HUDshield4 = getImage("/images/shield4.png");
+		HUDshield5 = getImage("/images/shield5.png");
 
 		g.setColor(Color.GRAY);
 		g.fillRect(15, 1000, healthBarWidth, 64);
@@ -75,8 +92,26 @@ public class HUD {
 		g.drawString("Damage Resist: " +  (2 -player.getDamage()), 15, 275);
 		g.drawString("Player Size: " + player.getPlayerHeight(), 15, 325);
 		g.drawString("Regeneration: " + regen, 15, 375);
-		
 		g.drawString("High Score: " + highscore, 1500, 25);
+		if ((2 -player.getDamage()) == 0.0) {
+			g.drawImage(HUDshield1, 440, 1010, 40, 40, null);
+			g.drawString("" + (2 -player.getDamage()), 500, 1040);
+		} else if ((2 -player.getDamage()) == 0.25) {
+			g.drawImage(HUDshield2, 440, 1010, 40, 40, null);
+			g.drawString("" + (2 -player.getDamage()), 500, 1040);
+		} else if ((2 -player.getDamage()) == 0.50) {
+			g.drawImage(HUDshield3, 440, 1010, 40, 40, null);
+			g.drawString("" + (2 -player.getDamage()), 500, 1040);
+		} else if ((2 -player.getDamage()) == 0.75) {
+			g.drawImage(HUDshield4, 440, 1010, 40, 40, null);
+			g.drawString("" + (2 -player.getDamage()), 500, 1040);
+		} else if ((2 -player.getDamage()) > 0.76) {
+			g.drawImage(HUDshield5, 440, 1010, 40, 40, null);
+			g.drawString("" + (2 -player.getDamage()), 500, 1040);
+		} 
+
+		
+		
 		
 		if(highscore < score){
 			highscore = score;
@@ -170,5 +205,16 @@ public class HUD {
 
 		public boolean getRegen() {
 			return regen;
-		}	
+		}
+		
+		public Image getImage(String path) {
+			Image image = null;
+			try {
+				URL imageURL = Game.class.getResource(path);
+				image = Toolkit.getDefaultToolkit().getImage(imageURL);
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+			return image;
+		}
 }
