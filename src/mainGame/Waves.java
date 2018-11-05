@@ -22,7 +22,7 @@ public class Waves implements GameMode {
 	private Game game;
 	private ArrayList<Integer> currentEnemySpawns;
 	private HUD hud;
-	private Image img = this.getImage("/images/cartoonspace.jpg");
+	private Image img = this.getImage("/images/space2.jpg");
 	private int levelPopTimer = 0;
 	private LevelText t;
 	private ID lastEnemy = null;

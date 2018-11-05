@@ -263,9 +263,9 @@ public class Game extends Canvas{
 	 */
 	public static double clamp(double var, double min, double max) {
 		if (var >= max)
-			return var = max;
+			return max;
 		else if (var <= min)
-			return var = min;
+			return min;
 		else
 			return var;
 	}
