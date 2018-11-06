@@ -149,6 +149,7 @@ public class Player extends GameObject {
 			if (tempObject.getId() == ID.PickupHealth && (getBounds().intersects(tempObject.getBounds()))) {
 				hud.restoreHealth();
 				handler.removeObject(tempObject);
+				AudioUtil.playClip("../gameSound/powerup.wav", false);
 			}
 			
 			if (tempObject.getId() == ID.PickupSize && (getBounds().intersects(tempObject.getBounds()))) {
@@ -158,21 +159,26 @@ public class Player extends GameObject {
 					hud.setScore(hud.getScore()+1000);
 				}
 				handler.removeObject(tempObject);
+				AudioUtil.playClip("../gameSound/powerup.wav", false);
 			}
 			
 			if (tempObject.getId() == ID.PickupLife && (getBounds().intersects(tempObject.getBounds()))) {
 				hud.setExtraLives(hud.getExtraLives()+1);
 				handler.removeObject(tempObject);
+				AudioUtil.playClip("../gameSound/1up.wav", false);
 			}
 			
 			if (tempObject.getId() == ID.PickupScore && (getBounds().intersects(tempObject.getBounds()))) {
 				hud.setScore(hud.getScore()+1000);
 				handler.removeObject(tempObject);
+				AudioUtil.playClip("../gameSound/coin.wav", false);
 			}
 			
 			if (tempObject.getId() == ID.PickupFreeze && (getBounds().intersects(tempObject.getBounds()))) {
+				AudioUtil.playClip("../gameSound/freeze1.wav", false);
 				handler.timer = 900;
 				handler.removeObject(tempObject);
+				AudioUtil.playClip("../gameSound/freeze2.wav", false);
 			}
 			}
 		}

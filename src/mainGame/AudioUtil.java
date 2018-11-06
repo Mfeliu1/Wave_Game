@@ -3,6 +3,7 @@ import java.io.File;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
+import javax.sound.sampled.FloatControl;
 
 public class AudioUtil {
 
@@ -16,10 +17,11 @@ public class AudioUtil {
 			AudioInputStream inputStream = AudioSystem.getAudioInputStream(new File(AudioUtil.class.getResource(path).toURI()));
 	        clip = AudioSystem.getClip();
 			clip.open(inputStream);
+			((FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN)).setValue(6f);
 	        if (repeat) {
 	        		clip.loop(Clip.LOOP_CONTINUOUSLY);
 	        } else {
-	        		clip.loop(1);
+	        		clip.loop(0);
 	        }
 		} catch (Exception ex) {
 			clip.stop();
@@ -64,6 +66,7 @@ public class AudioUtil {
 			AudioInputStream inputStream = AudioSystem.getAudioInputStream(new File(AudioUtil.class.getResource("../gameSound/battle.wav").toURI()));
 	        gameClip = AudioSystem.getClip();
 			gameClip.open(inputStream);
+			((FloatControl) gameClip.getControl(FloatControl.Type.MASTER_GAIN)).setValue(-5f);
 	        if (repeat) {
 	        		gameClip.loop(Clip.LOOP_CONTINUOUSLY);
 	        } else {
