@@ -8,6 +8,7 @@ import javax.sound.sampled.FloatControl;
 public class AudioUtil {
 
     private static Clip gameClip, menuClip, clip;
+    private static boolean paused = false;
 
 	public static void playClip(final String path, boolean repeat) {
 		try {
@@ -74,6 +75,17 @@ public class AudioUtil {
 	        }
 		} catch (Exception ex) {
 			System.out.println("\nException while playing game clip: " + ex.getLocalizedMessage());
+		}
+	}
+	
+	public static void pauseGameClip() {
+		if(paused) {
+			gameClip.start();
+			paused = false;
+		}
+		else {
+			gameClip.stop();
+			paused = true;
 		}
 	}
 	

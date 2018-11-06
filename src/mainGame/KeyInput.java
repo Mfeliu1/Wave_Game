@@ -101,6 +101,7 @@ public class KeyInput extends KeyAdapter {
 				if(key == KeyEvent.VK_P && game.devMode == true){
 					game.paused = !game.paused;
 					AudioUtil.playClip("../gameSound/pause.wav", false);
+					AudioUtil.pauseGameClip();
 				}
 				
 				if(key == KeyEvent.VK_U){

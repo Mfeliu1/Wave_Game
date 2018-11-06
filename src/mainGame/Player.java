@@ -178,7 +178,6 @@ public class Player extends GameObject {
 				AudioUtil.playClip("../gameSound/freeze1.wav", false);
 				handler.timer = 900;
 				handler.removeObject(tempObject);
-				AudioUtil.playClip("../gameSound/freeze2.wav", false);
 			}
 			}
 		}

@@ -168,12 +168,8 @@ public class Game extends Canvas{
 	 * Ticks classes based on current game state. 
 	 */
 	private void tick() {
-		if (this.paused) {
-			AudioUtil.closeGameClip();
-			AudioUtil.closeMenuClip();
-			this.gameCurrentClip = GAME_AUDIO.Menu;
-			return;
-		}
+		if (this.paused) {return;}
+		
 		handler.tick();// handler must always be ticked in order to draw all entities.
 		if (gameState == STATE.Menu || gameState == STATE.Help) {// user is on menu, update the menu items
 			if (this.gameCurrentClip != GAME_AUDIO.Menu) {
