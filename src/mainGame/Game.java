@@ -86,6 +86,8 @@ public class Game extends Canvas{
 		gm = new GameManager(this, hud);
 		this.addKeyListener(new KeyInput(this.handler, this, this.hud, this.player, this.upgrades));
 		this.addMouseListener(mouseListener);
+		AudioUtil.closeGameClip();
+		AudioUtil.playMenuClip(true);
 
 		@SuppressWarnings("unused")
 		Window window = new Window((int) windowSize.getWidth(), (int)windowSize.getHeight(), "Wave Game", this);
