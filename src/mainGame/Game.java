@@ -169,10 +169,18 @@ public class Game extends Canvas{
 		if (this.paused) {
 			AudioUtil.closeGameClip();
 			AudioUtil.closeMenuClip();
-			this.gameCurrentClip = GAME_AUDIO.None;
+			this.gameCurrentClip = GAME_AUDIO.Menu;
 			return;
 		}
 		handler.tick();// handler must always be ticked in order to draw all entities.
+		if (gameState == STATE.Menu || gameState == STATE.Help) {// user is on menu, update the menu items
+			if (this.gameCurrentClip != GAME_AUDIO.Menu) {
+				this.gameCurrentClip = GAME_AUDIO.Menu;
+				AudioUtil.closeGameClip();
+				AudioUtil.playMenuClip(true);
+			}
+			menu.tick();
+		} 
 		if (gameState == STATE.Game) {// game is running
 			if (this.gameCurrentClip != GAME_AUDIO.Game) {
 				this.gameCurrentClip = GAME_AUDIO.Game;
@@ -181,14 +189,8 @@ public class Game extends Canvas{
 			}
 			hud.tick();
 			gm.tick();
-		} else if (gameState == STATE.Menu || gameState == STATE.Help) {// user is on menu, update the menu items
-			if (this.gameCurrentClip != GAME_AUDIO.Menu) {
-				this.gameCurrentClip = GAME_AUDIO.Menu;
-				AudioUtil.closeGameClip();
-				AudioUtil.playMenuClip(true);
-			}
-			menu.tick();
-		} else if (gameState == STATE.Upgrade) {// user is on upgrade screen, update the upgrade screen
+		} 
+		else if (gameState == STATE.Upgrade) {// user is on upgrade screen, update the upgrade screen
 			upgradeScreen.tick();
 		} else if (gameState == STATE.GameOver) {// game is over, update the game over screen
 			gameOver.tick();
@@ -263,9 +265,9 @@ public class Game extends Canvas{
 	 */
 	public static double clamp(double var, double min, double max) {
 		if (var >= max)
-			return max;
+			return var = max;
 		else if (var <= min)
-			return min;
+			return var = min;
 		else
 			return var;
 	}

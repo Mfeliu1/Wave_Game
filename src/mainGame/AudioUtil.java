@@ -38,7 +38,7 @@ public class AudioUtil {
 	public static void playMenuClip(boolean repeat) {
 		try {
 			closeMenuClip();
-			AudioInputStream inputStream = AudioSystem.getAudioInputStream(new File(AudioUtil.class.getResource("../gameSound/opening.wav").toURI()));
+			AudioInputStream inputStream = AudioSystem.getAudioInputStream(new File(AudioUtil.class.getResource("../gameSound/spacejam.wav").toURI()));
 	        menuClip = AudioSystem.getClip();
 			menuClip.open(inputStream);
 	        if (repeat) {
@@ -47,7 +47,7 @@ public class AudioUtil {
 	        		menuClip.loop(1);
 	        }
 		} catch (Exception ex) {
-			System.out.println("\nException while playing clip: " + ex.getLocalizedMessage());
+			System.out.println("\nException while playing menu clip: " + ex.getLocalizedMessage());
 		}
 	}
 	
@@ -61,7 +61,7 @@ public class AudioUtil {
 	public static void playGameClip(boolean repeat) {
 		try {
 			closeGameClip();
-			AudioInputStream inputStream = AudioSystem.getAudioInputStream(new File(AudioUtil.class.getResource("../gameSound/AlienMusic.wav").toURI()));
+			AudioInputStream inputStream = AudioSystem.getAudioInputStream(new File(AudioUtil.class.getResource("../gameSound/battle.wav").toURI()));
 	        gameClip = AudioSystem.getClip();
 			gameClip.open(inputStream);
 	        if (repeat) {
@@ -70,7 +70,7 @@ public class AudioUtil {
 	        		gameClip.loop(1);
 	        }
 		} catch (Exception ex) {
-			System.out.println("\nException while playing clip: " + ex.getLocalizedMessage());
+			System.out.println("\nException while playing game clip: " + ex.getLocalizedMessage());
 		}
 	}
 	
