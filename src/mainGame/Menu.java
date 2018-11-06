@@ -38,6 +38,7 @@ public class Menu {
 	private Image PowerHealth;
 	private Image PowerSpeed;
 	private Image PowerSlow;
+	private Image HUDshield1;
 	private int timer;
 	private Random r;
 	private ArrayList<Color> colorPick = new ArrayList<Color>();
@@ -85,7 +86,7 @@ public class Menu {
 		if (game.gameState == STATE.Menu) {
 			//display the background  
 			g.drawImage(img, 0, 0, Game.WIDTH, Game.HEIGHT, null);
-			//usng the handler, render the graphics
+			//using the handler, render the graphics
 			handler.render(g);
 			//create the font objects
 			Font font = new Font("Amoebic", 1, 100); //the title
@@ -127,18 +128,20 @@ public class Menu {
 			PowerHealth = getImage("/images/PickupHealth.png");
 			PowerLife = getImage("/images/PickupLife.png");
 			PowerSpeed = getImage("/images/ShrinkAbility0.png");
+			HUDshield1 = getImage("/images/shield1.png");
 			//Help text
 			g.setFont(font); //set the font with its parameters above 
 			g.setColor(Color.white);
 			g.drawString("Help", 900, 70); //this is the help text, yayy
 			//Instructions 
 			g.setFont(font);
-			g.drawString("  Player controls: WASD/Arrow Keys", 35, 180);
-			g.drawString("  Avoid enemies as difficulty increases", 35, 240);
-			g.drawString("  Boss levels occur every five levels", 35, 300);
-			g.drawString("  Players can pick up various powerups", 35, 360);
-			g.drawString("  Players can gain a new powerup every ten levels", 35, 420);
-			g.drawString("  Power-Ups:", 1100, 180);
+			g.drawString("  How to play:", 35, 160);
+			g.drawString("  Player controls: WASD/Arrow Keys", 35, 240);
+			g.drawString("  Avoid enemies as difficulty increases", 35, 300);
+			g.drawString("  Boss levels occur every five levels", 35, 360);
+			g.drawString("  Players can pick up various powerups", 35, 420);
+			g.drawString("  Players obtain a new powerup after every boss", 35, 480);
+			g.drawString("  Power-Ups:", 1100, 160);
 			g.drawString("		-  Screen freeze powerup", 1125, 240);
 			g.drawImage(PowerSlow, 1655, 205, 40, 40, null);
 			g.drawString("		-  Make players smaller", 1125, 300);
@@ -149,6 +152,9 @@ public class Menu {
 			g.drawImage(PowerHealth, 1430, 380, 40, 40, null);
 			g.drawString("		-  Extra Life", 1125, 480);
 			g.drawImage(PowerLife, 1370, 440, 40, 40, null);
+			g.drawString("  Helpful Tips:", 35, 700);
+			g.drawImage(HUDshield1, 55, 740, 40, 40, null);
+			g.drawString("  : Represents amount of Damage Resistance you have", 80, 780);
 			//Back button
 			g.setFont(font3);
 			g.setColor(Color.white);
