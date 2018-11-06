@@ -93,7 +93,10 @@ public class Player extends GameObject {
 		if (hud.health <= 0) {// player is dead, game over!
 			if (hud.getExtraLives() == 0) {
 				game.gm.resetGames();
-		//Save the player's score if it is a higher score than the high score
+				AudioUtil.closeGameClip();
+				AudioUtil.stopCurrentClip(); //needed or else the gameover sound wont play
+				AudioUtil.playClip("../gameSound/gameover.wav", false);
+				//Save the player's score if it is a higher score than the high score
 				try{
 						File set = new File("src/HighScores.txt");
 						BufferedWriter out = new BufferedWriter(new FileWriter(set));
@@ -108,7 +111,6 @@ public class Player extends GameObject {
 				
 				handler.clearPlayer();
 			}
- 
 			else if (hud.getExtraLives() > 0) {// has an extra life, game continues
 				hud.setExtraLives(hud.getExtraLives() - 1);
 				hud.restoreHealth();

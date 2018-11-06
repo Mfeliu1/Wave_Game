@@ -31,6 +31,7 @@ public class AudioUtil {
 	}	
 	
 	public static void stopCurrentClip() {
+		System.out.println("YOU JUST CALLED A CLIP TYPE: " + clip);
 		if (clip != null) {
 			clip.stop();
 			clip.close();
