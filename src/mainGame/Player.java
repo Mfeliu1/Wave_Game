@@ -17,10 +17,10 @@ import javax.imageio.ImageIO;
 import mainGame.Game.STATE;
 
 /**
- * The main player in the game
+ * Player object class w/ collision
  * 
  * @author Brandon Loehle 5/30/16
- *
+ * @Revised William Joseph 12/9/18
  */
 
 public class Player extends GameObject {
@@ -42,12 +42,11 @@ public class Player extends GameObject {
 		hud.player = this;
 		this.game = game;
 		this.damage = 2;
-		//Player Width and Height change the size of the image, use the same number for both 
-		//so the image scales properly
+		//Player Width and Height change the size of the image, use the same number for both for scaling
 		playerWidth = 32;
 		playerHeight = 32;
 		
-		if (img == null) {
+		if (img == null) { //Player Sprite
 			try {
 				img = ImageIO.read(new File("src/images/playership.png"));
 			} catch (Exception e){
@@ -56,23 +55,16 @@ public class Player extends GameObject {
 			}
 		
 
-	}// end of player initializer
+	}
 
 	@Override
-	public void tick() {
+	public void tick() {//Heartbeat of the Player class
 		this.x += velX;
 		this.y += velY;
 		x = Game.clamp(x, 0, Game.canvasSize.getWidth()  - playerWidth);
 		y = Game.clamp(y, 0, Game.canvasSize.getHeight() - playerHeight);
-		/**
-		 * Literallyyv JUST REMOVE THE TRRAAIIILLLL to make the player image to show up
-		 * - Katie Rosell, 10/25
-		 */
-		//The color of the player?
-		// add the trail that follows it
 		handler.addObject(new Trail(x, y, ID.Trail, playerColor, playerWidth, playerHeight, 0.05, this.handler));
-		playerColor = Color.white;
-		//The thing above is the trail code that needs to be deleted. 
+		playerColor = Color.white; //player trail code
 		collision();
 		checkIfDead();
 		
@@ -94,24 +86,24 @@ public class Player extends GameObject {
 			if (hud.getExtraLives() == 0) {
 				game.gm.resetGames();
 				AudioUtil.closeGameClip();
-				AudioUtil.stopCurrentClip(); //needed or else the gameover sound wont play
+				AudioUtil.stopCurrentClip(); //Clears audio for game over sound
 				AudioUtil.playClip("../gameSound/gameover.wav", false);
-				//Save the player's score if it is a higher score than the high score
-				try{
+				
+				try{//Saves Highscore
 						File set = new File("src/HighScores.txt");
 						BufferedWriter out = new BufferedWriter(new FileWriter(set));
 						out.write(Integer.toString(HUD.thisHighScore()));
 						out.close();				
-					} //end try
+					}
 					catch (IOException e) {
 						System.out.println(e);
 						System.exit(1);
-					} //end catch
+					}
 				game.gameState = STATE.GameOver;
 				
 				handler.clearPlayer();
 			}
-			else if (hud.getExtraLives() > 0) {// has an extra life, game continues
+			else if (hud.getExtraLives() > 0) {//Player has extra life
 				hud.setExtraLives(hud.getExtraLives() - 1);
 				hud.restoreHealth();
 			}
@@ -127,10 +119,10 @@ public class Player extends GameObject {
 		for (int i = 0; i < handler.object.size(); i++) {
 			GameObject tempObject = handler.object.get(i);
 
-			if (Enemy.class.isInstance(tempObject)){// tempObject is an enemy
+			if (Enemy.class.isInstance(tempObject)){//tempObject is an enemy
 
 				// collision code
-				if (getBounds().intersects(tempObject.getBounds())) {// player hit an enemy
+				if (getBounds().intersects(tempObject.getBounds())) {//Player, Enemy Collision
 					AudioUtil.playClip("../gameSound/explosion.wav", false);
 					hud.health -= damage;
 					playerColor = Color.RED;
@@ -138,8 +130,7 @@ public class Player extends GameObject {
 				}
 			}
 			if (tempObject.getId() == ID.EnemyBoss) {
-				// Allows player time to get out of upper area where they will get hurt once the
-				// boss starts moving
+				//Gives players safety window to move from boss restricted region
 				if (this.y <= 138 && tempObject.isMoving) {
 					AudioUtil.playClip("../gameSound/damaged.wav", false);
 					hud.health -= 2;
@@ -147,7 +138,7 @@ public class Player extends GameObject {
 				}
 			}
 			
-			if (Pickup.class.isInstance(tempObject)) {
+			if (Pickup.class.isInstance(tempObject)) {//Power ups pickup
 			if (tempObject.getId() == ID.PickupHealth && (getBounds().intersects(tempObject.getBounds()))) {
 				hud.restoreHealth();
 				handler.removeObject(tempObject);
@@ -183,40 +174,40 @@ public class Player extends GameObject {
 			}
 			}
 		}
-		}catch(NullPointerException e){
-			System.err.println("ahh looks like you done removed an object while checking the object");
+		}catch(NullPointerException e){//Catches object glitches/errors
+			System.err.println("Object removed while checking object");
 		}
 	}
 	
 	@Override
-	public void render(Graphics g) {
+	public void render(Graphics g) {//renders player
 		g.setColor(playerColor);
 		g.fillRect((int) x, (int) y, playerWidth, playerHeight);
 		//g.drawImage(img, (int) this.x, (int) this.y, playerWidth, playerHeight, null);
 	}
 
 	@Override
-	public Rectangle getBounds() {
-		return new Rectangle((int) this.x, (int) this.y, playerWidth,playerHeight);//was this,this,60,60 -bpm
+	public Rectangle getBounds() {//creates hitbox
+		return new Rectangle((int) this.x, (int) this.y, playerWidth,playerHeight);
 	}
-	//how mucvh damage has the player taken?
-	public void setDamage(double d) {
+	
+	public void setDamage(double d) {//set players damage
 		this.damage = d;
 	}
-	//
-	public void setPlayerSize(int size) {
+	
+	public void setPlayerSize(int size) {//changes player size
 		this.playerWidth = size;
 		this.playerHeight = size;
 	}
 
-	public int getPlayerWidth() {
+	public int getPlayerWidth() {//get player width
 		return playerWidth;
 	}
-	public int getPlayerHeight(){
+	public int getPlayerHeight(){//get player width
 		return this.playerHeight;
 	}
 
-	public double getDamage() {
+	public double getDamage() {//get damage done
 		return damage;
 	}
 	
