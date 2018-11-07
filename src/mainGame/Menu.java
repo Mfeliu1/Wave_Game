@@ -155,6 +155,8 @@ public class Menu {
 			g.drawString("  Helpful Tips:", 35, 700);
 			g.drawImage(HUDshield1, 55, 740, 40, 40, null);
 			g.drawString("  : Represents amount of Damage Resistance you have", 80, 780);
+			g.drawString("  Press E or Enter to activate abilities", 35, 860);
+			g.drawString("  Git Gud", 35, 940);
 			//Back button
 			g.setFont(font3);
 			g.setColor(Color.white);
