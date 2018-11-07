@@ -25,6 +25,7 @@ public class HUD {
 	private int level = 0;
 
 	private boolean regen = false;
+	private String regenString = "Disabled";
 	private int timer = 60;
 	private int healthBarWidth = 400;
 	private int healthBarModifier = 2;
@@ -84,13 +85,15 @@ public class HUD {
 
 		g.setFont(font);
 
+		regenString = regen ? "Enabled" : "Disabled";
+
 		g.drawString("Score: " + score, 15, 25);
 		g.drawString("Level: " + level, 15, 75);
 		g.drawString("Extra Lives: " + extraLives, 15, 125);
 		g.drawString("Level Progress: " + levelProgress + "%", 15, 175);
 		g.drawString("Health: " + (int)health + "/" + (int)healthMax, 15, 1050);
 		g.drawString("Player Size: " + player.getPlayerHeight(), 15, 225);
-		g.drawString("Regeneration: " + regen, 15, 275);
+		g.drawString("Regeneration: " + regenString, 15, 275);
 		g.drawString("High Score: " + highscore, 1500, 25);
 		if ((2 -player.getDamage()) == 0.0) {
 			g.drawImage(HUDshield1, 440, 1010, 40, 40, null);
