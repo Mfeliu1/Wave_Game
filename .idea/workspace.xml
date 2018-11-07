@@ -1,0 +1,1180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Wave Game:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4bae7947-e298-4a12-af85-27600bc51a10" name="Default Changelist" comment="remove .class files from repo">
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/AudioUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/BossEye.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/Enemy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/EnemyBasic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/EnemyBoss.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/EnemyBossBomb.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/EnemyBossBombBullet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/EnemyBossBullet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/EnemyBurst.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/EnemyBurstWarning.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/EnemyFast.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/EnemyRocketBoss.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/EnemyRocketBossMissile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/EnemyShooter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/EnemyShooterBullet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/EnemyShooterMover.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/EnemyShooterSharp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/EnemySmart.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/EnemySweep.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/Game$GAME_AUDIO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/Game$STATE.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/Game.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/GameManager$CURRENTGAME.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/GameManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/GameMode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/GameObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/GameOver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/HUD.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/Handler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/ID.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/KeyInput$InputAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/KeyInput.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/Level.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/LevelText.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/Menu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/MenuFireworks.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/MouseListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/Pickup.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/PickupFreeze.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/PickupHealth.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/PickupLife.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/PickupScore.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/PickupSize.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/Trail.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/UpgradeScreen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/Upgrades.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/Waves.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/Window.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mainGame/spaceship1Blue.png" beforeDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/bin/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Wave_Game$Game.ic" NAME="Game Coverage Results" MODIFIED="1539196169844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mainGame.*</FILTER>
+    </SUITE>
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1692389168">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="38" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.11" value="2" />
+          <entry key="project.open.time.12" value="2" />
+          <entry key="project.open.time.13" value="4" />
+          <entry key="project.open.time.14" value="8" />
+          <entry key="project.open.time.15" value="4" />
+          <entry key="project.open.time.16" value="6" />
+          <entry key="project.open.time.17" value="3" />
+          <entry key="project.open.time.176" value="1" />
+          <entry key="project.open.time.18" value="3" />
+          <entry key="project.open.time.19" value="1" />
+          <entry key="project.open.time.29" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.42" value="1" />
+          <entry key="project.open.time.57" value="1" />
+          <entry key="project.opened" value="39" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="77" />
+          <entry key="jpg" value="3" />
+          <entry key="png" value="40" />
+          <entry key="txt" value="1" />
+          <entry key="xml" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Image" value="43" />
+          <entry key="JAVA" value="77" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="XML" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="4162" />
+          <entry key="txt" value="931" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="4162" />
+          <entry key="PLAIN_TEXT" value="931" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Wave Game" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mainGame/Player.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1479">
+              <caret line="65" column="43" selection-start-line="65" selection-start-column="43" selection-end-line="65" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mainGame/PickupSize.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="348">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mainGame/PickupScore.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="348">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/images/levelskipability.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mainGame/PickupLife.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="348">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mainGame/GameObject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="290">
+              <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/mainGame/Window.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="986">
+              <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mainGame/HUD.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="551">
+              <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mainGame/Game.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="7424">
+              <caret line="270" column="5" selection-start-line="270" selection-start-column="5" selection-end-line="270" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mainGame/GameMode.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="232">
+              <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Level</find>
+      <find>CurrentEnem</find>
+      <find>checkifboss</find>
+      <find>checkI</find>
+      <find>b</find>
+      <find>bar</find>
+      <find>id</find>
+      <find>checkIfBossDead</find>
+      <find>heal</find>
+      <find>%5</find>
+      <find>5</find>
+      <find>lev</find>
+      <find>%</find>
+      <find>level</find>
+      <find>bosslim</find>
+      <find>contains</find>
+      <find>health</find>
+      <find>remove</find>
+      <find>do noth</find>
+      <find>resetM</find>
+      <find>object</find>
+      <find>player</find>
+      <find>help</find>
+      <find>println</find>
+      <find>Game.</find>
+      <find>move</find>
+      <find>key</find>
+      <find>clamp</find>
+      <find>regen</find>
+    </findStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/src/mainGame</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="jrgermain &lt;jrgermain@github.com&gt;" />
+        <option value="jrgermain" />
+      </list>
+    </option>
+    <option name="UPDATE_TYPE" value="REBASE" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/mainGame/Enemy.java" />
+        <option value="$PROJECT_DIR$/src/mainGame/EnemyRocketBoss.java" />
+        <option value="$PROJECT_DIR$/src/mainGame/Waves.java" />
+        <option value="$PROJECT_DIR$/src/mainGame/EnemyBoss.java" />
+        <option value="$PROJECT_DIR$/src/mainGame/Menu.java" />
+        <option value="$PROJECT_DIR$/src/mainGame/EnemyRocketBossMissile.java" />
+        <option value="$PROJECT_DIR$/src/mainGame/EnemyShooterSharp.java" />
+        <option value="$PROJECT_DIR$/src/mainGame/EnemyBossBomb.java" />
+        <option value="$PROJECT_DIR$/src/mainGame/Handler.java" />
+        <option value="$PROJECT_DIR$/src/mainGame/Player.java" />
+        <option value="$PROJECT_DIR$/src/mainGame/Level.java" />
+        <option value="$PROJECT_DIR$/src/mainGame/MouseListener.java" />
+        <option value="$PROJECT_DIR$/src/mainGame/AudioUtil.java" />
+        <option value="$PROJECT_DIR$/src/mainGame/Game.java" />
+        <option value="$PROJECT_DIR$/src/mainGame/HUD.java" />
+        <option value="$PROJECT_DIR$/src/mainGame/Window.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="274" />
+    <option name="y" value="114" />
+    <option name="width" value="1600" />
+    <option name="height" value="1228" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Wave Game" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Wave_Game" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Wave Game" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Wave_Game" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Wave Game" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Wave_Game" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+              <item name="libraries" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Wave Game" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Wave_Game" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Wave Game" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Wave_Game" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Wave Game" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Wave_Game" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="mainGame" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Wave Game" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Wave_Game" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Wave Game" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Jamepad.jar!/" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.gitignore</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/mainGame/HUD.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/.DS_Store</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/.gitignore</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/gameSound/1up.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/gameSound/MissileSound.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/gameSound/battle.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/gameSound/coin.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/gameSound/damaged.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/gameSound/explosion.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/gameSound/freeze1.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/gameSound/freeze2.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/gameSound/gameover.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/gameSound/laser.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/gameSound/opening.mp3</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/gameSound/pause.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/gameSound/powerup.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/gameSound/spacejam.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/.DS_Store</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/Background.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/EnemyBoss.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/EnemyBossBlack.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/EnemyBossLightBlue.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/EnemyBossRed.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/EnemyBossYellow.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/PickupCoin.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/PickupHealth.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/PickupLife-OLD.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/PickupLife.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/PickupSpeed.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/Rocket_Boss 2.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/Rocket_Boss.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/Rocket_BossRed.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/Rocket_Boss_Off 2.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/Rocket_Boss_Off.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/ShrinkAbility0.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/asteroid.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/bosseye.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/cartoonspace.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/cartoonspace2.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/clearscreenability.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/decreaseplayersize.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/dr.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/earthnight4.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/extralife.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/freezeAbilitySnowflake.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/freezetimeability.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/healthincrease.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/healthregeneration.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/improveddamageresistance.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/levelskipability.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/playership.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/shield1.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/shield2.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/shield3.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/shield4.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/shield5.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/slowmotionability.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/space2.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/space3.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/spaceship1.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/spaceship1Blue.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/spaceship1Red.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/spaceship2.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/spaceship3.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/spaceship3orange.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/spaceship3purple.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/images/speedboost.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/AudioUtil.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/BossEye.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/Enemy.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/EnemyBasic.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/EnemyBoss.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/EnemyBossBomb.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/EnemyBossBombBullet.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/EnemyBossBullet.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/EnemyBurst.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/EnemyBurstWarning.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/EnemyFast.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/EnemyRocketBoss.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/EnemyRocketBossMissile.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/EnemyShooter.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/EnemyShooterBullet.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/EnemyShooterMover.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/EnemyShooterSharp.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/EnemySmart.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/EnemySweep.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/Game$GAME_AUDIO.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/Game$STATE.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/Game.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/GameManager$CURRENTGAME.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/GameManager.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/GameMode.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/GameObject.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/GameOver.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/HUD.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/Handler.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/ID.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/KeyInput$InputAction.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/KeyInput.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/Level.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/LevelText.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/Menu.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/MenuFireworks.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/MouseListener.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/Pickup.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/PickupFreeze.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/PickupHealth.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/PickupLife.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/PickupScore.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/PickupSize.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/Player.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/Trail.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/UpgradeScreen.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/Upgrades.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/Waves.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/Window.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/mainGame/spaceship1Blue.png</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="mainGame.Game" />
+      <module name="Wave Game" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mainGame.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Game" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4bae7947-e298-4a12-af85-27600bc51a10" name="Default Changelist" comment="" />
+      <created>1538611312011</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1538611312011</updated>
+      <workItem from="1538611313508" duration="1187000" />
+      <workItem from="1538621993951" duration="99000" />
+      <workItem from="1538622140172" duration="9000" />
+      <workItem from="1538679992112" duration="2612000" />
+      <workItem from="1538698157596" duration="51000" />
+      <workItem from="1538701756016" duration="21000" />
+      <workItem from="1538757463252" duration="1516000" />
+      <workItem from="1539018414600" duration="2773000" />
+      <workItem from="1539124460717" duration="3219000" />
+      <workItem from="1539186216313" duration="9837000" />
+      <workItem from="1539198378126" duration="246000" />
+      <workItem from="1539213542849" duration="1583000" />
+      <workItem from="1539223405695" duration="1149000" />
+      <workItem from="1539225464308" duration="1571000" />
+      <workItem from="1539227074918" duration="204000" />
+      <workItem from="1539358605732" duration="915000" />
+      <workItem from="1539486720424" duration="659000" />
+      <workItem from="1539563068595" duration="612000" />
+      <workItem from="1539744105840" duration="572000" />
+      <workItem from="1539908688081" duration="497000" />
+      <workItem from="1540231504382" duration="165000" />
+      <workItem from="1540254342572" duration="591000" />
+      <workItem from="1540334260691" duration="2728000" />
+      <workItem from="1540404364043" duration="719000" />
+      <workItem from="1540499684550" duration="771000" />
+      <workItem from="1540568748887" duration="60000" />
+      <workItem from="1540943642000" duration="199000" />
+      <workItem from="1540960306634" duration="4000" />
+      <workItem from="1540967601683" duration="23000" />
+      <workItem from="1541118767723" duration="3337000" />
+      <workItem from="1541178251628" duration="1754000" />
+      <workItem from="1541183670754" duration="115000" />
+      <workItem from="1541214174598" duration="114000" />
+      <workItem from="1541380470924" duration="32000" />
+      <workItem from="1541387177441" duration="1152000" />
+      <workItem from="1541435308443" duration="1773000" />
+      <workItem from="1541440865125" duration="3533000" />
+      <workItem from="1541606298020" duration="1224000" />
+      <workItem from="1541614846953" duration="254000" />
+    </task>
+    <task id="LOCAL-00001" summary="add getHealth method">
+      <created>1539019627112</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1539019627113</updated>
+    </task>
+    <task id="LOCAL-00002" summary="change window size to 90% of screen size to prevent overlapping taskbar(etc.)">
+      <created>1539125432547</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1539125432547</updated>
+    </task>
+    <task id="LOCAL-00003" summary="tweak window size">
+      <created>1539127471773</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1539127471773</updated>
+    </task>
+    <task id="LOCAL-00004" summary="remove redundant method I created earlier">
+      <created>1539187217599</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1539187217599</updated>
+    </task>
+    <task id="LOCAL-00005" summary="fix clearEnemies">
+      <created>1539193486740</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1539193486740</updated>
+    </task>
+    <task id="LOCAL-00006" summary="start to reimplement way enemies are removed">
+      <created>1539195915118</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1539195915118</updated>
+    </task>
+    <task id="LOCAL-00007" summary="remove reference to unused method">
+      <created>1539197279827</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1539197279827</updated>
+    </task>
+    <task id="LOCAL-00008" summary="unbold text and use standard style convention for font face">
+      <created>1539227225612</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1539227225612</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fix problems with mac fix breaking project on other operating systems">
+      <created>1540336511566</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1540336511566</updated>
+    </task>
+    <task id="LOCAL-00010" summary="make canvas size dependent on screen aspect ratio&#10;&#10;this stops game from looking cut off on 16:10 screens">
+      <created>1541125632866</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1541125632866</updated>
+    </task>
+    <task id="LOCAL-00011" summary="add jamepad library to idea project structure">
+      <created>1541178467815</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1541178467815</updated>
+    </task>
+    <task id="LOCAL-00012" summary="add jamepad library to idea project structure">
+      <created>1541178516603</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1541178516603</updated>
+    </task>
+    <task id="LOCAL-00013" summary="make pickup life icon more intuitive">
+      <created>1541436619951</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1541436619951</updated>
+    </task>
+    <task id="LOCAL-00014" summary="make pickup life icon more intuitive">
+      <created>1541436979945</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1541436979945</updated>
+    </task>
+    <task id="LOCAL-00015" summary="fix clamp method">
+      <created>1541442065932</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1541442065932</updated>
+    </task>
+    <task id="LOCAL-00016" summary="make regen in hud print enabled/disabled instead of true/false">
+      <created>1541607098003</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1541607098003</updated>
+    </task>
+    <task id="LOCAL-00017" summary="add potential macOS fullscreen fix">
+      <created>1541607233214</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1541607233214</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="47880000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-2" y="0" width="3204" height="1740" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49949443" visible="true" weight="0.3279846" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Favorites" order="4" sideWeight="0.50050557" side_tool="true" weight="0.24163449" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4985694" weight="0.3284345" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49133503" weight="0.26987308" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49422336" visible="true" weight="0.31462926" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50577664" side_tool="true" visible="true" weight="0.31462926" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49743262" weight="0.3293011" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Maven Projects" order="5" />
+      <window_info anchor="right" id="Coverage" order="6" side_tool="true" visible="true" weight="0.50969666" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <MESSAGE value="add getHealth method" />
+    <MESSAGE value="change window size to 90% of screen size to prevent overlapping taskbar(etc.)" />
+    <MESSAGE value="tweak window size" />
+    <MESSAGE value="remove redundant method I created earlier" />
+    <MESSAGE value="fix clearEnemies" />
+    <MESSAGE value="start to reimplement way enemies are removed" />
+    <MESSAGE value="remove reference to unused method" />
+    <MESSAGE value="unbold text and use standard style convention for font face" />
+    <MESSAGE value="fix problems with mac fix breaking project on other operating systems" />
+    <MESSAGE value="make canvas size dependent on screen aspect ratio&#10;&#10;this stops game from looking cut off on 16:10 screens" />
+    <MESSAGE value="add jamepad library to idea project structure" />
+    <MESSAGE value="make pickup life icon more intuitive" />
+    <MESSAGE value="fix clamp method" />
+    <MESSAGE value="make regen in hud print enabled/disabled instead of true/false" />
+    <MESSAGE value="add potential macOS fullscreen fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="add potential macOS fullscreen fix" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/mainGame/EnemyShooterSharp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1566">
+          <caret line="62" column="42" selection-start-line="62" selection-start-column="42" selection-end-line="62" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mainGame/EnemyBossBomb.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-26216" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mainGame/AudioUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mainGame/KeyInput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mainGame/UpgradeScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mainGame/Waves.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5191">
+          <caret line="187" column="22" selection-start-line="187" selection-start-column="16" selection-end-line="187" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mainGame/Level.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2552">
+          <caret line="90" column="78" selection-start-line="90" selection-start-column="78" selection-end-line="90" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mainGame/MouseListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3480">
+          <caret line="126" column="21" selection-start-line="126" selection-start-column="21" selection-end-line="126" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mainGame/Menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4640">
+          <caret line="172" selection-start-line="172" selection-end-line="172" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/libraries/Jamepad.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/libraries/AppleJavaExtensions.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/dodgeball.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/whiteGoodman.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/background.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/avgJoe.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/bosseye.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/clearscreenability.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/decreaseplayersize.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/dr.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/EnemyBoss.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/EnemyBoss.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/freezeAbilitySnowflake.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/gs.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/freezetimeability.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/healthincrease.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/healthregeneration.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/improveddamageresistance.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/levelskipability.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/slowmotionability.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/speedboost.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/extralife.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/PickupSpeed.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/PickupHealth.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mainGame/Handler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="21" column="7" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/images/PickupLife-OLD.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/images/PickupHealth.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/Rocket_Boss.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/ShrinkAbility0.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/PickupCoin.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/images/PickupLife.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mainGame/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1479">
+          <caret line="65" column="43" selection-start-line="65" selection-start-column="43" selection-end-line="65" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mainGame/PickupSize.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mainGame/PickupScore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/images/levelskipability.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mainGame/PickupLife.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mainGame/GameObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mainGame/HUD.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mainGame/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7424">
+          <caret line="270" column="5" selection-start-line="270" selection-start-column="5" selection-end-line="270" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mainGame/GameMode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mainGame/Window.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>Wave Game:jar</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>scala-sdk-2.12.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>11</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Wave Game</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Jamepad</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
