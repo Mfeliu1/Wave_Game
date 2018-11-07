@@ -18,7 +18,7 @@ public class AudioUtil {
 			AudioInputStream inputStream = AudioSystem.getAudioInputStream(new File(AudioUtil.class.getResource(path).toURI()));
 	        clip = AudioSystem.getClip();
 			clip.open(inputStream);
-			((FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN)).setValue(6f);
+			((FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN)).setValue(5f);
 	        if (repeat) {
 	        		clip.loop(Clip.LOOP_CONTINUOUSLY);
 	        } else {
@@ -44,6 +44,7 @@ public class AudioUtil {
 			closeMenuClip();
 			AudioInputStream inputStream = AudioSystem.getAudioInputStream(new File(AudioUtil.class.getResource("../gameSound/spacejam.wav").toURI()));
 	        menuClip = AudioSystem.getClip();
+	        ((FloatControl) gameClip.getControl(FloatControl.Type.MASTER_GAIN)).setValue(-2f);
 			menuClip.open(inputStream);
 	        if (repeat) {
 	        		menuClip.loop(Clip.LOOP_CONTINUOUSLY);
@@ -68,7 +69,7 @@ public class AudioUtil {
 			AudioInputStream inputStream = AudioSystem.getAudioInputStream(new File(AudioUtil.class.getResource("../gameSound/battle.wav").toURI()));
 	        gameClip = AudioSystem.getClip();
 			gameClip.open(inputStream);
-			((FloatControl) gameClip.getControl(FloatControl.Type.MASTER_GAIN)).setValue(-5f);
+			((FloatControl) gameClip.getControl(FloatControl.Type.MASTER_GAIN)).setValue(-8f);
 	        if (repeat) {
 	        		gameClip.loop(Clip.LOOP_CONTINUOUSLY);
 	        } else {
