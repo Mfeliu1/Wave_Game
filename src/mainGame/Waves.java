@@ -121,8 +121,8 @@ public class Waves implements GameMode {
 			t = new LevelText(Game .WIDTH / 2 - 675, Game.HEIGHT / 2 - 200, "Level " + this.currentLevelNum + (this.currentLevelNum%5 == 0 ? ": Boss Level!!!":""), ID.Levels1to10Text);
 			handler.addObject(t);
 			
-			double tempx = Math.random()*Game.WIDTH;
-			double tempy = Math.random()*Game.HEIGHT;
+			double tempx = (Math.random()*(Game.WIDTH-300))+150; 			
+			double tempy = (Math.random()*(Game.HEIGHT-300))+150;
 			switch ((int)(Math.random()*5)){
 			case 0: handler.addObject(new PickupSize(tempx,tempy));break;
 			case 1: handler.addObject(new PickupHealth(tempx,tempy));break;
