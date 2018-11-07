@@ -95,22 +95,17 @@ public class HUD {
 		g.drawString("Player Size: " + player.getPlayerHeight(), 15, 225);
 		g.drawString("Regeneration: " + regenString, 15, 275);
 		g.drawString("High Score: " + highscore, 1500, 25);
-		if ((2 -player.getDamage()) == 0.0) {
-			g.drawImage(HUDshield1, 440, 1010, 40, 40, null);
-			g.drawString("" + (2 -player.getDamage()), 500, 1040);
-		} else if ((2 -player.getDamage()) == 0.25) { 
-			g.drawImage(HUDshield2, 440, 1010, 40, 40, null);
-			g.drawString("" + (2 -player.getDamage()), 500, 1040);
-		} else if ((2 -player.getDamage()) == 0.50) {
-			g.drawImage(HUDshield3, 440, 1010, 40, 40, null);
-			g.drawString("" + (2 -player.getDamage()), 500, 1040);
-		} else if ((2 -player.getDamage()) == 0.75) {
-			g.drawImage(HUDshield4, 440, 1010, 40, 40, null);
-			g.drawString("" + (2 -player.getDamage()), 500, 1040);
-		} else if ((2 -player.getDamage()) > 0.76) {
-			g.drawImage(HUDshield5, 440, 1010, 40, 40, null);
-			g.drawString("" + (2 -player.getDamage()), 500, 1040);
-		} 
+		
+		Image shieldImg; 
+		switch ((int)((2 -player.getDamage())*100)){
+			case 0: shieldImg =  HUDshield1;break;
+			case 25: shieldImg =  HUDshield2;break;
+			case 50: shieldImg =  HUDshield3;break;
+			case 75: shieldImg =  HUDshield4;break;
+			default: shieldImg = HUDshield5;break;
+		}
+			g.drawImage(shieldImg, healthBarWidth+40, 1010, 40, 40, null);
+			g.drawString("" + (2 -player.getDamage()),healthBarWidth+100, 1040);
 
 		
 		
