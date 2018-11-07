@@ -25,22 +25,12 @@ public class Window extends JFrame{
 			try {
 				com.apple.eawt.FullScreenUtilities.setWindowCanFullScreen(this, true);
 				com.apple.eawt.Application.getApplication().requestToggleFullScreen(this);
-
-				try {
-					Thread.sleep(5000);
-				} catch (InterruptedException e) {
-					System.err.println("Snooze");
-				} finally {
-					com.apple.eawt.Application.getApplication().requestToggleFullScreen(this);
-				}
-
 			} catch (Exception e) {
 				System.err.println("Failed to load apple extensions package");
 			}
 		} else {
 			setUndecorated(true);
 		}
-
 		add(game);
 		setVisible(true);
 		setExtendedState(JFrame.MAXIMIZED_BOTH);
