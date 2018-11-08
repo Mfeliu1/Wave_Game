@@ -26,16 +26,14 @@ public class Game extends Canvas{
 
 	private static final long serialVersionUID = 1L;
 
-	static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-	public static final double aspectRatio = screenSize.getWidth()/screenSize.getHeight();
+	private static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+	private static final double aspectRatio = screenSize.getWidth()/screenSize.getHeight();
+	private static int WindowWidth = (int) (1 * screenSize.getWidth());
+	private static int WindowHeight = (int) (1 *screenSize.getHeight());
+
 	public static final Dimension canvasSize = canvasSize();
-	static int WindowWidth = (int) (1 * screenSize.getWidth());
-	static int WindowHeight = (int) (1 *screenSize.getHeight());
 	public static final Dimension windowSize = new Dimension(WindowWidth,WindowHeight);
-	public static final int WIDTH  = (int)canvasSize.getWidth();
-	public static final int HEIGHT = (int)canvasSize.getHeight();
-	public static final int high = highScore();
-	
+
 	private boolean running = false;
 	private HUD hud;
 	private Menu menu;
@@ -55,6 +53,9 @@ public class Game extends Canvas{
 	//---------------------------------------------------------------------------------
 	
 	public static int TEMP_COUNTER;
+	public static final int WIDTH  = (int)canvasSize.getWidth();
+	public static final int HEIGHT = (int)canvasSize.getHeight();
+
 	public STATE gameState = STATE.Menu;
 	public GAME_AUDIO gameCurrentClip = GAME_AUDIO.Menu;
 	public boolean paused = false;
@@ -287,7 +288,7 @@ public class Game extends Canvas{
 		return image;
 	}
 
-	public static Dimension canvasSize() {
+	private static Dimension canvasSize() {
 		// Choose canvas size that conforms to screen aspect ratio
 		if (aspectRatio > 1.7) {
 			// Screen aspect ratio is 16:9 or wider
