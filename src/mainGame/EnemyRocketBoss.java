@@ -33,8 +33,8 @@ public class EnemyRocketBoss extends GameObject {
 		super(x, y, id);
 		this.player = p;
 		if(img == null) {
-		img = getImage("/images/Rocket_Boss.png");
-		imgOff = getImage("/images/Rocket_Boss_Off.png");}
+		img = getImage("/images/Rocket_Boss_White.png");
+		imgOff = getImage("/images/Rocket_Boss_Off_White.png");}
 		handler = h;
 		this.hud = hud;
 		this.mode = mode; 

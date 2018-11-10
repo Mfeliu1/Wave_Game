@@ -30,7 +30,7 @@ public class EnemySmart extends Enemy {
 		this.speed = speed;
 		if (img == null) {
 		try {
-			img = ImageIO.read(new File("src/images/spaceship3.png"));
+			img = ImageIO.read(new File("src/images/spaceship3blue.png"));
 		} catch (Exception e){
 			e.printStackTrace();
 		}}

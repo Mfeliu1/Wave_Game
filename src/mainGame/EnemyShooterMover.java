@@ -48,7 +48,7 @@ public class EnemyShooterMover extends Enemy {
 		this.bulletSpeed = bulletSpeed;
 		if (img == null) {
 		try {
-			img = ImageIO.read(new File("src/images/spaceship1Blue.png"));
+			img = ImageIO.read(new File("src/images/spaceship2_big.png"));
 		} catch (Exception e){
 			e.printStackTrace();
 		}
