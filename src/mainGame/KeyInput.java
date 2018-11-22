@@ -90,6 +90,10 @@ public class KeyInput extends KeyAdapter {
 		int key = e.getKeyCode();
 		this.speed = Player.playerSpeed;
 
+		if(key == KeyEvent.VK_T && game.gameState != STATE.Game) {
+			game.playAfricaByToto();
+		}
+
 		// finds what key strokes associate with Player
 		for (int i = 0; i < handler.object.size(); i++) {
 			GameObject tempObject = handler.object.get(i);
@@ -103,7 +107,6 @@ public class KeyInput extends KeyAdapter {
 					AudioUtil.playClip("../gameSound/pause.wav", false);
 					AudioUtil.pauseGameClip();
 				}
-				
 				if(key == KeyEvent.VK_U){
 					game.gameState = STATE.Upgrade;
 				}

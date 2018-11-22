@@ -59,6 +59,9 @@ public class Game extends Canvas{
 	public STATE gameState = STATE.Menu;
 	public GAME_AUDIO gameCurrentClip = GAME_AUDIO.Menu;
 	public boolean paused = false;
+
+	public boolean africa = false;
+
 	/**
 	 * Used to switch between each of the screens shown to the user
 	 */
@@ -88,7 +91,7 @@ public class Game extends Canvas{
 		this.addKeyListener(new KeyInput(this.handler, this, this.hud, this.player, this.upgrades));
 		this.addMouseListener(mouseListener);
 		AudioUtil.closeGameClip();
-		AudioUtil.playMenuClip(true);
+		AudioUtil.playMenuClip(true, false);
 
 		@SuppressWarnings("unused")
 		Window window = new Window((int) windowSize.getWidth(), (int)windowSize.getHeight(), "Wave Game", this);
@@ -176,7 +179,7 @@ public class Game extends Canvas{
 			if (this.gameCurrentClip != GAME_AUDIO.Menu) {
 				this.gameCurrentClip = GAME_AUDIO.Menu;
 				AudioUtil.closeGameClip();
-				AudioUtil.playMenuClip(true);
+				AudioUtil.playMenuClip(true, false);
 			}
 			menu.tick();
 		} 
@@ -300,5 +303,11 @@ public class Game extends Canvas{
 			// Screen aspect ratio is somewhere in between, probably 16:10
 			return new Dimension(1920,1200);
 		}
+	}
+
+	public void playAfricaByToto() {
+		africa = !africa;
+		AudioUtil.closeMenuClip();
+		AudioUtil.playMenuClip(true, africa);
 	}
 }

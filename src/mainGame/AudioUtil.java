@@ -39,10 +39,14 @@ public class AudioUtil {
 		}
 	}
 	
-	public static void playMenuClip(boolean repeat) {
+	public static void playMenuClip(boolean repeat, boolean africa) {
 		try {
 			closeMenuClip();
-			AudioInputStream inputStream = AudioSystem.getAudioInputStream(new File(AudioUtil.class.getResource("../gameSound/spacejam.wav").toURI()));
+
+			// If africa mode is enabled, use the africa clip for the menu
+			String clip = africa ? "../gameSound/africa.wav" : "../gameSound/spacejam.wav";
+
+			AudioInputStream inputStream = AudioSystem.getAudioInputStream(new File(AudioUtil.class.getResource(clip).toURI()));
 	        menuClip = AudioSystem.getClip();
 	        ((FloatControl) gameClip.getControl(FloatControl.Type.MASTER_GAIN)).setValue(-2f);
 			menuClip.open(inputStream);
