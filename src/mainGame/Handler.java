@@ -15,6 +15,7 @@ public class Handler {
 	ArrayList<GameObject> object = new ArrayList<GameObject>();
 	ArrayList<Pickup> pickups = new ArrayList<Pickup>();
 	public int timer = 0;
+	private Themes theme = Themes.Space;
 	
 	/**
 	 * Updates each entity in the game by looping through each ArrayList and calling
@@ -150,5 +151,12 @@ public class Handler {
 		return pickups.size();
 	}
 
+	public void setTheme(Themes t) {
+		this.theme = t;
+	}
+
+	public Themes getTheme() {
+	    return this.theme;
+    }
 
 }
