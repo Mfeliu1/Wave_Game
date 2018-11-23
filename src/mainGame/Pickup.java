@@ -11,7 +11,7 @@ import java.net.URL;
 import javax.imageio.ImageIO;
 
 /**
- * TO BE IMPLEMENTED - class for pickups that affect the player, such as health
+ * class for pickups that affect the player, such as health
  * boost, speed boost, etc...
  * 
  * @author Brandon Loehle 5/30/16

@@ -88,7 +88,7 @@ public class UpgradeScreen {
 			imagePaths.add(paths[i]);
 		}
 	}
-	//
+	
 	public int getIndex(int maxIndex) {
 		int index = r.nextInt(maxIndex);
 		if (index == 1 && game.player.getPlayerHeight() <= 3) {

@@ -39,6 +39,7 @@ public class HUD {
 	public int levelProgress;
 	public Player player;
 	
+	//calls background and each of the damage resistance shields
 	private Image img;
 	private Image HUDshield1;
 	private Image HUDshield2;
@@ -46,6 +47,7 @@ public class HUD {
 	private Image HUDshield4;
 	private Image HUDshield5;
 
+	//game uses tick method to check amount of health player has and update health bar display. Also updates score using this method
 	public void tick() {
 		health = Game.clamp(health, 0, health);
 
@@ -87,6 +89,7 @@ public class HUD {
 
 		regenString = regen ? "Enabled" : "Disabled";
 
+		//displays elements of the HUD
 		g.drawString("Score: " + score, 15, 25);
 		g.drawString("Level: " + level, 15, 75);
 		g.drawString("Extra Lives: " + extraLives, 15, 125);
@@ -96,6 +99,7 @@ public class HUD {
 		g.drawString("Regeneration: " + regenString, 15, 275);
 		g.drawString("High Score: " + highscore, 1500, 25);
 		
+		//this switch statement updates the damage resistance sprite on the HUD
 		Image shieldImg; 
 		switch ((int)((2 -player.getDamage())*100)){
 			case 0: shieldImg =  HUDshield1;break;
@@ -104,17 +108,19 @@ public class HUD {
 			case 75: shieldImg =  HUDshield4;break;
 			default: shieldImg = HUDshield5;break;
 		}
+			//prints damage resistance next to HUD along with sprite
 			g.drawImage(shieldImg, healthBarWidth+40, 1010, 40, 40, null);
 			g.drawString("" + (2 -player.getDamage()),healthBarWidth+100, 1040);
 
 		
 		
-		
+		//this is a tough one, can't figure out what it does
 		if(highscore < score){
 			highscore = score;
 		}
 		
 
+		//if the player has an ability, display that to the screen
 		if (ability.equals("freezeTime")) {//comment
 			g.drawString("Time Freezes: " + abilityUses, Game.WIDTH - 300, 64);
 		} else if (ability.equals("clearScreen")) {
@@ -123,6 +129,8 @@ public class HUD {
 			g.drawString("Level Skips: " + abilityUses, Game.WIDTH - 300, 64);
 		}
 	}
+	
+	//series of methods which activate and set a number of different things within the game such as score and amount of lives
 
 	public void setAbility(String ability) {
 		this.ability = ability;
@@ -203,7 +211,7 @@ public class HUD {
 		public boolean getRegen() {
 			return regen;
 		}
-		
+		//need this to have images work on HUD
 		public Image getImage(String path) {
 			Image image = null;
 			try {

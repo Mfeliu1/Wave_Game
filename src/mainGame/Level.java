@@ -49,7 +49,7 @@ public class Level {
 		}
 	}
 	/**
-	 * Tick spawns new enemies depending on there spawn limit and current tick.
+	 * Tick spawns new enemies depending on their spawn limit and current tick.
 	 * Takes the max level tick, and for every enemy divides it by the # of enemies.
 	 * It then spawns that enemy every X ticks depending on the volume of spawns. 
 	 * This ensures that the enemies are evenly spawned throughout the level. 

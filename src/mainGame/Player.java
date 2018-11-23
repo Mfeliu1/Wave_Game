@@ -137,7 +137,7 @@ public class Player extends GameObject {
 					hud.updateScoreColor(Color.red);
 				}
 			}
-			
+			//if player collides with powerup, trigger what that powerup does, remove the powerup and play the collision sound
 			if (Pickup.class.isInstance(tempObject)) {//Power ups pickup
 			if (tempObject.getId() == ID.PickupHealth && (getBounds().intersects(tempObject.getBounds()))) {
 				hud.restoreHealth();

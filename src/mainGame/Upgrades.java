@@ -9,7 +9,7 @@ package mainGame;
 /**
  * 
  * @author Team B3
- * This class has not been updated. It contains all the upgrades
+ * It contains all the upgrades
  * that are possibly avaiable for the player to obtain.
  * Descriptions of what the upgrades are are listed by the 
  * respective function 

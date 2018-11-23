@@ -22,8 +22,7 @@ import mainGame.Game.STATE;
  */
 
 /*****
- * @author Katie Rosell
- * Any changes or comments I made I sign off with my name...
+ * 
  */
 
 public class Menu {
@@ -70,6 +69,7 @@ public class Menu {
 		colorPick.add(Color.yellow);
 	}
 
+	//tick method, allows game to check time and spawn fireworks
 	public void tick() {
 		timer--;
 		if (timer <= 0) {
@@ -114,7 +114,7 @@ public class Menu {
 			g.setFont(font);
 			g.setColor(Color.white);
 			g.drawString("Quit", 1400, 500);
-			//Credits to original editor
+			//Credits to team that worked on game last editor
 			g.setColor(Color.white);
 			g.setFont(font2);
 			g.drawString("Credits: Irrelephant Games '18-'19", 0, 1000);
@@ -123,6 +123,7 @@ public class Menu {
 			Font font = new Font("impact", Font.PLAIN, 50); //make a new font
 			Font font2 = new Font("impact", Font.PLAIN, 30); //also make a new font
 			Font font3 = new Font("impact", Font.PLAIN, 30); //also make a new font
+			//gets images, allows them to be used on help menu
 			PowerCoin = getImage("/images/PickupCoin.png");
 			PowerSlow = getImage("/images/freezeAbilitySnowflake.png");
 			PowerHealth = getImage("/images/PickupHealth.png");
