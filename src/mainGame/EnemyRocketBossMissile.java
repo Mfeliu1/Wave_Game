@@ -10,6 +10,7 @@ import java.awt.geom.AffineTransform;
 import java.awt.geom.Path2D;
 import java.awt.geom.Rectangle2D;
 import java.io.File;
+import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
@@ -28,13 +29,21 @@ public class EnemyRocketBossMissile extends Enemy {
 		super(x, y, id);
 		this.handler = handler;
 		AudioUtil.playClip("/gameSound/MissileSound.wav", false);
-		if (img == null) {
+
+		// Set sprite based on current theme
 		try {
-			img = ImageIO.read(new File("src/images/Rocket_Boss.png"));
-		} catch (Exception e){
-			e.printStackTrace();
+			switch (handler.getTheme()) {
+				case Space:
+					img = ImageIO.read(new File("src/images/Rocket_Boss.png"));
+					break;
+				case Underwater:
+					img = ImageIO.read(new File("src/images/Rocket_Boss.png"));
+					break;
+			}
+		} catch (IOException e) {
+			System.err.println("Error reading sprite file for EnemyRocketBossMissile");
 		}
-		}
+
 		speed = spd;
 		direction = dir;
 		hud = _hud;

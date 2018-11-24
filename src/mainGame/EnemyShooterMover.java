@@ -6,6 +6,7 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Rectangle;
 import java.io.File;
+import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
@@ -46,16 +47,24 @@ public class EnemyShooterMover extends Enemy {
 		this.sizeY = 75;
 		this.timer = 60;
 		this.bulletSpeed = bulletSpeed;
-		if (img == null) {
+
+		// Set sprite based on current theme
 		try {
-			img = ImageIO.read(new File("src/images/spaceship2_big.png"));
-		} catch (Exception e){
-			e.printStackTrace();
+			switch (handler.getTheme()) {
+				case Space:
+					img = ImageIO.read(new File("src/images/spaceship2_big.png"));
+					break;
+				case Underwater:
+					img = ImageIO.read(new File("src/images/spaceship2_big.png"));
+					break;
+			}
+		} catch (IOException e) {
+			System.err.println("Error reading sprite file for EnemyShooterMover");
 		}
+
 		for (int i = 0; i < handler.object.size(); i++) {
 			if (handler.object.get(i).getId() == ID.Player)
 				player = handler.object.get(i);
-		}
 		}
 	}
 

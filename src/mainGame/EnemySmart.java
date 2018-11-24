@@ -7,6 +7,7 @@ import java.awt.Image;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.io.File;
+import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
@@ -28,12 +29,21 @@ public class EnemySmart extends Enemy {
 		super(x, y, id);
 		this.handler = handler;
 		this.speed = speed;
-		if (img == null) {
+
+		// Set sprite based on current theme
 		try {
-			img = ImageIO.read(new File("src/images/spaceship3blue.png"));
-		} catch (Exception e){
-			e.printStackTrace();
-		}}
+			switch (handler.getTheme()) {
+				case Space:
+					img = ImageIO.read(new File("src/images/spaceship3blue.png"));
+					break;
+				case Underwater:
+					img = ImageIO.read(new File("src/images/spaceship3blue.png"));
+					break;
+			}
+		} catch (IOException e) {
+			System.err.println("Error reading sprite file for EnemySmart");
+		}
+
 		for (int i = 0; i < handler.object.size(); i++) {
 			if (handler.object.get(i).getId() == ID.Player)
 				player = handler.object.get(i);

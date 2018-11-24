@@ -32,13 +32,30 @@ public class EnemyRocketBoss extends GameObject {
 	public EnemyRocketBoss(double x, double y, ID id, Player p, Handler h, HUD hud, GameMode mode, int diff) {
 		super(x, y, id);
 		this.player = p;
-		if(img == null) {
-		img = getImage("/images/Rocket_Boss_White.png");
-		imgOff = getImage("/images/Rocket_Boss_Off_White.png");}
 		handler = h;
 		this.hud = hud;
-		this.mode = mode; 
+		this.mode = mode;
 		difficulty = diff;
+
+		// Set "on" sprite based on current theme
+		switch (handler.getTheme()) {
+			case Space:
+				img = getImage("/images/Rocket_Boss_White.png");
+				break;
+			case Underwater:
+				img = getImage("/images/Rocket_Boss_White.png");
+				break;
+		}
+
+		// Set "off" sprite based on current theme
+		switch (handler.getTheme()) {
+			case Space:
+				imgOff = getImage("/images/Rocket_Boss_Off_White.png");
+				break;
+			case Underwater:
+				imgOff = getImage("/images/Rocket_Boss_Off_White.png");
+				break;
+		}
 	}
 
 	@Override

@@ -32,16 +32,25 @@ public class EnemyBoss extends GameObject {
 	
 	// constructor
 	// used to initialize the state of the object
-	public EnemyBoss(ID id, Handler handler,int diff,HUD h) {
+	public EnemyBoss(ID id, Handler handler, int diff, HUD h) {
 		super(Game.WIDTH / 2 - 48, -120, id);
 		this.handler = handler;
+		hud = h;
 		velX = 0;
 		velY = 2;
-		img = getImage("/images/EnemyBossRed.png");
-		this.health = 1000;//full health is 1000
+		this.health = 1000; //full health is 1000
 		difficulty = diff;
-		hud = h;
-		
+
+		// Set sprite based on current theme
+		switch (handler.getTheme()) {
+			case Space:
+				img = getImage("/images/EnemyBossRed.png");
+				break;
+			case Underwater:
+				img = getImage("/images/EnemyBossRed.png");
+				break;
+		}
+
 	}
 	
 	// methods

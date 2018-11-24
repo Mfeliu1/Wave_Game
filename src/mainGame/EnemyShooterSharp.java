@@ -8,6 +8,7 @@ import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.geom.Point2D;
 import java.io.File;
+import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
@@ -41,17 +42,26 @@ public class EnemyShooterSharp extends Enemy {
 		this.timer = 60;
 		speed = 1;
 		this.bulletSpeed = Math.abs(bulletSpeed);
-		if (img == null) {
+
+		// Set sprite based on current theme
 		try {
-			img = ImageIO.read(new File("src/images/spaceship1Red.png"));
-		} catch (Exception e){
-			e.printStackTrace();
+			switch (handler.getTheme()) {
+				case Space:
+					img = ImageIO.read(new File("src/images/spaceship1Red.png"));
+					break;
+				case Underwater:
+					img = ImageIO.read(new File("src/images/spaceship1Red.png"));
+					break;
+			}
+		} catch (IOException e) {
+			System.err.println("Error reading sprite file for EnemyShooterSharp");
 		}
+
 		for (int i = 0; i < handler.object.size(); i++) {
 			if (handler.object.get(i).getId() == ID.Player)
 				player = handler.object.get(i);
 		}
-		}
+
 	}
 
 	public void tick() {

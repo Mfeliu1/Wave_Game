@@ -6,6 +6,7 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Rectangle;
 import java.io.File;
+import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
@@ -20,28 +21,33 @@ public class EnemyBasic extends Enemy {
 
 	private static Image img;
 	private Handler handler;
-	
+
 	public EnemyBasic(double x, double y, int velX, int velY, ID id, Handler handler) {
 		super(x, y, id);
 		this.handler = handler;
 		if (Math.random() > .5) {
-			velX*=-1;
+			velX *= -1;
 		}
 		if (Math.random() > .5) {
-			velY*=-1;
+			velY *= -1;
 		}
 		this.velX = velX;
 		this.velY = velY;
-		
-		if (img == null) {
+
+		// Set sprite based on current theme
 		try {
-			img = ImageIO.read(new File("src/images/spaceship2.png"));
-		} catch (Exception e){
-			e.printStackTrace();
-		}
+			switch (handler.getTheme()) {
+				case Space:
+					img = ImageIO.read(new File("src/images/spaceship2.png"));
+					break;
+				case Underwater:
+					img = ImageIO.read(new File("src/images/spaceship2.png"));
+					break;
+			}
+		} catch (IOException e) {
+			System.err.println("Error reading sprite file for EnemyBasic");
 		}
 	}
-		
 
 	public void tick() {
 		if (this.y <= 0){

@@ -6,6 +6,7 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Rectangle;
 import java.io.File;
+import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
@@ -26,12 +27,19 @@ public class EnemyFast extends Enemy {
 		this.handler = handler;
 		velX = 2*(Math.random()-Math.random());
 		velY = -12;
-		if (img == null) {
+
+		// Set sprite based on current theme
 		try {
-			img = ImageIO.read(new File("src/images/Rocket_BossRed.png"));
-		} catch (Exception e){
-			e.printStackTrace();
-		}
+			switch (handler.getTheme()) {
+				case Space:
+					img = ImageIO.read(new File("src/images/Rocket_BossRed.png"));
+					break;
+				case Underwater:
+					img = ImageIO.read(new File("src/images/Rocket_BossRed.png"));
+					break;
+			}
+		} catch (IOException e) {
+			System.err.println("Error reading sprite file for EnemyFast");
 		}
 	}
 

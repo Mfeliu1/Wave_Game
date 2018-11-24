@@ -6,6 +6,7 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Rectangle;
 import java.io.File;
+import java.io.IOException;
 import java.util.Random;
 
 import javax.imageio.ImageIO;
@@ -34,13 +35,21 @@ public class EnemyBurst extends Enemy {
 		this.timer = 60;
 		this.side = side;
 		this.size = size;
-		if (img == null) {
+
+		// Set sprite based on current theme
 		try {
-			img = ImageIO.read(new File("src/images/asteroid.png"));
-		} catch (Exception e){
-			e.printStackTrace();
+			switch (handler.getTheme()) {
+				case Space:
+					img = ImageIO.read(new File("src/images/asteroid.png"));
+					break;
+				case Underwater:
+					img = ImageIO.read(new File("src/images/asteroid.png"));
+					break;
+			}
+		} catch (IOException e) {
+			System.err.println("Error reading sprite file for EnemyBurst");
 		}
-		}
+
 		if (this.side.equals("left")) {
 			handler.object.add(new EnemyBurstWarning(0, 0, 25, Game.HEIGHT, ID.EnemyBurstWarning, handler));
 			setPos();
