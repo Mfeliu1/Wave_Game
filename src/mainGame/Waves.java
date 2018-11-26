@@ -22,17 +22,29 @@ public class Waves implements GameMode {
 	private Game game;
 	private ArrayList<Integer> currentEnemySpawns;
 	private HUD hud;
-	private Image img = this.getImage("/images/space2.jpg");
+	private Image img;
 	private int levelPopTimer = 0;
 	private LevelText t;
 	private ID lastEnemy = null;
 	private ID lastBoss = (Math.random()*1 == 0 ? ID.EnemyBoss:ID.EnemyRocketBoss);
-	public Waves(Player p,Handler h, HUD _hud, Game g){
-		player = p;
-		handler = h;
-		hud = _hud;
-		game = g;
-	}
+
+    public Waves(Player p, Handler h, HUD _hud, Game g) {
+        player = p;
+        handler = h;
+        hud = _hud;
+        game = g;
+
+        // Set game background based on theme
+        switch (handler.getTheme()) {
+            case Space:
+                img = this.getImage("/images/space2.jpg");
+                break;
+            case Underwater:
+                img = this.getImage("/images/space2.jpg");
+                break;
+        }
+
+    }
 	
 	//Links the ID of an enemy to actual creation.
 	//This allows the gameMode to override the generic Level Spawning Scheme. IE if a boss doesn't care where a player is. 
