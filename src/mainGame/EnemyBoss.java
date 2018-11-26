@@ -77,10 +77,14 @@ public class EnemyBoss extends GameObject {
 				this.health -= 3;
 			}
 		}
+		//prevents the alien boss from spawning bombs at the earlier levels
 		if (difficulty > 0) {
+			//if the timer is less than 0, trigger the bombs
 			bombTimer--;
 			if (bombTimer < 0) {
+				//resets the bomb timer
 				bombTimer = 120;
+				//calls calls the enemy boss bomb class
 				handler.addObject(
 						new EnemyBossBomb((int) this.x + 48, (int) this.y + 80, ID.EnemyBossBomb, handler,difficulty > 1 ? ( difficulty > 2 ? 16 : 8 ) : 4));
 			}
