@@ -8,7 +8,7 @@ public abstract class Enemy extends GameObject {
 		super(x, y, id);
 		// TODO Auto-generated constructor stub
 	}
-
+//generates the hitbox
 	public void drawHitBox(Graphics g) {
 		g.fillRect(this.getBounds().x,this.getBounds().y,this.getBounds().width,this.getBounds().height);
 	}
