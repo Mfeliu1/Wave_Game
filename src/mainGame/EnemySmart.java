@@ -25,24 +25,10 @@ public class EnemySmart extends Enemy {
 	private int speed;
 	static private Image img;
 
-	public EnemySmart(double x, double y, int speed, ID id, Handler handler) {
+    public EnemySmart(double x, double y, int speed, ID id, Handler handler) {
 		super(x, y, id);
 		this.handler = handler;
 		this.speed = speed;
-
-		// Set sprite based on current theme
-		try {
-			switch (handler.getTheme()) {
-				case Space:
-					img = ImageIO.read(new File("src/images/spaceship3blue.png"));
-					break;
-				case Underwater:
-					img = ImageIO.read(new File("src/images/spaceship3blue.png"));
-					break;
-			}
-		} catch (IOException e) {
-			System.err.println("Error reading sprite file for EnemySmart");
-		}
 
 		for (int i = 0; i < handler.object.size(); i++) {
 			if (handler.object.get(i).getId() == ID.Player)
@@ -98,4 +84,19 @@ public class EnemySmart extends Enemy {
         return (Math.atan2(yDiff, xDiff));
     }
 
+    public static void updateSprite(Themes theme) {
+        // Set sprite based on current theme
+        try {
+            switch (theme) {
+                case Space:
+                    img = ImageIO.read(new File("src/images/spaceship3blue.png"));
+                    break;
+                case Underwater:
+                    img = ImageIO.read(new File("src/images/spaceship3blue.png"));
+                    break;
+            }
+        } catch (IOException e) {
+            System.err.println("Error reading sprite file for EnemySmart");
+        }
+    }
 }

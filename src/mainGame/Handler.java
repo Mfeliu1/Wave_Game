@@ -159,4 +159,17 @@ public class Handler {
 	    return this.theme;
     }
 
+    public void updateSprites() {
+	    // Call the static sprite update method for each enemy class, passing on the current theme
+	    EnemyBoss.updateSprite(theme);
+	    EnemyBurst.updateSprite(theme);
+	    EnemyFast.updateSprite(theme);
+	    EnemyRocketBoss.updateSprite(theme);
+	    EnemyRocketBossMissile.updateSprite(theme);
+	    EnemyShooter.updateSprite(theme);
+	    EnemyShooterMover.updateSprite(theme);
+	    EnemyShooterSharp.updateSprite(theme);
+	    EnemySmart.updateSprite(theme);
+    }
+
 }

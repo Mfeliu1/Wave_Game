@@ -34,19 +34,7 @@ public class EnemyBasic extends Enemy {
 		this.velX = velX;
 		this.velY = velY;
 
-		// Set sprite based on current theme
-		try {
-			switch (handler.getTheme()) {
-				case Space:
-					img = ImageIO.read(new File("src/images/spaceship2.png"));
-					break;
-				case Underwater:
-					img = ImageIO.read(new File("src/images/spaceship2.png"));
-					break;
-			}
-		} catch (IOException e) {
-			System.err.println("Error reading sprite file for EnemyBasic");
-		}
+
 	}
 
 	public void tick() {
@@ -85,4 +73,19 @@ public class EnemyBasic extends Enemy {
 		return new Rectangle((int) this.x-62, (int) this.y-30, 125, 60);//16,16
 	}
 
+    public static void updateSprite(Themes theme) {
+        // Set sprite based on current theme
+        try {
+            switch (theme) {
+                case Space:
+                    img = ImageIO.read(new File("src/images/spaceship2.png"));
+                    break;
+                case Underwater:
+                    img = ImageIO.read(new File("src/images/spaceship2.png"));
+                    break;
+            }
+        } catch (IOException e) {
+            System.err.println("Error reading sprite file for EnemyBasic");
+        }
+    }
 }

@@ -48,20 +48,6 @@ public class EnemyShooterMover extends Enemy {
 		this.timer = 60;
 		this.bulletSpeed = bulletSpeed;
 
-		// Set sprite based on current theme
-		try {
-			switch (handler.getTheme()) {
-				case Space:
-					img = ImageIO.read(new File("src/images/spaceship2_big.png"));
-					break;
-				case Underwater:
-					img = ImageIO.read(new File("src/images/spaceship2_big.png"));
-					break;
-			}
-		} catch (IOException e) {
-			System.err.println("Error reading sprite file for EnemyShooterMover");
-		}
-
 		for (int i = 0; i < handler.object.size(); i++) {
 			if (handler.object.get(i).getId() == ID.Player)
 				player = handler.object.get(i);
@@ -132,4 +118,19 @@ public class EnemyShooterMover extends Enemy {
 		return new Rectangle((int) this.x-this.sizeX/2, (int) this.y-sizeY/2, this.sizeX, this.sizeY);
 	}
 
+    public static void updateSprite(Themes theme) {
+        // Set sprite based on current theme
+        try {
+            switch (theme) {
+                case Space:
+                    img = ImageIO.read(new File("src/images/spaceship2_big.png"));
+                    break;
+                case Underwater:
+                    img = ImageIO.read(new File("src/images/spaceship2_big.png"));
+                    break;
+            }
+        } catch (IOException e) {
+            System.err.println("Error reading sprite file for EnemyShooterMover");
+        }
+    }
 }

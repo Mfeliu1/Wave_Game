@@ -1,11 +1,14 @@
 package mainGame;
 
+import javax.imageio.ImageIO;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.Random;
 
@@ -17,14 +20,14 @@ import java.util.Random;
  *
  */
 
-public class EnemyBoss extends GameObject {
+public class EnemyBoss extends Enemy {
 
 	// instances
 	private Handler handler;
 	private int timer = 80;
 	private int timer2 = 50;
 	Random r = new Random();
-	private Image img;
+	private static Image img;
 	private int spawn;
 	private int difficulty = 1;
 	private int bombTimer = 120;
@@ -40,16 +43,6 @@ public class EnemyBoss extends GameObject {
 		velY = 2;
 		this.health = 1000; //full health is 1000
 		difficulty = diff;
-
-		// Set sprite based on current theme
-		switch (handler.getTheme()) {
-			case Space:
-				img = getImage("/images/EnemyBossRed.png");
-				break;
-			case Underwater:
-				img = getImage("/images/EnemyBossRed.png");
-				break;
-		}
 
 	}
 	
@@ -153,4 +146,19 @@ public class EnemyBoss extends GameObject {
 			handler.addObject(new EnemyBossBullet((int) this.x + 48, (int) this.y + 96, ID.EnemyBossBullet, handler));
 	}
 
+    public static void updateSprite(Themes theme) {
+        // Set sprite based on current theme
+        try {
+            switch (theme) {
+                case Space:
+                    img = ImageIO.read(new File("src/images/EnemyBossRed.png"));
+                    break;
+                case Underwater:
+                    img = ImageIO.read(new File("src/images/EnemyBossRed.png"));
+                    break;
+            }
+        } catch (IOException e) {
+            System.err.println("Error reading sprite file for EnemyBoss");
+        }
+    }
 }

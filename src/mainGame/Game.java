@@ -78,6 +78,7 @@ public class Game extends Canvas{
 	 */
 	public Game() {
 		handler = new Handler();
+		handler.updateSprites();
 		hud = new HUD();
 		menu = new Menu(this, this.handler, this.hud);
 		

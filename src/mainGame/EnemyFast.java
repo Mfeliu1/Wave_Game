@@ -27,23 +27,9 @@ public class EnemyFast extends Enemy {
 		this.handler = handler;
 		velX = 2*(Math.random()-Math.random());
 		velY = -12;
-
-		// Set sprite based on current theme
-		try {
-			switch (handler.getTheme()) {
-				case Space:
-					img = ImageIO.read(new File("src/images/Rocket_BossRed.png"));
-					break;
-				case Underwater:
-					img = ImageIO.read(new File("src/images/Rocket_BossRed.png"));
-					break;
-			}
-		} catch (IOException e) {
-			System.err.println("Error reading sprite file for EnemyFast");
-		}
 	}
 
-	public void tick() {
+    public void tick() {
 		this.x += velX;
 		this.y += velY;
 
@@ -72,4 +58,19 @@ public class EnemyFast extends Enemy {
 		return new Rectangle((int) this.x+8, (int) this.y, 16, 64);
 	}
 
+    public static void updateSprite(Themes theme) {
+        // Set sprite based on current theme
+        try {
+            switch (theme) {
+                case Space:
+                    img = ImageIO.read(new File("src/images/Rocket_BossRed.png"));
+                    break;
+                case Underwater:
+                    img = ImageIO.read(new File("src/images/Rocket_BossRed.png"));
+                    break;
+            }
+        } catch (IOException e) {
+            System.err.println("Error reading sprite file for EnemyFast");
+        }
+    }
 }

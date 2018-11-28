@@ -36,20 +36,6 @@ public class EnemyBurst extends Enemy {
 		this.side = side;
 		this.size = size;
 
-		// Set sprite based on current theme
-		try {
-			switch (handler.getTheme()) {
-				case Space:
-					img = ImageIO.read(new File("src/images/asteroid.png"));
-					break;
-				case Underwater:
-					img = ImageIO.read(new File("src/images/asteroid.png"));
-					break;
-			}
-		} catch (IOException e) {
-			System.err.println("Error reading sprite file for EnemyBurst");
-		}
-
 		if (this.side.equals("left")) {
 			handler.object.add(new EnemyBurstWarning(0, 0, 25, Game.HEIGHT, ID.EnemyBurstWarning, handler));
 			setPos();
@@ -136,4 +122,19 @@ public class EnemyBurst extends Enemy {
 		return new Rectangle((int) this.x, (int) this.y, 150,150);
 	}
 
+    public static void updateSprite(Themes theme) {
+        // Set sprite based on current theme
+        try {
+            switch (theme) {
+                case Space:
+                    img = ImageIO.read(new File("src/images/asteroid.png"));
+                    break;
+                case Underwater:
+                    img = ImageIO.read(new File("src/images/asteroid.png"));
+                    break;
+            }
+        } catch (IOException e) {
+            System.err.println("Error reading sprite file for EnemyBurst");
+        }
+    }
 }

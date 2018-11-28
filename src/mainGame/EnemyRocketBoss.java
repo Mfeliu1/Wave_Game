@@ -1,5 +1,6 @@
 package mainGame;
 
+import javax.imageio.ImageIO;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -12,9 +13,11 @@ import java.awt.geom.AffineTransform;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Path2D;
 import java.awt.geom.Rectangle2D;
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 
-public class EnemyRocketBoss extends GameObject {
+public class EnemyRocketBoss extends Enemy {
 	private static Image img, imgOff;
 	private double dash_x,dash_y; //current target
 	private boolean inDash = false; // in dash
@@ -29,33 +32,14 @@ public class EnemyRocketBoss extends GameObject {
 	private boolean colliding = false;
 	private int rocketTimer = 120;
 	private int difficulty = 1;
-	public EnemyRocketBoss(double x, double y, ID id, Player p, Handler h, HUD hud, GameMode mode, int diff) {
+
+    public EnemyRocketBoss(double x, double y, ID id, Player p, Handler h, HUD hud, GameMode mode, int diff) {
 		super(x, y, id);
 		this.player = p;
 		handler = h;
 		this.hud = hud;
 		this.mode = mode;
 		difficulty = diff;
-
-		// Set "on" sprite based on current theme
-		switch (handler.getTheme()) {
-			case Space:
-				img = getImage("/images/Rocket_Boss_White.png");
-				break;
-			case Underwater:
-				img = getImage("/images/Rocket_Boss_White.png");
-				break;
-		}
-
-		// Set "off" sprite based on current theme
-		switch (handler.getTheme()) {
-			case Space:
-				imgOff = getImage("/images/Rocket_Boss_Off_White.png");
-				break;
-			case Underwater:
-				imgOff = getImage("/images/Rocket_Boss_Off_White.png");
-				break;
-		}
 	}
 
 	@Override
@@ -200,6 +184,30 @@ public class EnemyRocketBoss extends GameObject {
 
 		return image;
 	}
-	
-	
+
+    public static void updateSprite(Themes theme) {
+        try {
+            // Set "on" sprite based on current theme
+            switch (theme) {
+                case Space:
+                    img = ImageIO.read(new File("src/images/Rocket_Boss_White.png"));
+                    break;
+                case Underwater:
+                    img = ImageIO.read(new File("src/images/Rocket_Boss_White.png"));
+                    break;
+            }
+
+            // Set "off" sprite based on current theme
+            switch (theme) {
+                case Space:
+                    imgOff = ImageIO.read(new File("src/images/Rocket_Boss_Off_White.png"));
+                    break;
+                case Underwater:
+                    imgOff = ImageIO.read(new File("src/images/Rocket_Boss_Off_White.png"));
+                    break;
+            }
+        } catch (IOException e) {
+            System.err.println("Error reading sprite file for EnemyRocketBoss");
+        }
+    }
 }

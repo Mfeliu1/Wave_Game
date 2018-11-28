@@ -28,9 +28,8 @@ public class EnemyShooter extends Enemy {
 	private double bulletVelY;
 	private int bulletSpeed;
 	private static Image img = null;
-	
 
-	public EnemyShooter(double x, double y, int sizeX, int sizeY, int bulletSpeed, ID id, Handler handler) {
+    public EnemyShooter(double x, double y, int sizeX, int sizeY, int bulletSpeed, ID id, Handler handler) {
 		super(x, y, id);
 		this.handler = handler;
 		this.velX = 0;
@@ -39,20 +38,6 @@ public class EnemyShooter extends Enemy {
 		this.sizeY = 75;
 		this.timer = 60;
 		this.bulletSpeed = bulletSpeed;
-
-		// Set sprite based on current theme
-		try {
-			switch (handler.getTheme()) {
-				case Space:
-					img = ImageIO.read(new File("src/images/spaceship1yellow.png"));
-					break;
-				case Underwater:
-					img = ImageIO.read(new File("src/images/spaceship1yellow.png"));
-					break;
-			}
-		} catch (IOException e) {
-			System.err.println("Error reading sprite file for EnemyShooter");
-		}
 
 		for (int i = 0; i < handler.object.size(); i++) {
 			if (handler.object.get(i).getId() == ID.Player)
@@ -124,4 +109,19 @@ public class EnemyShooter extends Enemy {
 		return new Rectangle((int) this.x-this.sizeX/2, (int) this.y-sizeY/2, this.sizeX, this.sizeY);
 	}
 
+    public static void updateSprite(Themes theme) {
+        // Set sprite based on current theme
+        try {
+            switch (theme) {
+                case Space:
+                    img = ImageIO.read(new File("src/images/spaceship1yellow.png"));
+                    break;
+                case Underwater:
+                    img = ImageIO.read(new File("src/images/spaceship1yellow.png"));
+                    break;
+            }
+        } catch (IOException e) {
+            System.err.println("Error reading sprite file for EnemyShooter");
+        }
+    }
 }

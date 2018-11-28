@@ -25,25 +25,10 @@ public class EnemyRocketBossMissile extends Enemy {
 	private Player player;
 	private double trackSpeed;
 
-	public EnemyRocketBossMissile(double x, double y, ID id, Handler handler, double dir, double spd, HUD _hud, Player play,double track) {
+    public EnemyRocketBossMissile(double x, double y, ID id, Handler handler, double dir, double spd, HUD _hud, Player play, double track) {
 		super(x, y, id);
 		this.handler = handler;
 		AudioUtil.playClip("/gameSound/MissileSound.wav", false);
-
-		// Set sprite based on current theme
-		try {
-			switch (handler.getTheme()) {
-				case Space:
-					img = ImageIO.read(new File("src/images/Rocket_Boss.png"));
-					break;
-				case Underwater:
-					img = ImageIO.read(new File("src/images/Rocket_Boss.png"));
-					break;
-			}
-		} catch (IOException e) {
-			System.err.println("Error reading sprite file for EnemyRocketBossMissile");
-		}
-
 		speed = spd;
 		direction = dir;
 		hud = _hud;
@@ -101,4 +86,19 @@ public class EnemyRocketBossMissile extends Enemy {
 		return new Rectangle(-99, -99, -99, -99);
 	}
 
+    public static void updateSprite(Themes theme) {
+        // Set sprite based on current theme
+        try {
+            switch (theme) {
+                case Space:
+                    img = ImageIO.read(new File("src/images/Rocket_Boss.png"));
+                    break;
+                case Underwater:
+                    img = ImageIO.read(new File("src/images/Rocket_Boss.png"));
+                    break;
+            }
+        } catch (IOException e) {
+            System.err.println("Error reading sprite file for EnemyRocketBossMissile");
+        }
+    }
 }

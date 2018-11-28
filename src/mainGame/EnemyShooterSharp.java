@@ -43,20 +43,6 @@ public class EnemyShooterSharp extends Enemy {
 		speed = 1;
 		this.bulletSpeed = Math.abs(bulletSpeed);
 
-		// Set sprite based on current theme
-		try {
-			switch (handler.getTheme()) {
-				case Space:
-					img = ImageIO.read(new File("src/images/spaceship1Red.png"));
-					break;
-				case Underwater:
-					img = ImageIO.read(new File("src/images/spaceship1Red.png"));
-					break;
-			}
-		} catch (IOException e) {
-			System.err.println("Error reading sprite file for EnemyShooterSharp");
-		}
-
 		for (int i = 0; i < handler.object.size(); i++) {
 			if (handler.object.get(i).getId() == ID.Player)
 				player = handler.object.get(i);
@@ -153,4 +139,19 @@ public class EnemyShooterSharp extends Enemy {
 		return new Rectangle((int) this.x-this.sizeX/2, (int) this.y-sizeY/2, this.sizeX, this.sizeY);
 	}
 
+    public static void updateSprite(Themes theme) {
+        // Set sprite based on current theme
+        try {
+            switch (theme) {
+                case Space:
+                    img = ImageIO.read(new File("src/images/spaceship1Red.png"));
+                    break;
+                case Underwater:
+                    img = ImageIO.read(new File("src/images/spaceship1Red.png"));
+                    break;
+            }
+        } catch (IOException e) {
+            System.err.println("Error reading sprite file for EnemyShooterSharp");
+        }
+    }
 }
