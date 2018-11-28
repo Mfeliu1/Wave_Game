@@ -153,6 +153,7 @@ public class Handler {
 
 	public void setTheme(Themes t) {
 		this.theme = t;
+		updateSprites();
 	}
 
 	public Themes getTheme() {

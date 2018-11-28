@@ -83,6 +83,13 @@ public class Menu {
 	}
 	//THIS MAKES THE MENU LOOK THE WAY IT DOES USING THE GRAPHICS 
 	public void render(Graphics g) {
+	    // Change background on theme change
+	    if (handler.getTheme() == Themes.Space) {
+            img = getImage("/images/Background.png");
+        } else if (handler.getTheme() == Themes.Underwater) {
+            img = getImage("/images/Water.jpg");
+        }
+
 		if (game.gameState == STATE.Menu) {
 			//display the background  
 			g.drawImage(img, 0, 0, Game.WIDTH, Game.HEIGHT, null);
@@ -114,6 +121,19 @@ public class Menu {
 			g.setFont(font);
 			g.setColor(Color.white);
 			g.drawString("Quit", 1400, 500);
+
+            //Theme buttons
+            g.setColor(Color.white);
+            g.setFont(font);
+
+            g.drawString("Themes:", 330,710);
+
+            g.drawRect(400, 730, 350, 120);
+            g.drawString("Space", 430, 815);
+
+            g.drawRect(850, 730, 650, 120);
+            g.drawString("Underwater", 870, 825);
+
 			//Credits to team that worked on game last editor
 			g.setColor(Color.white);
 			g.setFont(font2);

@@ -101,6 +101,14 @@ public class MouseListener extends MouseAdapter {
 			else if (mouseOver(mx, my, 1390, 360, 260, 200)) {
 				System.exit(1);
 			}
+            // Space Theme Button
+            else if (mouseOver(mx, my, 400, 730, 350, 120)) {
+                handler.setTheme(Themes.Space);
+            }
+            // Underwater Theme Button
+            else if (mouseOver(mx, my, 850, 730, 650, 120)) {
+                handler.setTheme(Themes.Underwater);
+            }
 		}
 		// Back Button for Help screen
 		else if (game.gameState == STATE.Help) {
