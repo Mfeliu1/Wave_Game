@@ -154,7 +154,7 @@ public class EnemyBoss extends Enemy {
                     img = ImageIO.read(new File("src/images/EnemyBossRed.png"));
                     break;
                 case Underwater:
-                    img = ImageIO.read(new File("src/images/EnemyBossRed.png"));
+                    img = ImageIO.read(new File("src/images/EnemyBossJellyfish.png"));
                     break;
             }
         } catch (IOException e) {

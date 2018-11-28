@@ -40,7 +40,7 @@ public class Waves implements GameMode {
                 img = this.getImage("/images/space2.jpg");
                 break;
             case Underwater:
-                img = this.getImage("/images/space2.jpg");
+                img = this.getImage("/images/Water.jpg");
                 break;
         }
 
