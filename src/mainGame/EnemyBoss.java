@@ -77,7 +77,7 @@ public class EnemyBoss extends Enemy {
 			if (bombTimer < 0) {
 				//resets the bomb timer
 				bombTimer = 120;
-				//calls calls the enemy boss bomb class
+				//calls calls the EnemyBossBomb class
 				handler.addObject(
 						new EnemyBossBomb((int) this.x + 48, (int) this.y + 80, ID.EnemyBossBomb, handler,difficulty > 1 ? ( difficulty > 2 ? 16 : 8 ) : 4));
 			}
