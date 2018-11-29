@@ -66,7 +66,7 @@ public class EnemyFast extends Enemy {
                     img = ImageIO.read(new File("src/images/Rocket_BossRed.png"));
                     break;
                 case Underwater:
-                    img = ImageIO.read(new File("src/images/Rocket_BossRed.png"));
+                    img = ImageIO.read(new File("src/images/Rocket_BossShark.png"));
                     break;
             }
         } catch (IOException e) {

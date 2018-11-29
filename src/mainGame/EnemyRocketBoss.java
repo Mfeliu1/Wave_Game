@@ -193,14 +193,14 @@ public class EnemyRocketBoss extends Enemy {
                     img = ImageIO.read(new File("src/images/Rocket_Boss_White.png"));
                     break;
                 case Underwater:
-                    img = ImageIO.read(new File("src/images/Rocket_Boss_White.png"));
+                    img = ImageIO.read(new File("src/images/Rocket_Boss_Off_Sub.png"));
                     break;
             }
 
             // Set "off" sprite based on current theme
             switch (theme) {
                 case Space:
-                    imgOff = ImageIO.read(new File("src/images/Rocket_Boss_Off_Sub.png"));
+                    imgOff = ImageIO.read(new File("src/images/Rocket_Boss_Off_White.png"));
                     break;
                 case Underwater:
                     imgOff = ImageIO.read(new File("src/images/Rocket_Boss_Off_Sub.png"));

@@ -130,7 +130,7 @@ public class EnemyBurst extends Enemy {
                     img = ImageIO.read(new File("src/images/asteroid.png"));
                     break;
                 case Underwater:
-                    img = ImageIO.read(new File("src/images/asteroid.png"));
+                    img = ImageIO.read(new File("src/images/pufferfish.png"));
                     break;
             }
         } catch (IOException e) {

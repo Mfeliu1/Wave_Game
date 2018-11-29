@@ -92,7 +92,7 @@ public class EnemySmart extends Enemy {
                     img = ImageIO.read(new File("src/images/spaceship3blue.png"));
                     break;
                 case Underwater:
-                    img = ImageIO.read(new File("src/images/spaceship3blue.png"));
+                    img = ImageIO.read(new File("src/images/spaceship3sub.png"));
                     break;
             }
         } catch (IOException e) {

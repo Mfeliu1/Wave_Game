@@ -147,7 +147,7 @@ public class EnemyShooterSharp extends Enemy {
                     img = ImageIO.read(new File("src/images/spaceship1Red.png"));
                     break;
                 case Underwater:
-                    img = ImageIO.read(new File("src/images/spaceship1Red.png"));
+                    img = ImageIO.read(new File("src/images/spaceship1sub.png"));
                     break;
             }
         } catch (IOException e) {

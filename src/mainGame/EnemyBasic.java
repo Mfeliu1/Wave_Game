@@ -78,10 +78,10 @@ public class EnemyBasic extends Enemy {
         try {
             switch (theme) {
                 case Space:
-                    img = ImageIO.read(new File("src/images/spaceship2.png"));
+                    img = ImageIO.read(new File("src/images/spaceship2_old.png"));
                     break;
                 case Underwater:
-                    img = ImageIO.read(new File("src/images/spaceship2.png"));
+                    img = ImageIO.read(new File("src/images/spaceship2_old.png"));
                     break;
             }
         } catch (IOException e) {

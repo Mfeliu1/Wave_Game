@@ -117,7 +117,7 @@ public class EnemyShooter extends Enemy {
                     img = ImageIO.read(new File("src/images/spaceship1yellow.png"));
                     break;
                 case Underwater:
-                    img = ImageIO.read(new File("src/images/spaceship1yellow.png"));
+                    img = ImageIO.read(new File("src/images/spaceship4sub.png"));
                     break;
             }
         } catch (IOException e) {
