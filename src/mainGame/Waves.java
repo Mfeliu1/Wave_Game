@@ -226,7 +226,7 @@ public class Waves implements GameMode {
 			player.playerHeight = 32;
 			hud.setExtraLives(0);
 			hud.resetHealth();
-			}
+		}
 	}
 	@Override
 	public void resetMode() {

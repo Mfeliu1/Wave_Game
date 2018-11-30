@@ -142,8 +142,9 @@ public class EnemyBoss extends Enemy {
 
 	// allows for grey line to be drawn, as well as first bullet shot
 	public void drawFirstBullet() {
-		if (timer2 == 1)
-			handler.addObject(new EnemyBossBullet((int) this.x + 48, (int) this.y + 96, ID.EnemyBossBullet, handler));
+		if (timer2 == 1) {
+            handler.addObject(new EnemyBossBullet((int) this.x + 48, (int) this.y + 96, ID.EnemyBossBullet, handler));
+        }
 	}
 
     public static void updateSprite(Themes theme) {
