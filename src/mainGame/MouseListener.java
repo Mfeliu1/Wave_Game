@@ -3,10 +3,7 @@ package mainGame;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-import javax.swing.JOptionPane;
-
 import mainGame.Game.STATE;
-import mainGame.GameManager.CURRENTGAME;
 
 /**
  * Handles all mouse input
@@ -103,12 +100,12 @@ public class MouseListener extends MouseAdapter {
 			}
             // Space Theme Button
             else if (mouseOver(mx, my, 400, 730, 350, 120)) {
-                game.playAfricaByToto();
+                game.toggleMenuMusic();
                 handler.setTheme(Themes.Space);
             }
             // Underwater Theme Button
             else if (mouseOver(mx, my, 850, 730, 650, 120)) {
-                game.playAfricaByToto();
+                game.toggleMenuMusic();
                 handler.setTheme(Themes.Underwater);
             }
 		}

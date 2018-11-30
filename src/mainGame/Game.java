@@ -306,8 +306,10 @@ public class Game extends Canvas{
 		}
 	}
 
-	public void playAfricaByToto() {
+	public void toggleMenuMusic() {
+	    // Toggle menu theme between Space Jam and Africa
 		africa = !africa;
+		// Restart menu music
 		AudioUtil.closeMenuClip();
 		AudioUtil.playMenuClip(true, africa);
 	}
