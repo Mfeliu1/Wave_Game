@@ -110,7 +110,7 @@ public class Handler {
 	public void clearEnemies() {
 		for (int i = 0; i < this.object.size(); i++) {
 			GameObject tempObject = this.object.get(i);
-			if (tempObject.getId() != ID.Player) {
+			if (tempObject.getId() != ID.Player && object.contains(tempObject)) {
 				this.removeObject(tempObject);
 				i--;
 			}
