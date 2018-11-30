@@ -4,11 +4,15 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Point;
 import java.awt.Toolkit;
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Random;
 
 import mainGame.Game.STATE;
+
+import javax.imageio.ImageIO;
 
 public class Waves implements GameMode {
 	private Player player;
@@ -22,7 +26,7 @@ public class Waves implements GameMode {
 	private Game game;
 	private ArrayList<Integer> currentEnemySpawns;
 	private HUD hud;
-	private Image img;
+	private static Image img;
 	private int levelPopTimer = 0;
 	private LevelText t;
 	private ID lastEnemy = null;
@@ -33,17 +37,6 @@ public class Waves implements GameMode {
         handler = h;
         hud = _hud;
         game = g;
-
-        // Set game background based on theme
-        switch (handler.getTheme()) {
-            case Space:
-                img = this.getImage("/images/space2.jpg");
-                break;
-            case Underwater:
-                img = this.getImage("/images/Water.jpg");
-                break;
-        }
-
     }
 	
 	//Links the ID of an enemy to actual creation.
@@ -239,17 +232,21 @@ public class Waves implements GameMode {
 	public void resetMode() {
 		resetMode(true);
 	}
-	
-	private Image getImage(String path) {
-		Image image = null;
-		try {
-			URL imageURL = Game.class.getResource(path);
-			image = Toolkit.getDefaultToolkit().getImage(imageURL);
-		} catch (Exception e) {
-			System.err.println(e.getMessage());
-		}
 
-		return image;
-	}
+    public static void updateSprite(Themes theme) {
+        // Set sprite based on current theme
+        try {
+            switch (theme) {
+                case Space:
+                    img = ImageIO.read(new File("src/images/space2.jpg"));
+                    break;
+                case Underwater:
+                    img = ImageIO.read(new File("src/images/Water.jpg"));
+                    break;
+            }
+        } catch (IOException e) {
+            System.err.println("Error reading sprite file for Waves (game background)");
+        }
+    }
 
 }

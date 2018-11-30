@@ -171,6 +171,7 @@ public class Handler {
 	    EnemyShooterMover.updateSprite(theme);
 	    EnemyShooterSharp.updateSprite(theme);
 	    EnemySmart.updateSprite(theme);
+	    Waves.updateSprite(theme);
     }
 
 }
