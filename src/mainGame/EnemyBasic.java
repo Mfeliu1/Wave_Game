@@ -75,6 +75,8 @@ public class EnemyBasic extends Enemy {
 
     public static void updateSprite(Themes theme) {
         // Set sprite based on current theme
+
+        // TODO: Currently this sprite won't display and we don't know why
         try {
             switch (theme) {
                 case Space:
