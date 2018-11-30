@@ -105,10 +105,10 @@ public class Menu {
 			g.drawString("Loehle's Sandbox", 500, 100);
 			//Waves button, the start game button essentially
 			g.setColor(Color.white);
-			g.drawRect(700, 300, 470, 250); //changes the rectangle size drawn : kt
+			g.drawRect(700, 300, 470, 250); //changes the rectangle size drawn
 			g.setFont(font3);
 			g.setColor(Color.white);
-			g.drawString("Waves", 730, 465);//move the text down and center it inside the rectangle : katie              
+			g.drawString("Waves", 730, 465);//move the text down and center it inside the rectangle            
 			//Help button
 			g.setColor(Color.white);
 			g.drawRect(230, 360, 260, 200);
