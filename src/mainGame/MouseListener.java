@@ -103,10 +103,12 @@ public class MouseListener extends MouseAdapter {
 			}
             // Space Theme Button
             else if (mouseOver(mx, my, 400, 730, 350, 120)) {
+                game.playAfricaByToto();
                 handler.setTheme(Themes.Space);
             }
             // Underwater Theme Button
             else if (mouseOver(mx, my, 850, 730, 650, 120)) {
+                game.playAfricaByToto();
                 handler.setTheme(Themes.Underwater);
             }
 		}
