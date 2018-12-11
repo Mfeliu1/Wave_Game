@@ -1,19 +1,7 @@
-Known Bugs 11/24/17:
- - Rocket Boss's angling is slightly off
- - Randomization of bosses for waves does not work properly
- - Tails do no display when drawing images for enemies. 
- - Screen size scales properly, but does not detect users screen size and adjust scale properly 
-     - App runs in 1920x1080... but is scaled down manually due to not checking screen size of user. 
- 
-
-Improvements:
- - Upgrades
- - Power Ups
- - Add more enemies 
- - Add more gamemodes
- - Add multi-player
- 
- 
+Known Bugs 12/11/18:
+ - EnemyBasic is invisible
+ - Need to manually add and set up AppleJavaExtensions and Jamepad libraries (in libraries folder)
+ - Screen maximization on macOS is buggy and the game is cut off (you can go off the screen)
 
 Event Process/How the game runs:
  - Game.java acts as a holder class for all the games data
